@@ -16,7 +16,11 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { mainNavigation } from "@/constants/navbarData";
-import { SpecialContent, StandardContent } from "@/types/navbarTypes";
+import {
+  NavigationContent,
+  SpecialContent,
+  StandardContent,
+} from "@/types/navbarTypes";
 
 export default function MainNavigationMenu() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -42,12 +46,15 @@ export default function MainNavigationMenu() {
   };
 
   // Type guard function to check if content has specialLayout and sections
-  const hasSpecialLayout = (content: any): content is SpecialContent => {
+  const hasSpecialLayout = (
+    content: NavigationContent | undefined,
+  ): content is SpecialContent => {
     return content?.specialLayout === true && Array.isArray(content?.sections);
   };
 
-  // Type guard function to check if content has menuItems and gridColumns
-  const hasStandardLayout = (content: any): content is StandardContent => {
+  const hasStandardLayout = (
+    content: NavigationContent | undefined,
+  ): content is StandardContent => {
     return content?.specialLayout !== true && Array.isArray(content?.menuItems);
   };
 
@@ -140,7 +147,7 @@ export default function MainNavigationMenu() {
                                 {navItem.content.sidebarDescription}
                               </p>
                               <Link
-                                href={navItem.content.sidebarButtonLink}
+                                href={navItem.content.sidebarButtonLink || "#"}
                                 className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                               >
                                 {navItem.content.sidebarButtonText}
@@ -190,7 +197,7 @@ export default function MainNavigationMenu() {
                                 {navItem.content.sidebarDescription}
                               </p>
                               <Link
-                                href={navItem.content.sidebarButtonLink}
+                                href={navItem.content.sidebarButtonLink || "#"}
                                 className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                               >
                                 {navItem.content.sidebarButtonText}

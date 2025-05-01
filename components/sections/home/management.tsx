@@ -75,6 +75,7 @@ export default function ManagementSection() {
             <Button
               className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-indigo-100 shadow-xl transition duration-300 w-full hover:scale-110 cursor-pointer"
               variant={"outline"}
+              onClick={() => window.open("/company", "_self")}
             >
               Explore More
             </Button>

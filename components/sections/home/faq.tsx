@@ -51,14 +51,15 @@ export default function FAQSection() {
           <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">
             Get quick answers to common questions about our healthcare
             consulting, analytics, and digital transformation solutions. Whether
-            you&apos;re a hospital, insurer, or government agency, we're here to
-            guide your journey to smarter healthcare.
+            you&apos;re a hospital, insurer, or government agency, we&#39;re
+            here to guide your journey to smarter healthcare.
           </p>
           <Button
             className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white text-lg p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
             variant={"outline"}
+            onClick={() => window.open("/contact", "_self")}
           >
-            Learn More
+            Get in touch
           </Button>
         </motion.div>
 

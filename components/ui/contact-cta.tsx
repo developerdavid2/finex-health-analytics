@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AuroraText } from "@/components/ui/aurora-text";
+import { useRouter } from "next/navigation";
 
 // Animation configuration - matching the Hero Section
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
@@ -17,6 +18,7 @@ export default function ContactCta() {
   const { ref } = useSectionScroll("contact");
   const animationRef = useRef(null);
   const isInView = useInView(animationRef, { once: true, amount: 0.2 });
+  const router = useRouter();
 
   // Set animation state based on view
   const animationState = isInView ? "visible" : "hidden";
@@ -55,8 +57,9 @@ export default function ContactCta() {
             <Button
               className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
               variant={"outline"}
+              onClick={() => router.push("/contact")}
             >
-              Explore More
+              Contact Us
             </Button>
           </motion.div>
         </div>

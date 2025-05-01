@@ -1,10 +1,8 @@
 "use client";
 import React, { useRef } from "react";
-import { useMotionValueEvent, useScroll } from "motion/react";
-import { motion } from "motion/react";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
-// Animation variants for staggered children
 
 export const StickyScroll = ({
   content,
@@ -14,6 +12,7 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
     content?: React.ReactNode | any;
     image?: string;
   }[];
@@ -22,7 +21,7 @@ export const StickyScroll = ({
   inView?: boolean;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     container: ref,
     offset: ["start start", "end start"],
