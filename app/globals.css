@@ -83,6 +83,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
 
+  --color-main: #626877;
+
+
   --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
   infinite;
 
@@ -188,6 +191,16 @@
   }
   body {
     @apply overflow-x-hidden text-foreground;
+  }
+
+  /* Hide scrollbar but allow scroll */
+  .scroll-hide {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE and Edge */
+  }
+
+  .scroll-hide::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari */
   }
 
 }

@@ -34,7 +34,7 @@ export default function ContactCta() {
           className="max-w-7xl mx-auto text-center mb-12 relative"
         >
           <motion.h1
-            className="text-9xl text-neutral-700 font-bold mb-4"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-[85px] text-neutral-700 font-bold mb-4"
             variants={variants}
             initial="hidden"
             animate={animationState}

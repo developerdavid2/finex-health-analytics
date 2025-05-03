@@ -54,10 +54,11 @@ export default function HomeSection() {
       ref={ref}
       className="flex justify-center items-center bg-pink-50/20 relative pt-[10rem]"
     >
-      {/* Shadow reflections */}
+      {/* Blur gradient reflections */}
       <div className="blur-[12rem] h-52 w-52 bg-pink-200 absolute top-[20%] right-[5%] " />
       <div className="blur-[12rem] h-52 w-52 bg-purple-500 absolute top-[60%] left-[5%] " />
 
+      {/*Radial round ball*/}
       <motion.div
         variants={variants}
         transition={transition}
@@ -68,11 +69,11 @@ export default function HomeSection() {
         initial="hidden"
         animate={initialState}
         transition={{ staggerChildren: 0.04 }}
-        className="size-18 rounded-full bg-radial-[at_50%_75%] from-blue-200 via-purple-400/15 to-purple-900/10 to-90% absolute top-96 left-[10%]"
+        className="size-18 rounded-full bg-radial-[at_50%_75%] from-blue-200 via-purple-400/15 to-purple-900/10 to-90% absolute  top-[30rem] md:top-96 left-[10%]"
       ></motion.div>
 
       <motion.div
-        className="max-w-4xl mx-auto text-center flex flex-col relative"
+        className="max-w-lg md:max-w-3xl lg:max-w-4xl mx-auto text-center flex flex-col relative"
         initial="hidden"
         animate={initialState}
         transition={{ staggerChildren: 0.04 }}
@@ -88,7 +89,7 @@ export default function HomeSection() {
           </div>
         </motion.div>
 
-        <h1 className="text-[85px] leading-none font-black tracking-tight mb-6 text-zinc-600 pt-8 text-shadow-xl font-urbanist">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85px] leading-none font-black tracking-tight mb-6 text-main pt-8 text-shadow-xl font-urbanist">
           {words.map((word, index) => (
             <React.Fragment key={index}>
               <motion.span
@@ -104,18 +105,17 @@ export default function HomeSection() {
         </h1>
 
         <motion.p
-          className="text-gray-600 text-lg font-medium mb-8 max-w-3xl"
+          className="text-gray-600 text-lg font-medium mb-8 max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto text-center"
           transition={transition}
           variants={variants}
         >
-          At Finex, we incorporate the use of various analytical tools to read,
-          compile, extract, and visualize clients historic medical report, for
-          making efficient health decisions.
+          At Finex, we incorporate the use of various analytical tools to help
+          you make efficient health decisions.
         </motion.p>
 
         <motion.div transition={transition} variants={variants}>
           <Button
-            className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
+            className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 md:w-[15rem] hover:scale-110 cursor-pointer"
             variant={"outline"}
           >
             Explore More
@@ -126,7 +126,7 @@ export default function HomeSection() {
           {/* Glass Morphism with animations */}
           <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 left-[13%] " />
           <motion.div
-            className="bg-blue-200/10 border-2 border-white drop-shadow-2xl rounded-xl border-transparent animate-border text-base capitalize inline-flex justify-center whitespace-nowrap font-medium text-gray-700 backdrop-blur-[5rem] p-2 gap-2 items-center w-fit pr-16 absolute top-5 -left-[20%] -translate-x-0.5"
+            className="bg-blue-200/10 border-2 border-white drop-shadow-2xl rounded-xl border-transparent animate-border text-base capitalize inline-flex justify-center whitespace-nowrap font-medium text-gray-700 backdrop-blur-[5rem] p-2 gap-2 items-center w-fit pr-16 absolute top-5 max-md:hidden lg:left-[10%] xl:-left-[20%] -translate-x-0.5"
             transition={{ ...transition, delay: 0.2 }}
             variants={variants}
           >
@@ -144,7 +144,7 @@ export default function HomeSection() {
           <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-10 left-[50%]" />
 
           <motion.div
-            className="w-[30rem] z-10 absolute top-50 left-[20%] bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50 flex items-center text-gray-800 font-semibold"
+            className="w-fit md:w-[30rem] z-10 absolute top-50 left-[10%] xl:left-[20%] bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50 flex items-center text-gray-800 font-semibold mx-auto"
             transition={{ ...transition, delay: 0.6 }}
             variants={variants}
           >
@@ -165,7 +165,7 @@ export default function HomeSection() {
                 {heroButtons.map((button) => (
                   <div
                     key={button.slug}
-                    className="inline-flex text-center justify-center items-center gap-2 rounded-full px-3 py-1.5 text-sm/6 font-semibold text-gray-500 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-hover:text-white data-open:bg-gray-700 flex-[1_1_20%] max-w-[20%] border border-gray-400 "
+                    className="inline-flex text-center justify-center items-center gap-2 rounded-full px-3 py-1.5 text-sm/6 font-semibold text-gray-500 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-hover:text-white data-open:bg-gray-700 border border-gray-400  basis-[30%] md:basis-[20%]"
                   >
                     {button.label}
                   </div>
@@ -173,7 +173,7 @@ export default function HomeSection() {
               </div>
             </div>
 
-            <div className="absolute bottom-0 right-0 w-auto h-auto">
+            <div className="absolute bottom-0 right-0 w-auto h-auto max-sm:hidden">
               <Image
                 src="/images/doctor.webp"
                 alt="Doctor Image"
@@ -185,7 +185,7 @@ export default function HomeSection() {
 
           <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 -right-[18%]" />
           <motion.div
-            className="w-80 h-auto z-10 absolute top-5 -right-[20%] -translate-x-0.5 bg-white/10 rounded-2xl shadow-2xl backdrop-blur-md border border-white/30 items-center justify-center text-gray-800 font-semibold flex flex-col"
+            className="w-80 h-auto z-10 absolute top-5 max-xl:hidden xl:-right-[20%] -translate-x-0.5 bg-white/10 rounded-2xl shadow-2xl backdrop-blur-md border border-white/30 items-center justify-center text-gray-800 font-semibold flex flex-col"
             transition={{ ...transition, delay: 0.6 }}
             variants={variants}
           >
@@ -209,18 +209,18 @@ export default function HomeSection() {
 
         {/* Faded circular Background Decoration */}
 
-        <div className="relative flex flex-col items-center justify-center mt-32">
+        <div className="relative flex flex-col items-center justify-center mt-20 md:mt-30">
           <motion.div
             variants={scaleVariants}
             whileInView={scaleVariants.whileInView}
-            className="size-[600px] rounded-full bg-blue-400/10 mx-auto mask-b-from-20% mask-b-to-70% flex flex-col items-center justify-center"
+            className="size-[600px] rounded-full bg-blue-400/10 mx-auto mask-b-from-20% mask-b-to-70% flex flex-col items-center justify-center "
           />
           <motion.img
             src="/images/hero-analysis-ai.png"
             alt="Hero  image"
-            width={300}
-            height={300}
-            className="w-[500px] h-auto absolute inset-0 -top-40 left-1/2 -translate-x-1/2 object-cover mask-b-from-50% mask-b-to-100%"
+            width={100}
+            height={100}
+            className="w-[350px] lg:w-[500px] h-auto absolute inset-0 -top-20 md:-top-40 left-1/2 -translate-x-1/2 object-cover mask-b-from-50% mask-b-to-100%"
             transition={{ ...transition, delay: 0.6 }}
             variants={variants}
           />

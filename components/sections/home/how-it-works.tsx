@@ -34,17 +34,20 @@ export default function HowItWorksSection() {
     <section
       id="how-it-works"
       ref={ref}
-      className="flex justify-center items-center bg-indigo-50 relative pb-[10rem]"
+      className="flex justify-center items-center bg-indigo-50 relative"
     >
-      <div ref={animationRef} className="flex flex-col container max-w-7xl">
+      <div
+        ref={animationRef}
+        className="flex flex-col container py-[10rem] max-w-7xl lg:px-[6rem]"
+      >
         <motion.div
-          className="container max-w-6xl mb-10"
+          className="max-w-6xl mb-10 px-[3rem]"
           initial="hidden"
           animate={initialState}
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-start text-7xl max-w-6xl font-bold mb-4 text-zinc-700 font-urbanist font-urban">
+          <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Finex Process Work Flow
           </h2>
           <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">

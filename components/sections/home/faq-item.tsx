@@ -56,7 +56,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
             "text-left text-[20px] font-semibold flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 cursor-pointer",
             accordionOpen
               ? "text-indigo-700"
-              : "text-neutral-700 hover:text-indigo-400/60",
+              : "text-main hover:text-indigo-400/60",
           )}
         >
           <span>{question}</span>
@@ -65,7 +65,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
               "flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300",
               accordionOpen
                 ? "bg-indigo-100 shadow-inner text-indigo-700"
-                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-neutral-700 hover:text-indigo-600",
+                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-main hover:text-indigo-600",
             )}
           >
             <svg

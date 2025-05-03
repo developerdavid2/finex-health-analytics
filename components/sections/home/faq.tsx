@@ -33,48 +33,50 @@ export default function FAQSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col md:flex-row container gap-10 max-w-7xl mx-auto"
+        className="flex flex-col xl:flex-row container relative pt-[10rem] max-w-3xl xl:max-w-7xl xl:px-[6rem]"
       >
         <div className="absolute inset-0 h-[500px] mask-y-from-80% mask-y-to-90% opacity-60 w-full overflow-hidden">
           <Ripple />
         </div>
-        <motion.div
-          className="container mb-10 md:w-[40%]"
-          initial="hidden"
-          animate={initialState}
-          variants={variants}
-          transition={transition}
-        >
-          <h2 className="text-start text-5xl md:text-7xl max-w-xl font-bold mb-4 text-zinc-700 font-urbanist">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">
-            Get quick answers to common questions about our healthcare
-            consulting, analytics, and digital transformation solutions. Whether
-            you&apos;re a hospital, insurer, or government agency, we&#39;re
-            here to guide your journey to smarter healthcare.
-          </p>
-          <Button
-            className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white text-lg p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
-            variant={"outline"}
-            onClick={() => window.open("/contact", "_self")}
+        <div className="flex flex-col xl:flex-row gap-10 justify-between">
+          <motion.div
+            className="container mb-10 xl:w-[50%] flex flex-col items-center xl:items-start mx-auto"
+            initial="hidden"
+            animate={initialState}
+            variants={variants}
+            transition={transition}
           >
-            Get in touch
-          </Button>
-        </motion.div>
+            <h2 className="text-start text-3xl md:text-5xl  xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 text-xl font-medium mb-8 max-w-3xl">
+              Get quick answers to common questions about our healthcare
+              consulting, analytics, and digital transformation solutions.
+              Whether you&apos;re a hospital, insurer, or government agency,
+              we&#39;re here to guide your journey to smarter healthcare.
+            </p>
+            <Button
+              className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white  text-md p-6 md:text-xl md:p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
+              variant={"outline"}
+              onClick={() => window.open("/contact", "_self")}
+            >
+              Get in touch
+            </Button>
+          </motion.div>
 
-        <div className="mb-10 mx-auto flex flex-col justify-center items-center md:w-[60%]">
-          <div className="flex flex-col gap-6 max-w-full items-stretch w-full">
-            {faqData.map((item, index) => (
-              <FaqItem
-                key={item.id}
-                id={item.id}
-                question={item.question}
-                answer={item.answer}
-                index={index}
-                initialState={initialState}
-              />
-            ))}
+          <div className="mb-10 flex flex-col justify-center items-center">
+            <div className="flex flex-col gap-6 max-w-full items-stretch w-full">
+              {faqData.map((item, index) => (
+                <FaqItem
+                  key={item.id}
+                  id={item.id}
+                  question={item.question}
+                  answer={item.answer}
+                  index={index}
+                  initialState={initialState}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

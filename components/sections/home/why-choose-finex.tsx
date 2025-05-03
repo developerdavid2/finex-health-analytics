@@ -32,10 +32,14 @@ export function WhyChooseFinexSection() {
   const headerAnimationState = isHeaderInView ? "visible" : "hidden";
 
   return (
-    <section id="testimonials" ref={ref} className="flex flex-col py-[10rem]">
+    <section
+      id="why-choose-finex"
+      ref={ref}
+      className="flex flex-col pb-[10rem]"
+    >
       <div
         ref={animationRef}
-        className="flex flex-col justify-center items-center container relative max-w-7xl mx-auto px-[6rem]"
+        className="flex flex-col lg:flex-row container relative max-w-7xl px-[3rem] lg:px-[6rem]"
       >
         <motion.div
           className="container max-w-6xl"
@@ -44,7 +48,7 @@ export function WhyChooseFinexSection() {
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-start text-7xl font-bold mb-4 text-zinc-700 font-urbanist font-urban">
+          <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Why Choose Finex?
           </h2>
           <p className="text-gray-600 text-lg font-medium max-w-3xl">

@@ -77,8 +77,10 @@ export const aboutSections = [
     href: "/",
     cta: "Learn more",
     background: (
-      <img
-        className="absolute inset-0 object-cover min-h-full mask-b-from-50% mask-b-to-100%"
+      <Image
+        width={400}
+        height={400}
+        className="absolute inset-0 object-cover min-h-full mask-b-from-50% mask-b-to-100% w-full"
         src="/images/brain-ai.png"
         alt="brain-ai"
       />
@@ -93,8 +95,10 @@ export const aboutSections = [
     href: "/",
     cta: "Learn more",
     background: (
-      <img
-        className="absolute inset-0 object-cover min-h-full opacity-60"
+      <Image
+        width={400}
+        height={400}
+        className="absolute inset-0 object-cover min-h-full mask-b-from-50% mask-b-to-100% w-full"
         src="/images/health-record.jpeg"
         alt="health-record"
       />
@@ -109,16 +113,28 @@ export const aboutSections = [
     href: "/",
     cta: "Learn more",
     background: (
-      <div className="flex justify-center items-center bg-gray-100 absolute inset-0 object-contain w-full h-full">
-        <DotLottieReact
-          src="/lotties/robot.lottie" // <-- replace this with your actual path
-          autoplay
-          loop
-        />
+      <div className="flex justify-center items-center bg-gray-100 absolute inset-0 object-cover w-full min-h-full">
+        <div className="relative w-full max-w-md mx-auto xs:max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-xl 2xl:max-w-2xl">
+          <DotLottieReact
+            src="/lotties/robot.lottie"
+            autoplay
+            loop
+            className="w-full h-auto"
+            style={{ maxHeight: "100%", objectFit: "contain" }}
+          />
+        </div>
       </div>
     ),
     className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-3",
   },
+];
+
+export const outlinedServices = [
+  { label: "Informatics", slug: "informatics" },
+  { label: "Policy Advisory", slug: "policy" },
+  { label: "Capacity", slug: "training" },
+  { label: "Integration", slug: "ai" },
+  { label: "Health Projects", slug: "community" },
 ];
 
 // faqData.ts
@@ -165,7 +181,9 @@ export const whyChooseFinex = [
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="my-6 ">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/images/integrated.gif"
             alt="Integrated Expertise"
             className="w-[300px] h-[200px] object-cover rounded-xl"
@@ -186,7 +204,9 @@ export const whyChooseFinex = [
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="mb-6">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/images/scalable.jpeg"
             alt="Scalable Solutions"
             className="w-[300px] h-[200px] object-cover rounded-xl"
@@ -205,7 +225,9 @@ export const whyChooseFinex = [
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="mb-6">
-          <img
+          <Image
+            width={900}
+            height={900}
             src="/images/medical-training.jpeg"
             alt="Training & Education"
             className="w-[300px] h-[200px] object-cover rounded-xl"
@@ -224,7 +246,9 @@ export const whyChooseFinex = [
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="mb-6">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/images/sporting.jpg"
             alt="Community Impact"
             className="w-[300px] h-[200px] object-cover rounded-xl"
@@ -243,7 +267,9 @@ export const whyChooseFinex = [
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="mb-6">
-          <img
+          <Image
+            width={100}
+            height={100}
             src="/images/ai-model.gif"
             alt="AI Solutions"
             className="w-[300px] h-[200px] object-cover rounded-xl"
@@ -258,6 +284,7 @@ export const whyChooseFinex = [
 ];
 
 import { Lightbulb, ShieldCheck, Handshake, Activity } from "lucide-react";
+import Image from "next/image";
 
 export interface CoreValueCard {
   title: string;

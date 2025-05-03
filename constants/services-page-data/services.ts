@@ -2,7 +2,6 @@ import {
   FaChartBar,
   FaShieldAlt,
   FaCreditCard,
-  FaRegLightbulb,
   FaRobot,
   FaDatabase,
   FaChalkboardTeacher,
@@ -32,13 +31,6 @@ export const servicesMenu = [
       "Fraud-proof payment systems, digital wallets, and revenue cycle optimization tools.",
     href: "/services#fintech",
     icon: FaCreditCard,
-  },
-  {
-    title: "Digital Health Strategy & Policy",
-    description:
-      "Consulting on healthcare financing, digital systems, and public health policy development.",
-    href: "/services#policy",
-    icon: FaRegLightbulb,
   },
   {
     title: "Predictive Analytics & AI",

@@ -123,20 +123,20 @@ export default function StackedCards({ animationProps }: StackedCardsProps) {
                   className={`${card.color} bg-opacity-10 rounded-3xl overflow-hidden border border-white/20 h-[500px] transition-all duration-500`}
                 >
                   <div className="flex flex-col md:flex-row h-full">
-                    <div className="w-full md:w-2/5 h-full">
-                      <div className="h-full relative p-8 rounded-lg overflow-hidden">
+                    <div className="w-full md:w-2/5 h-full flex items-center justify-center">
+                      <div className="h-full relative p-8 max-sm:pb-0 rounded-lg overflow-hidden">
                         <Image
                           src={card.image}
                           alt={card.title}
                           width={300}
                           height={300}
-                          className="w-full h-full object-cover rounded-lg"
+                          className="size-[200px] md:w-full md:h-full object-cover rounded-lg"
                         />
                       </div>
                     </div>
-                    <div className="w-full md:w-3/5 p-14 flex flex-col justify-center">
+                    <div className="w-full md:w-3/5  p-14 max-sm:pt-0 flex flex-col justify-center">
                       <div className="flex items-center mb-4">
-                        <span className="text-7xl font-bold text-zinc-700 opacity-80">
+                        <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-main opacity-80">
                           {card.number}
                         </span>
                       </div>

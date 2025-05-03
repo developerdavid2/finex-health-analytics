@@ -21,11 +21,14 @@ export default function TestimonialsSection() {
   const animationState = isInView ? "visible" : "hidden";
 
   return (
-    <section ref={ref} className="w-full py-20 bg-[#EEF2FF]">
-      <div className="container mx-auto px-4">
+    <section
+      ref={ref}
+      className="bg-[#EEF2FF] -mt-32 flex justify-center items-center mx-auto"
+    >
+      <div className="relative overflow-hidden text-center flex flex-col items-center bg-[#EEF2FF] ">
         <div ref={animationRef} className="max-w-4xl mx-auto text-center mb-12">
           <motion.h2
-            className="text-7xl font-bold mb-4"
+            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban"
             variants={variants}
             initial="hidden"
             animate={animationState}

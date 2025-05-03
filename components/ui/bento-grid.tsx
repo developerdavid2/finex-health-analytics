@@ -57,7 +57,7 @@ const BentoCard = ({
             <stop offset="100%" stopColor="#6b7280" />
           </linearGradient>
         </svg>
-        <h3 className="text-2xl font-semibold text-neutral-700 dark:text-neutral-300">
+        <h3 className="text-xl md:text-2xl font-semibold text-main dark:text-neutral-300">
           {name}
         </h3>
         <p className="max-w-lg text-neutral-400">{description}</p>
