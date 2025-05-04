@@ -33,14 +33,14 @@ export default function FAQSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col xl:flex-row container relative pt-[10rem] max-w-3xl xl:max-w-7xl xl:px-[6rem]"
+        className="flex flex-col xl:flex-row container relative pt-[10rem] max-w-3xl xl:max-w-7xl"
       >
         <div className="absolute inset-0 h-[500px] mask-y-from-80% mask-y-to-90% opacity-60 w-full overflow-hidden">
           <Ripple />
         </div>
         <div className="flex flex-col xl:flex-row gap-10 justify-between">
           <motion.div
-            className="container mb-10 xl:w-[50%] flex flex-col items-center xl:items-start mx-auto"
+            className="container mb-10 xl:w-[70%] flex flex-col items-center xl:items-start mx-auto"
             initial="hidden"
             animate={initialState}
             variants={variants}

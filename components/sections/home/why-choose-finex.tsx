@@ -35,11 +35,11 @@ export function WhyChooseFinexSection() {
     <section
       id="why-choose-finex"
       ref={ref}
-      className="flex flex-col pb-[10rem]"
+      className="flex flex-col  items-center  pb-[10rem]"
     >
       <div
         ref={animationRef}
-        className="flex flex-col lg:flex-row container relative max-w-7xl px-[3rem] lg:px-[6rem]"
+        className="flex flex-col container relative max-w-7xl px-[3rem] pb-10 lg:px-[6rem]"
       >
         <motion.div
           className="container max-w-6xl"
@@ -48,10 +48,10 @@ export function WhyChooseFinexSection() {
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+          <h2 className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Why Choose Finex?
           </h2>
-          <p className="text-gray-600 text-lg font-medium max-w-3xl">
+          <p className="text-center text-gray-600 text-lg font-medium max-w-3xl">
             Here are some of the key features that set us apart from the rest:
           </p>
         </motion.div>

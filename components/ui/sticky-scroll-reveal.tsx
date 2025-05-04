@@ -62,7 +62,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[40rem] justify-center space-x-10 overflow-y-auto rounded-[5rem] p-10"
+      className="relative flex flex-col xl:flex-row h-[40rem] justify-center space-x-10 overflow-y-auto rounded-[5rem] p-10"
       ref={ref}
       initial={animate ? { opacity: 0 } : {}}
       whileInView={
@@ -138,7 +138,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "sticky z-30 top-10 hidden h-fit w-96 overflow-hidden rounded-2xl bg-gradient-to-br backdrop-blur-lg border border-white/20 shadow-xl lg:block",
+          "sticky z-30 top-10 h-fit w-96 overflow-hidden rounded-2xl bg-gradient-to-br backdrop-blur-lg border border-white/20 shadow-xl lg:block",
           cardGradients[activeCard % cardGradients.length],
           contentClassName,
         )}
