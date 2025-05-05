@@ -35,7 +35,7 @@ export default function AboutSection() {
     <section
       id="about-us"
       ref={ref}
-      className="flex justify-center items-center bg-indigo-50 relative pt-[10rem]"
+      className="flex justify-center items-center bg-indigo-50 relative pt-[10rem] px-4"
     >
       <div
         ref={animationRef}

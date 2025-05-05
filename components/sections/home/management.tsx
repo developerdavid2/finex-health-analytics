@@ -52,7 +52,7 @@ export default function ManagementSection() {
     <section id="team" ref={ref} className="flex justify-center items-center">
       <div
         ref={animationRef}
-        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-[3rem] lg:px-[6rem] mb-[10rem]"
+        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-4 lg:px-[6rem] mb-[10rem]"
       >
         <motion.div
           className="container max-w-6xl mb-10"
@@ -105,8 +105,8 @@ export default function ManagementSection() {
                 ))}
               </CarouselContent>
               <div className="flex justify-center mt-6 gap-4">
-                <CarouselPrevious className="relative static transform-none mx-2" />
-                <CarouselNext className="relative static transform-none mx-2" />
+                <CarouselPrevious className=" static transform-none mx-2" />
+                <CarouselNext className=" static transform-none mx-2" />
               </div>
             </Carousel>
           </motion.div>

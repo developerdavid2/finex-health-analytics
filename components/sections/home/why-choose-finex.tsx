@@ -51,7 +51,7 @@ export function WhyChooseFinexSection() {
           <h2 className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Why Choose Finex?
           </h2>
-          <p className="text-center text-gray-600 text-lg font-medium max-w-3xl">
+          <p className="text-center text-gray-600 text-lg font-medium">
             Here are some of the key features that set us apart from the rest:
           </p>
         </motion.div>

@@ -16,9 +16,8 @@ const FooterSocial: React.FC = () => {
             aria-label={`${social.name} profile`}
           >
             <div
-              className="w-10 h-10 flex items-center justify-center rounded-lg"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-b from-gray-100 to-gray-200"
               style={{
-                background: "linear-gradient(145deg, #f0f0f0, #e6e6e6)",
                 boxShadow: "4px 4px 8px #d1d1d1, -4px -4px 8px #ffffff",
               }}
             >

@@ -276,7 +276,7 @@ export default function MainNavigationMenu() {
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
                         >
-                          <NavigationMenuTrigger className="bg-neutral-300/30">
+                          <NavigationMenuTrigger className="max-lg:bg-neutral-300/30 hover:bg-main/20">
                             {navItem.title}
                           </NavigationMenuTrigger>
                         </NavigationMenuLink>

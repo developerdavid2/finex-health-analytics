@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -56,13 +56,18 @@ export const StickyScroll = ({
     "from-purple-100/20 to-blue-100/20", // purple to blue with transparency
     "from-red-100/20 to-amber-100/20", // red to amber with transparency
   ];
+  const [, setBackgroundGradient] = useState(cardGradients[0]);
+
+  useEffect(() => {
+    setBackgroundGradient(cardGradients[activeCard % cardGradients.length]);
+  }, [activeCard]);
 
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex flex-col xl:flex-row h-[40rem] justify-center space-x-10 overflow-y-auto rounded-[5rem] p-10"
+      className="relative flex h-[40rem] justify-center space-x-10 overflow-y-auto rounded-md p-10 scroll-hide"
       ref={ref}
       initial={animate ? { opacity: 0 } : {}}
       whileInView={
@@ -78,12 +83,12 @@ export const StickyScroll = ({
       }
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="relative flex items-start px-4 z-20">
+      <div className="relative flex items-start px-4 z-20 max-lg:mr-0">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <motion.div
               key={item.title + index}
-              className="my-20"
+              className="my-40 first:mt-20 last:mb-20"
               initial={
                 animate
                   ? {
@@ -127,7 +132,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-lg mt-10 max-w-sm text-neutral-700"
+                className="text-lg mt-10 max-w-xl text-neutral-700"
               >
                 {item.description}
               </motion.p>
@@ -138,7 +143,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "sticky z-30 top-10 h-fit w-96 overflow-hidden rounded-2xl bg-gradient-to-br backdrop-blur-lg border border-white/20 shadow-xl lg:block",
+          "sticky z-30 top-10 hidden h-fit w-96 overflow-hidden rounded-2xl bg-gradient-to-br backdrop-blur-lg border border-white/20 shadow-xl lg:block",
           cardGradients[activeCard % cardGradients.length],
           contentClassName,
         )}

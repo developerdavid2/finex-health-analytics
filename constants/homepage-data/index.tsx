@@ -319,3 +319,42 @@ export const coreValues: CoreValueCard[] = [
     icon: <Activity className="w-10 h-10 text-red-600/30" />,
   },
 ];
+
+export const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    name: "John Brian",
+    username: "@johnbrian",
+    body: "I'm at a loss for words. Amazing healthcare analytics. I love it.",
+    img: "https://randomuser.me/api/portraits/men/65.jpg",
+  },
+  {
+    name: "Jane Ranne",
+    username: "@janeranne",
+    body: "This blew my mind. Clean, smart, and seamless delivery.",
+    img: "https://randomuser.me/api/portraits/women/12.jpg",
+  },
+  {
+    name: "Jenny Smith",
+    username: "@jennysmith",
+    body: "Their insights transformed our decision-making process.",
+    img: "https://randomuser.me/api/portraits/women/51.jpg",
+  },
+  {
+    name: "James Fisher",
+    username: "@jamesfisher",
+    body: "Exceptional service. The team truly understands healthcare.",
+    img: "https://randomuser.me/api/portraits/men/76.jpg",
+  },
+];

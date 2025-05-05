@@ -54,11 +54,49 @@ export default function HomeSection() {
       ref={ref}
       className="justify-center items-center bg-pink-50/20 relative pt-[10rem]"
     >
-      <div className="container mx-auto flex flex-col overflow-hidden">
-        {/* Blur gradient reflections */}
-        <div className="blur-[12rem] h-52 w-52 bg-pink-200 absolute top-[20%] right-[5%] " />
-        <div className="blur-[12rem] h-52 w-52 bg-purple-500 absolute top-[60%] left-[5%] " />
+      {/* Blur gradient reflections */}
+      <div className="blur-[12rem] h-52 w-52 bg-pink-200 absolute top-[20%] right-[5%] " />
+      <div className="blur-[12rem] h-52 w-52 bg-purple-500 absolute top-[60%] left-[5%] " />
+      {/* Glass Morphism with animations */}
+      <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 left-[0%] " />
+      <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-10 left-[50%]" />
 
+      <motion.div
+        className="bg-blue-200/10 border-2 border-white drop-shadow-2xl rounded-xl border-transparent animate-border text-base capitalize inline-flex justify-center whitespace-nowrap font-medium text-gray-700 backdrop-blur-[5rem] p-2 gap-2 items-center w-fit pr-16 absolute max-lg:hidden top-1/2 left-[10%] -translate-x-0.5"
+        transition={{ ...transition, delay: 0.2 }}
+        variants={variants}
+      >
+        <span className="bg-white p-2 rounded-lg w-[2.5rem] h-[2.5rem] flex items-center justify-center ">
+          <IoShieldCheckmarkSharp className="text-green-600 size-[20px]" />
+        </span>
+        <div className="flex flex-col items-start">
+          <p className="text-gray-600 font-medium">Our clients rate us</p>
+          <p className="text-gray-600 font-semibold">More than 100k reviews</p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="w-80 h-auto z-10 absolute top-1/2 max-xl:hidden right-[5%] bg-white/10 rounded-2xl shadow-2xl backdrop-blur-md border border-white/30 items-center justify-center text-gray-800 font-semibold flex flex-col"
+        transition={{ ...transition, delay: 0.6 }}
+        variants={variants}
+      >
+        <div className="flex gap-4 pt-8 items-center justify-start">
+          <span className="bg-gray-100 p-2 rounded-lg w-[2.5rem] h-[2.5rem] flex items-center justify-center ">
+            <GiWaterDrop className="text-blue-500/30 size-[20px]" />
+          </span>
+          <p className="text-gray-600 font-semibold">
+            Monitor your heart&#39;s health
+          </p>
+        </div>
+        <Image
+          src="/images/line-chart.png"
+          alt="Lines Triple"
+          width={100}
+          height={100}
+          className="w-full h-full object-cover rounded-2xl hue-rotate-60"
+        />
+      </motion.div>
+      <div className="container mx-auto flex flex-col overflow-hidden">
         {/*Radial round ball*/}
         <motion.div
           variants={variants}
@@ -74,7 +112,7 @@ export default function HomeSection() {
         ></motion.div>
 
         <motion.div
-          className="max-w-lg md:max-w-3xl lg:max-w-4xl mx-auto text-center flex flex-col relative"
+          className="flex flex-col justify-center items-center relative"
           initial="hidden"
           animate={initialState}
           transition={{ staggerChildren: 0.04 }}
@@ -90,30 +128,31 @@ export default function HomeSection() {
             </div>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85px] leading-none font-black tracking-tight mb-6 text-main pt-8 text-shadow-xl font-urbanist">
-            {words.map((word, index) => (
-              <React.Fragment key={index}>
-                <motion.span
-                  className="inline-block"
-                  transition={transition}
-                  variants={variants}
-                >
-                  {word}
-                </motion.span>
-                {index < words.length - 1 && " "}
-              </React.Fragment>
-            ))}
-          </h1>
+          <div className="max-w-7xl px-4">
+            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85px] leading-none font-black tracking-tight mb-6 text-main pt-8 text-shadow-xl font-urbanist">
+              {words.map((word, index) => (
+                <React.Fragment key={index}>
+                  <motion.span
+                    className="inline-block"
+                    transition={transition}
+                    variants={variants}
+                  >
+                    {word}
+                  </motion.span>
+                  {index < words.length - 1 && " "}
+                </React.Fragment>
+              ))}
+            </h1>
 
-          <motion.p
-            className="text-gray-600 text-lg font-medium mb-8 max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto text-center"
-            transition={transition}
-            variants={variants}
-          >
-            At Finex, we incorporate the use of various analytical tools to help
-            you make efficient health decisions.
-          </motion.p>
-
+            <motion.p
+              className="text-gray-600 text-lg font-medium mb-8 max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto text-center"
+              transition={transition}
+              variants={variants}
+            >
+              At Finex, we incorporate the use of various analytical tools to
+              help you make efficient health decisions.
+            </motion.p>
+          </div>
           <motion.div transition={transition} variants={variants}>
             <Button
               className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 md:w-[15rem] hover:scale-110 cursor-pointer"
@@ -123,29 +162,9 @@ export default function HomeSection() {
             </Button>
           </motion.div>
 
-          <div className="flex flex-col md:flex-row gap-8 mt-12 relative">
-            {/* Glass Morphism with animations */}
-            <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 left-[13%] " />
+          <div className="flex flex-col md:flex-row gap-8 mt-12 relative h-full w-full">
             <motion.div
-              className="bg-blue-200/10 border-2 border-white drop-shadow-2xl rounded-xl border-transparent animate-border text-base capitalize inline-flex justify-center whitespace-nowrap font-medium text-gray-700 backdrop-blur-[5rem] p-2 gap-2 items-center w-fit pr-16 absolute top-5 max-md:hidden lg:left-[10%] xl:-left-[20%] -translate-x-0.5"
-              transition={{ ...transition, delay: 0.2 }}
-              variants={variants}
-            >
-              <span className="bg-white p-2 rounded-lg w-[2.5rem] h-[2.5rem] flex items-center justify-center ">
-                <IoShieldCheckmarkSharp className="text-green-600 size-[20px]" />
-              </span>
-              <div className="flex flex-col items-start">
-                <p className="text-gray-600 font-medium">Our clients rate us</p>
-                <p className="text-gray-600 font-semibold">
-                  More than 100k reviews
-                </p>
-              </div>
-            </motion.div>
-
-            <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-10 left-[50%]" />
-
-            <motion.div
-              className="w-fit md:w-[30rem] z-10 absolute top-50 left-[10%] xl:left-[20%] bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50 flex items-center text-gray-800 font-semibold mx-auto"
+              className="w-fit md:w-[30rem] z-10 absolute top-50 left-[50%] -translate-x-1/2 bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50 flex items-center text-gray-800 font-semibold mx-auto"
               transition={{ ...transition, delay: 0.6 }}
               variants={variants}
             >
@@ -185,27 +204,6 @@ export default function HomeSection() {
             </motion.div>
 
             <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 -right-[18%]" />
-            <motion.div
-              className="w-80 h-auto z-10 absolute top-5 max-xl:hidden xl:-right-[20%] -translate-x-0.5 bg-white/10 rounded-2xl shadow-2xl backdrop-blur-md border border-white/30 items-center justify-center text-gray-800 font-semibold flex flex-col"
-              transition={{ ...transition, delay: 0.6 }}
-              variants={variants}
-            >
-              <div className="flex gap-4 pt-8 items-center justify-start">
-                <span className="bg-gray-100 p-2 rounded-lg w-[2.5rem] h-[2.5rem] flex items-center justify-center ">
-                  <GiWaterDrop className="text-blue-500/30 size-[20px]" />
-                </span>
-                <p className="text-gray-600 font-semibold">
-                  Monitor your heart&#39;s health
-                </p>
-              </div>
-              <Image
-                src="/images/line-chart.png"
-                alt="Lines Triple"
-                width={100}
-                height={100}
-                className="w-full h-full object-cover rounded-2xl hue-rotate-60"
-              />
-            </motion.div>
           </div>
 
           {/* Faded circular Background Decoration */}

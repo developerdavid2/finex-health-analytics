@@ -33,23 +33,23 @@ export default function FAQSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col xl:flex-row container relative pt-[10rem] max-w-3xl xl:max-w-7xl"
+        className="flex flex-col xl:flex-row container relative px-4 pt-[10rem] max-w-3xl xl:max-w-7xl"
       >
         <div className="absolute inset-0 h-[500px] mask-y-from-80% mask-y-to-90% opacity-60 w-full overflow-hidden">
           <Ripple />
         </div>
         <div className="flex flex-col xl:flex-row gap-10 justify-between">
           <motion.div
-            className="container mb-10 xl:w-[70%] flex flex-col items-center xl:items-start mx-auto"
+            className="container mb-10 flex flex-col items-center xl:items-start mx-auto"
             initial="hidden"
             animate={initialState}
             variants={variants}
             transition={transition}
           >
-            <h2 className="text-start text-3xl md:text-5xl  xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+            <h2 className="max-xl:text-center text-3xl md:text-5xl  xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600 text-xl font-medium mb-8 max-w-3xl">
+            <p className="text-gray-600 text-xl font-medium mb-8 max-w-3xl max-xl:text-center">
               Get quick answers to common questions about our healthcare
               consulting, analytics, and digital transformation solutions.
               Whether you&apos;re a hospital, insurer, or government agency,

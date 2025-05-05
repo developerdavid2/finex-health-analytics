@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-red-100/10 w-full py-12 px-6 md:px-12 lg:px-24 overflow-hidden rounded-t-[5rem]">
       {/* Giant Logo Text with Neumorphic Effect */}
-      <div className="w-full mb-16">
+      <div className="w-full mb-16 hidden lg:block">
         <h1
           className="text-center text-7xl md:text-9xl lg:text-[300px] font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-300 opacity-40"
           style={{
@@ -28,10 +28,12 @@ const Footer: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Column: Logo and Social Links */}
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col lg:gap-4 lg:justify-between justify-center h-full items-center lg:items-stretch">
           <div>
             <FooterLogo />
-            <p className="text-gray-600 mt-4">{companySlogan}</p>
+            <p className="text-gray-600 mt-4 hidden lg:block">
+              {companySlogan}
+            </p>
           </div>
           <FooterSocial />
         </div>

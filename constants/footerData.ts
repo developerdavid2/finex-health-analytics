@@ -16,43 +16,32 @@ export const footerNavLinks: FooterCategory[] = [
   {
     title: "Home",
     links: [
-      { title: "Features", href: "/features" },
-      { title: "Pricing", href: "/pricing" },
-      { title: "Demo", href: "/demo" },
+      { title: "Testimonials", href: "/#testimonials" },
+      { title: "FAQ", href: "/#faq" },
     ],
   },
   {
     title: "Company",
     links: [
-      { title: "About", href: "/about" },
-      { title: "Blog", href: "/blog" },
-      { title: "Contact", href: "/contact" },
-      { title: "Careers", href: "/careers" },
+      { title: "About Us", href: "/company#company" },
+      { title: "Mission & Vision", href: "/company#mission-vision" },
+      { title: "Competitive Edge", href: "/company#competitive-edge" },
     ],
   },
   {
     title: "Services",
     links: [
-      { title: "Trading", href: "/services/trading" },
-      { title: "Analysis", href: "/services/analysis" },
-      { title: "Automation", href: "/services/automation" },
-      { title: "API", href: "/services/api" },
-    ],
-  },
-  {
-    title: "Customers",
-    links: [
-      { title: "Testimonials", href: "/customers/testimonials" },
-      { title: "Case Studies", href: "/customers/case-studies" },
-      { title: "Support", href: "/customers/support" },
+      { title: "Healthcare Analytics", href: "/services#analytics" },
+      { title: "Cybersecurity", href: "/services#cybersecurity" },
+      { title: "E-Payment & Fintech", href: "/services#fintech" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { title: "Documentation", href: "/resources/docs" },
-      { title: "FAQ", href: "/resources/faq" },
-      { title: "Support", href: "/resources/support" },
+      { title: "Regions We Serve", href: "/customers#regions" },
+      { title: "Partnerships", href: "/milestones#partnerships" },
+      { title: "Leadership", href: "/milestones#brand" },
     ],
   },
 ];
@@ -81,4 +70,5 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-export const companySlogan = "Improve your healthcare with our solutions";
+export const companySlogan =
+  "Empowering better healthcare decisions through data, clarity, and insight.";

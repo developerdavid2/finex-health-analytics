@@ -37,7 +37,7 @@ export default function ServicesSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-[3rem] lg:px-[6rem] mb-[10rem]"
+        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-4 lg:px-[6rem] mb-[10rem]"
       >
         <motion.div
           className="container max-w-6xl mb-10"
@@ -47,7 +47,7 @@ export default function ServicesSection() {
           transition={transition}
         >
           <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
-            Finex Healthcare Innovations
+            Finex Innovative Services
           </h2>
           <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">
             We deliver cutting-edge solutions that enhance patient outcomes,
@@ -74,7 +74,7 @@ export default function ServicesSection() {
               </p>
             </div>
             <Image
-              src="/images/health-record.jpeg"
+              src="/images/health-analytics.jpeg"
               alt="Healthcare Data Analytics"
               className="w-full h-52 object-cover rounded-xl"
               width={100}
@@ -98,7 +98,7 @@ export default function ServicesSection() {
             transition={{ ...transition, delay: 0.4 }}
           >
             <Image
-              src="/images/policy-ai.png"
+              src="/images/e-payment.jpeg"
               alt="Healthcare Data Analytics"
               className="w-full h-52 object-cover rounded-xl"
               width={100}
@@ -118,7 +118,7 @@ export default function ServicesSection() {
 
           <div className="max-xl:row-span-2 max-xl:col-span-full space-y-4">
             <motion.div
-              className="relative p-16 xl:p-10 flex flex-col text-center bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50"
+              className="relative p-10 flex flex-col text-center bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50"
               initial="hidden"
               animate={initialState}
               variants={variants}

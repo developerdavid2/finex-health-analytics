@@ -38,7 +38,7 @@ export default function HowItWorksSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col container py-[10rem] max-w-7xl"
+        className="flex flex-col container pt-[10rem] max-w-7xl"
       >
         <motion.div
           className="max-w-6xl mb-10 px-[3rem]"

@@ -1,45 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 import { motion } from "framer-motion";
-
-const reviews = [
-  {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
-  },
-];
+import { reviews } from "@/constants/homepage-data";
+import Image from "next/image";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -106,7 +69,7 @@ const ReviewCard = ({
       <div className="relative z-10">
         <div className="flex flex-row items-center gap-3">
           <div className="rounded-full overflow-hidden border-2 border-white/30 shadow-md">
-            <img
+            <Image
               className="w-10 h-10 object-cover"
               width={40}
               height={40}
@@ -123,7 +86,10 @@ const ReviewCard = ({
             </p>
           </div>
         </div>
-        <blockquote className="mt-4 text-sm leading-relaxed text-neutral-700 font-medium">
+        <blockquote
+          className="mt-4 text-sm leading-relaxed text-neutral-700 font-medium text-start
+        "
+        >
           &#34;{body}&#34;
         </blockquote>
       </div>
