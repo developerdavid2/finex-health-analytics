@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 import { motion } from "framer-motion";
 import { reviews } from "@/constants/homepage-data";
-import Image from "next/image";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -69,7 +68,7 @@ const ReviewCard = ({
       <div className="relative z-10">
         <div className="flex flex-row items-center gap-3">
           <div className="rounded-full overflow-hidden border-2 border-white/30 shadow-md">
-            <Image
+            <img
               className="w-10 h-10 object-cover"
               width={40}
               height={40}
