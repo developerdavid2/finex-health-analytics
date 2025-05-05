@@ -273,13 +273,9 @@ export default function MainNavigationMenu() {
                   <NavigationMenuItem key={navItem.title}>
                     {navItem.hasDropdown ? (
                       <>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
-                          <NavigationMenuTrigger className="max-lg:bg-neutral-300/30 hover:bg-main/20">
-                            {navItem.title}
-                          </NavigationMenuTrigger>
-                        </NavigationMenuLink>
+                        <NavigationMenuTrigger className="max-lg:bg-neutral-300/30 hover:bg-main/20">
+                          {navItem.title}
+                        </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           {hasSpecialLayout(navItem.content) ? (
                             // Special layout for Resources (with sections)
@@ -399,13 +395,12 @@ export default function MainNavigationMenu() {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      // Simple link without dropdown
-                      <Link href={navItem.href} legacyBehavior passHref>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
-                          {navItem.title}
-                        </NavigationMenuLink>
+                      // Updated simple link without dropdown (fixed legacyBehavior issue)
+                      <Link
+                        href={navItem.href}
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        {navItem.title}
                       </Link>
                     )}
                   </NavigationMenuItem>
