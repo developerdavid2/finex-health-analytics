@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://finex-healthcare-analytics.vercel.app
+
+# Sitemaps
+Sitemap: https://finex-healthcare-analytics.vercel.app/sitemap.xml
