@@ -3,7 +3,13 @@ import type { NextConfig } from "next";
 // next.config.js
 const nextConfig: NextConfig = {
   images: {
-    domains: ["randomuser.me"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
