@@ -34,13 +34,16 @@ const ManagementCard: React.FC<ManagementCardProps> = ({
         animate={animationState}
         variants={variants}
         transition={{ ...transition, delay }}
-        className="w-full max-w-xs sm:max-w-sm md:max-w-md h-full p-1.5 relative rounded-3xl border border-gray-400/20 overflow-hidden bg-red-300/10"
+        className="group w-full max-w-xs sm:max-w-sm md:max-w-md h-full p-1.5 relative rounded-3xl border border-gray-400/20 overflow-hidden bg-red-300/10"
       >
-        {/* Text overlay */}
+        {/* Overlay */}
         <div
-          className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 z-30 ${
-            showOverlay ? "opacity-100" : "opacity-0 sm:opacity-100"
-          }`}
+          className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6 bg-gradient-to-t from-black/60 via-black/30 to-transparent transition-opacity duration-300 z-30
+            ${
+              showOverlay
+                ? "opacity-100"
+                : "opacity-0 lg:opacity-0 lg:group-hover:opacity-100"
+            }`}
         >
           <h4 className="text-2xl font-bold mb-2">{name}</h4>
           <span className="px-3 py-1 rounded-md bg-white/10 text-xs sm:text-sm font-medium mb-3">
@@ -49,25 +52,27 @@ const ManagementCard: React.FC<ManagementCardProps> = ({
           <p className="text-xs sm:text-lg leading-relaxed">{description}</p>
         </div>
 
-        {/* Profile Image */}
+        {/* Image */}
         <div className="aspect-[3/4] w-full">
           <Image
             src={image}
             alt={name}
-            className={`w-full h-full object-cover rounded-2xl transition-all duration-500 ${
-              showOverlay
-                ? "scale-95 blur-[10px]"
-                : "sm:scale-95 sm:blur-[10px]"
-            }`}
+            className={`w-full h-full object-cover rounded-2xl transition-all duration-500
+              ${
+                showOverlay
+                  ? "scale-95 blur-[10px]"
+                  : "blur-0 scale-100 lg:group-hover:scale-95 lg:group-hover:blur-[10px]"
+              }`}
             width={300}
             height={400}
           />
         </div>
       </motion.div>
-      {/* Toggle Button — only visible on mobile */}
+
+      {/* Button — visible only below lg */}
       <button
         onClick={() => setShowOverlay(!showOverlay)}
-        className="mt-3 px-4 py-1 bg-main text-white rounded-full text-sm hover:bg-gray-800 transition sm:hidden"
+        className="mt-3 px-4 py-1 bg-main text-white rounded-full text-sm hover:bg-gray-800 transition lg:hidden"
       >
         {showOverlay ? "Hide Details" : "Show Details"}
       </button>
