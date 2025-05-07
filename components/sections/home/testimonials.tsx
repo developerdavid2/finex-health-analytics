@@ -4,6 +4,7 @@ import { useSectionScroll } from "@/hooks/use-section-scroll";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
+import { useScrollOnLoad } from "@/hooks/use-scroll-onload";
 
 // Animation configuration - matching the Hero Section
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
@@ -13,16 +14,17 @@ const variants = {
 };
 
 export default function TestimonialsSection() {
-  const { ref } = useSectionScroll("testimonials");
+  const { ref } = useSectionScroll("home-testimonials");
   const animationRef = useRef(null);
   const isInView = useInView(animationRef, { once: true, amount: 0.2 });
 
   // Set animation state based on view
   const animationState = isInView ? "visible" : "hidden";
-
+  useScrollOnLoad();
   return (
     <section
       ref={ref}
+      id="home-testimonials"
       className="bg-[#EEF2FF] -mt-32 flex justify-center items-center mx-auto"
     >
       <div className="relative overflow-hidden text-center flex flex-col items-center bg-[#EEF2FF] ">

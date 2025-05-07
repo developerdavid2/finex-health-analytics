@@ -27,7 +27,7 @@ export default function FAQSection() {
   }, [isInView]);
   return (
     <section
-      id="faq"
+      id="home-faq"
       ref={ref}
       className="flex justify-center items-center bg-indigo-50 relative pb-[10rem] pt-16"
     >

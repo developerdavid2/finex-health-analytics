@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useSectionScroll } from "@/hooks/use-section-scroll";
+import { useScrollTo } from "@/hooks/use-scroll-to"; // Import the hook
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 import Image from "next/image";
@@ -20,6 +21,8 @@ const variants = {
 
 export default function HomeSection() {
   const { ref } = useSectionScroll("home");
+  // Use the scroll hook for the services section
+  const scrollToServices = useScrollTo("services");
 
   // State to track if animation has played
   const [, setHasAnimated] = useState(false);
@@ -34,7 +37,8 @@ export default function HomeSection() {
   }, []);
 
   // Split headline text into words for word-by-word animation
-  const headlineText = "Unlock Medical Insights. Transform Your Care.";
+  const headlineText =
+    "Transforming Healthcare Through Digital Innovation & Analytics";
   const words = headlineText.split(" ");
 
   const scaleVariants = {
@@ -129,7 +133,7 @@ export default function HomeSection() {
           </motion.div>
 
           <div className="max-w-7xl px-4">
-            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[85px] leading-none font-black tracking-tight mb-6 text-main pt-8 text-shadow-xl font-urbanist">
+            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-none font-black tracking-tight mb-6 text-main pt-8 text-shadow-xl font-urbanist">
               {words.map((word, index) => (
                 <React.Fragment key={index}>
                   <motion.span
@@ -157,6 +161,7 @@ export default function HomeSection() {
             <Button
               className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 md:w-[15rem] hover:scale-110 cursor-pointer"
               variant={"outline"}
+              onClick={scrollToServices}
             >
               Explore More
             </Button>
