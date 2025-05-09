@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useSectionScroll } from "@/hooks/use-section-scroll";
 import { useScrollTo } from "@/hooks/use-scroll-to"; // Import the hook
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
@@ -11,6 +10,8 @@ import { heroButtons } from "@/constants/homepage-data";
 import { CgPill } from "react-icons/cg";
 import { GiWaterDrop } from "react-icons/gi";
 import { Button } from "@/components/ui/button";
+import { AuroraText } from "@/components/ui/aurora-text";
+import { useScrollOnLoad } from "@/hooks/use-scroll-onload";
 
 // Animation configuration
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
@@ -20,10 +21,9 @@ const variants = {
 };
 
 export default function HomeSection() {
-  const { ref } = useSectionScroll("home");
   // Use the scroll hook for the services section
   const scrollToServices = useScrollTo("services");
-
+  useScrollOnLoad();
   // State to track if animation has played
   const [, setHasAnimated] = useState(false);
 
@@ -55,7 +55,6 @@ export default function HomeSection() {
   return (
     <section
       id="home"
-      ref={ref}
       className="justify-center items-center bg-pink-50/20 relative pt-[10rem]"
     >
       {/* Blur gradient reflections */}
@@ -141,7 +140,11 @@ export default function HomeSection() {
                     transition={transition}
                     variants={variants}
                   >
-                    {word}
+                    {word === "Analytics" ? (
+                      <AuroraText>{word}</AuroraText>
+                    ) : (
+                      word
+                    )}
                   </motion.span>
                   {index < words.length - 1 && " "}
                 </React.Fragment>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { outlinedServices } from "@/constants/homepage-data";
 import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 // Animation configuration - matching the Hero Section
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
@@ -21,7 +22,7 @@ export default function ServicesSection() {
 
   // State to track if animation has played
   const [initialState, setInitialState] = useState("hidden");
-
+  const router = useRouter();
   // Set animation to visible when section comes into view
   useEffect(() => {
     if (isInView) {
@@ -56,15 +57,16 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-start gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          {/*1st Grid*/}
           <motion.div
-            className="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff70] p-10 flex flex-col items-center text-center border border-white/40"
+            className="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff70] p-10 flex flex-col h-full border border-white/40"
             initial="hidden"
             animate={initialState}
             variants={variants}
             transition={{ ...transition, delay: 0.2 }}
           >
-            <div className="flex flex-col items-start text-start mb-14">
+            <div className="flex flex-col items-start text-start mb-auto">
               <h3 className="text-2xl font-semibold text-main mb-4">
                 Healthcare Data Analytics
               </h3>
@@ -73,15 +75,16 @@ export default function ServicesSection() {
                 optimize care, cut costs, and drive smarter decisions.
               </p>
             </div>
-            <Image
-              src="/images/health-analytics.jpeg"
-              alt="Healthcare Data Analytics"
-              className="w-full h-52 object-cover rounded-xl"
-              width={100}
-              height={70}
-            />
-
-            <div className="flex justify-between text-start mt-14 space-x-20">
+            <div className="my-6">
+              <Image
+                src="/images/health-analytics.jpeg"
+                alt="Healthcare Data Analytics"
+                className="w-full h-52 object-cover rounded-xl"
+                width={100}
+                height={70}
+              />
+            </div>
+            <div className="flex justify-between text-start mt-auto space-x-6 md:space-x-20">
               <h2 className="text-4xl font-semibold text-main">90%</h2>
               <p className="text-gray-600 text-sm">
                 healthcare leaders believe AI will improve good health
@@ -90,23 +93,25 @@ export default function ServicesSection() {
             </div>
           </motion.div>
 
+          {/*2nd Grid*/}
           <motion.div
-            className="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff70] p-10 flex flex-col items-center text-center border border-white/40"
+            className="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff70] p-10 flex flex-col h-full border border-white/40"
             initial="hidden"
             animate={initialState}
             variants={variants}
             transition={{ ...transition, delay: 0.4 }}
           >
-            <Image
-              src="/images/e-payment.jpeg"
-              alt="Healthcare Data Analytics"
-              className="w-full h-52 object-cover rounded-xl"
-              width={100}
-              height={70}
-            />
-            <div className="flex flex-col items-start text-start mt-14">
+            <div className="mb-6">
+              <Image
+                src="/images/e-payment.jpeg"
+                alt="E-Payment & Fintech Solutions"
+                className="w-full h-52 object-cover rounded-xl"
+                width={100}
+                height={70}
+              />
+            </div>
+            <div className="flex flex-col items-start text-start mt-10">
               <h3 className="text-2xl font-semibold text-main mb-4">
-                {" "}
                 E-Payment & Fintech Solutions for Healthcare
               </h3>
               <p className="text-gray-600 text-sm">
@@ -116,57 +121,86 @@ export default function ServicesSection() {
             </div>
           </motion.div>
 
-          <div className="max-xl:row-span-2 max-xl:col-span-full space-y-4">
-            <motion.div
-              className="relative p-10 flex flex-col text-center bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50"
-              initial="hidden"
-              animate={initialState}
-              variants={variants}
-              transition={{ ...transition, delay: 0.6 }}
-            >
-              <div className="flex flex-col items-start text-start mt-14">
-                <h3 className="text-2xl font-semibold text-main mb-4">
-                  Cybersecurity Solutions for Digital Health Systems
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Protect sensitive health data and ensure full compliance with
-                  robust, AI-powered cybersecurity frameworks.
-                </p>
+          {/*3rd Grid*/}
+          <motion.div
+            className="relative p-10 flex flex-col h-full bg-white/10 rounded-3xl shadow-2xl backdrop-blur-2xl border border-white/50"
+            initial="hidden"
+            animate={initialState}
+            variants={variants}
+            transition={{ ...transition, delay: 0.6 }}
+          >
+            <div className="flex flex-col items-start text-start mb-10">
+              <h3 className="text-2xl font-semibold text-main mb-4">
+                Cybersecurity Solutions for Digital Health Systems
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Protect sensitive health data and ensure full compliance with
+                robust, AI-powered cybersecurity frameworks.
+              </p>
+            </div>
+            <div className="mt-10">
+              <h5 className="text-xl font-semibold justify-start flex mb-6">
+                Learn More
+              </h5>
+              <div className="flex flex-wrap gap-4 justify-start">
+                {outlinedServices.map((button) => (
+                  <div
+                    key={button.slug}
+                    className="inline-flex text-center justify-center items-center gap-2 rounded-full px-3 py-1.5 text-sm/6 font-semibold text-gray-500 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-hover:text-white data-open:bg-gray-700 max-w-full border border-gray-400"
+                  >
+                    {button.label}
+                  </div>
+                ))}
               </div>
-              <div className="flex flex-col mt-10 space-x-16">
-                <h5 className="text-xl font-semibold justify-start flex mb-10">
-                  {" "}
-                  Learn More
-                </h5>
-                <div className="flex flex-wrap gap-4 justify-start">
-                  {outlinedServices.map((button) => (
-                    <div
-                      key={button.slug}
-                      className="inline-flex text-center justify-center items-center gap-2 rounded-full px-3 py-1.5 text-sm/6 font-semibold text-gray-500 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-hover:text-white data-open:bg-gray-700 max-w-full border border-gray-400 "
-                    >
-                      {button.label}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            <motion.div
-              initial="hidden"
-              animate={initialState}
-              variants={variants}
-              transition={{ ...transition, delay: 0.8 }}
-              className="flex flex-col items-center justify-center mx-auto"
+          {/*4th Grid - Spans 2 columns in xl layout*/}
+          <motion.div
+            className="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-[inset_8px_8px_16px_#d1d9e6,inset_-8px_-8px_16px_#ffffff70] p-10 flex flex-col xl:flex-row h-full border border-white/40 xl:col-span-2 items-center justify-center gap-x-10"
+            initial="hidden"
+            animate={initialState}
+            variants={variants}
+            transition={{ ...transition, delay: 0.4 }}
+          >
+            <div className="mb-6 xl:flex-1 w-full">
+              <Image
+                src="/images/speed.jpeg"
+                alt="SPEED Eellness"
+                className="w-full h-52 object-cover rounded-xl"
+                width={100}
+                height={70}
+              />
+            </div>
+            <div className="flex flex-col xl:flex-none xl:w-72">
+              <h3 className="text-2xl font-semibold text-main mb-4">
+                Sports Promotion, Engagement and Education (SPEED)
+              </h3>
+              <p className="text-gray-600 text-sm">
+                We promote wellness through sports, education, and community
+                engagement. By supporting talent, partnering with NGOs, and
+                sponsoring programs, we encourage physical activity and
+                educational growth while driving positive social impact.
+              </p>
+            </div>
+          </motion.div>
+
+          {/*5th Grid - Button to More Services*/}
+          <motion.div
+            transition={transition}
+            variants={variants}
+            className="flex justify-center items-center h-full"
+            initial="hidden"
+            animate={initialState}
+          >
+            <Button
+              className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 md:w-[15rem] hover:scale-110 cursor-pointer"
+              variant={"outline"}
+              onClick={() => router.push(`/services`)}
             >
-              <Button
-                className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-indigo-100 shadow-xl transition duration-300 w-full max-w-[50%] hover:scale-110 cursor-pointer"
-                variant={"outline"}
-                onClick={() => window.open("/services", "_self")}
-              >
-                Explore More
-              </Button>
-            </motion.div>
-          </div>
+              Explore More
+            </Button>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@ import TestimonialsSection from "@/components/sections/home/testimonials";
 import { WhyChooseFinexSection } from "@/components/sections/home/why-choose-finex";
 import ContactCta from "@/components/ui/contact-cta";
 import CoreValuesSection from "@/components/sections/home/core-values";
+import ResearchSection from "@/components/sections/home/research";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <AboutSection />
       <CoreValuesSection />
       <ServicesSection />
+      <ResearchSection />
       <ManagementSection />
       <HowItWorksSection />
       <FAQSection />
