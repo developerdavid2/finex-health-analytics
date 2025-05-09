@@ -14,8 +14,7 @@ const variants = {
 };
 export default function MissionVisionSection() {
   const animationRef = useRef(null);
-  const isInView = useInView(animationRef, { once: true, amount: 0.2 });
-
+  useInView(animationRef, { once: true, amount: 0.2 });
   // Set animation state based on view
   return (
     <section
