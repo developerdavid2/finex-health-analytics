@@ -33,7 +33,7 @@ export default function AboutHeroSection() {
       className="justify-center items-center bg-pink-50/20 relative pt-[7rem]"
     >
       {/* Blur gradient reflections */}
-      <div className="blur-[12rem] h-52 w-52 bg-pink-200 absolute top-[20%] right-[5%] " />
+      <div className="blur-[12rem] h-52 w-52 bg-pink-200/50 absolute top-[20%] right-[5%] " />
       <div className="blur-[12rem] h-52 w-52 bg-purple-500 absolute top-[60%] left-[5%] " />
       {/* Glass Morphism with animations */}
       <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 left-[0%] " />
