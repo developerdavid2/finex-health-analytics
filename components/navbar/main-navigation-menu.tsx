@@ -78,7 +78,7 @@ export default function MainNavigationMenu() {
   }) => {
     return (
       <div className="flex flex-col h-full p-4">
-        <SheetHeader className="border-b border-b-black/20 pb-4 mb-4">
+        <SheetHeader className="border-b border-b-main/20 pb-4 mb-4">
           <button
             onClick={onBack}
             className="flex items-center text-sm font-medium mb-2"
@@ -133,7 +133,7 @@ export default function MainNavigationMenu() {
                         handleSectionNavigation(path, section);
                       }
                     }}
-                    className="flex flex-col p-3 rounded-md border border-black/20 hover:bg-neutral-300/30 transition-colors"
+                    className="flex flex-col p-3 rounded-md border border-main/20 hover:bg-neutral-300/30 transition-colors"
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <div className="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-100/10">
@@ -152,7 +152,7 @@ export default function MainNavigationMenu() {
         </div>
 
         {/* Footer - CTA Button */}
-        <div className="border-t border-t-black/20 mt-auto pt-4">
+        <div className="border-t border-t-main/20 mt-auto pt-4">
           <h3 className="text-sm font-medium mb-2">
             {navItem.content?.sidebarTitle}
           </h3>
@@ -180,7 +180,7 @@ export default function MainNavigationMenu() {
   }) => {
     return (
       <div className="flex flex-col h-full p-4">
-        <SheetHeader className="border-b  border-b-black/20 pb-4 mb-4">
+        <SheetHeader className="border-b  border-b-main/20 pb-4 mb-4">
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
 
@@ -224,7 +224,7 @@ export default function MainNavigationMenu() {
           </nav>
         </div>
 
-        <div className="mt-auto pt-4 border-t border-t-black/20">
+        <div className="mt-auto pt-4 border-t border-t-main/20">
           <SheetClose asChild>
             <Link
               href="/contact"
@@ -249,7 +249,7 @@ export default function MainNavigationMenu() {
           className={`flex h-14 w-full items-center justify-between gap-3 transition-all duration-300
           ${
             isScrolled
-              ? "rounded-full shadow-2xl backdrop-blur-2xl border border-gray-300/50 px-3 shadow-black/[0.04]"
+              ? "rounded-full shadow-2xl backdrop-blur-2xl border border-gray-300/50 px-3 shadow-main/[0.04]"
               : "px-3 rounded-full"
           }
         `}
@@ -427,7 +427,7 @@ export default function MainNavigationMenu() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="p-4 w-full sm:w-80 overflow-y-auto scroll-hide bg-indigo-50 border border-white/30 shadow-lg dark:bg-black/20 dark:border-white/10"
+                className="p-4 w-full sm:w-80 overflow-y-auto scroll-hide bg-indigo-50 border border-white/30 shadow-lg dark:bg-main/20 dark:border-white/10"
               >
                 {activeSubmenu ? (
                   <MobileSubmenu

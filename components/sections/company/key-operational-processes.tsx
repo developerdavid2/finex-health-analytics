@@ -181,14 +181,13 @@ export default function KeyOperationsSection() {
       id="operations"
       className="flex justify-center items-center bg-indigo-50 relative pb-[10rem] pt-16"
     >
-      <div className="absolute bottom-1/4 right-1/3 size-[200px] rounded-full bg-red-400 filter blur-[80px] opacity-20"></div>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={
           isInView ? { opacity: 0.6, scale: 1 } : { opacity: 0, scale: 0.8 }
         }
         transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-        className="h-56 w-56 bg-main/30 rounded-full absolute top-1/2 left-[0%]"
+        className="size-18 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900/15 to-75% absolute top-60 left-[10%]"
       />
 
       {/* Animated Content */}
