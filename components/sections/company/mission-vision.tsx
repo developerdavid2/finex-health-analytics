@@ -172,18 +172,18 @@ export default function MissionVisionSection() {
                       isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                     }
                     transition={{ duration: 1, delay: 0.6 }}
-                    className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
+                    className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-5xl xl:text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
                   >
                     Vision
                   </motion.span>
 
-                  <div className="h-full">
+                  <div className="h-[100px] xl:h-full">
                     <motion.img
                       src="/images/health-mission-vision.png"
                       alt="Hero image"
                       width={400}
                       height={400}
-                      className="w-full h-auto absolute inset-0 top-40 left-1/2 -translate-x-1/2 object-cover mask-b-from-60% mask-b-to-95%"
+                      className="w-full h-auto absolute inset-0 top-20 xl:top-40 left-1/2 -translate-x-1/2 object-cover mask-b-from-60% mask-b-to-95%"
                       transition={{ ...transition, delay: 0.6 }}
                       variants={variants}
                     />
