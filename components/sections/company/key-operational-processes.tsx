@@ -73,8 +73,8 @@ const ProcessItem: React.FC<ProcessItemProps> = ({
       <h5>
         <button
           className={clsx(
-            "text-left text-[20px] font-semibold flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 cursor-pointer",
-            isOpen ? "text-pink-700" : "text-main hover:text-pink-400/60",
+            "text-left text-lg lg:text-[20px] font-semibold flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 cursor-pointer",
+            isOpen ? "text-pink-700" : "text-main hover:text-gray-400/60",
           )}
         >
           <div className="flex items-center">
@@ -88,14 +88,14 @@ const ProcessItem: React.FC<ProcessItemProps> = ({
             >
               {icon}
             </div>
-            <span>{title}</span>
+            <span className="text-base md:text-lg">{title}</span>
           </div>
           <div
             className={clsx(
               "flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300",
               isOpen
                 ? "bg-indigo-100 shadow-inner text-pink-700"
-                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-main hover:text-pink-600",
+                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-main hover:text-gray-600",
             )}
           >
             <svg
@@ -112,7 +112,7 @@ const ProcessItem: React.FC<ProcessItemProps> = ({
                 width="16"
                 height="2"
                 rx="1"
-                className={`origin-center ${isOpen ? "fill-indigo-700" : "fill-neutral-700"}`}
+                className={`origin-center ${isOpen ? "fill-pink-700" : "fill-neutral-700"}`}
               />
               <rect
                 y="7"
@@ -208,18 +208,9 @@ export default function KeyOperationsSection() {
               Key Operational Processes
             </h2>
             <p className="text-center text-gray-600 text-xl font-medium mb-8 max-w-3xl max-xl:text-center">
-              Finex operates across key regions in Africa, North America,
-              Europe, and Southeast Asia, delivering innovative healthcare
-              analytics and informatics solutions tailored to diverse healthcare
-              systems.
+              Our key operational processes are designed to ensure that we
+              deliver the best possible service to our clients.
             </p>
-            <Button
-              className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white text-md p-6 md:text-xl md:p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
-              variant={"outline"}
-              onClick={() => window.open("/services", "_self")}
-            >
-              View All Services
-            </Button>
           </motion.div>
 
           {/* Grid is shown only after delay */}
@@ -240,6 +231,15 @@ export default function KeyOperationsSection() {
               ))}
             </div>
           )}
+          <div className="mx-auto">
+            <Button
+              className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white text-md p-6 md:text-xl md:p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
+              variant={"outline"}
+              onClick={() => window.open("/services", "_self")}
+            >
+              View All Services
+            </Button>
+          </div>
         </div>
       </div>
     </section>

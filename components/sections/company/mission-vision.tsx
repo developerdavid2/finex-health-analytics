@@ -6,6 +6,11 @@ import { ScrollIcon } from "lucide-react";
 import { FaBullseye, FaLightbulb } from "react-icons/fa";
 
 // Animation configuration - matching the Hero Section
+const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
+const variants = {
+  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
+};
 // Container variants for staggered children
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -169,10 +174,20 @@ export default function MissionVisionSection() {
                     transition={{ duration: 1, delay: 0.6 }}
                     className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
                   >
-                    Globe
+                    Vision
                   </motion.span>
 
-                  {/*<Globe className="top-32 xl:top-44" />*/}
+                  <div className="h-full">
+                    <motion.img
+                      src="/images/health-mission-vision.png"
+                      alt="Hero image"
+                      width={400}
+                      height={400}
+                      className="w-full h-auto absolute inset-0 top-40 left-1/2 -translate-x-1/2 object-cover mask-b-from-60% mask-b-to-95%"
+                      transition={{ ...transition, delay: 0.6 }}
+                      variants={variants}
+                    />
+                  </div>
 
                   <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
                 </div>

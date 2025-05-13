@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { whyFinexIsBetter } from "@/constants/company-page-data/company";
 import { AuroraText } from "@/components/ui/aurora-text";
 
@@ -83,13 +82,6 @@ export default function WhyFinexBetterSection() {
                 </motion.div>
               ))}
             </div>
-            <Button
-              className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white  text-md p-6 md:text-xl md:p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer mt-12"
-              variant={"outline"}
-              onClick={() => window.open("/contact", "_self")}
-            >
-              Get in touch
-            </Button>
           </motion.div>
         </div>
       </div>
