@@ -14,8 +14,18 @@ const variants = {
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
-export default function ContactCta() {
-  const { ref } = useSectionScroll("contact");
+export default function ContactCta({
+  sectionId = "cta",
+  heading = "Try Finex today",
+  highlightWord = "Finex",
+  description = "We are here to help you with any questions or concerns you may have.",
+  buttonText = "Contact Us",
+  buttonLink = "/contact",
+  backgroundColor = "#EEF2FF",
+  primaryBlurColor = "bg-blue-400/50",
+  secondaryBlurColor = "bg-purple-500/50",
+}) {
+  const { ref } = useSectionScroll(sectionId);
   const animationRef = useRef(null);
   const isInView = useInView(animationRef, { once: true, amount: 0.2 });
   const router = useRouter();
@@ -23,11 +33,20 @@ export default function ContactCta() {
   // Set animation state based on view
   const animationState = isInView ? "visible" : "hidden";
 
+  // Extract parts of the heading
+  const headingParts = heading.split(highlightWord);
+  const beforeHighlight = headingParts[0];
+  const afterHighlight = headingParts.length > 1 ? headingParts[1] : "";
+
   return (
-    <section ref={ref} className="w-full py-20 bg-[#EEF2FF]">
+    <section ref={ref} className="w-full py-20" style={{ backgroundColor }}>
       <div className="container mx-auto px-4 relative">
-        <div className="blur-[12rem] h-52 w-52 bg-blue-400/50 absolute top-[20%] right-[5%] " />
-        <div className="blur-[12rem] h-52 w-52 bg-purple-500/50 absolute top-[60%] left-[5%] " />
+        <div
+          className={`blur-[12rem] h-52 w-52 ${primaryBlurColor} absolute top-[20%] right-[5%]`}
+        />
+        <div
+          className={`blur-[12rem] h-52 w-52 ${secondaryBlurColor} absolute top-[60%] left-[5%]`}
+        />
 
         <div
           ref={animationRef}
@@ -40,7 +59,9 @@ export default function ContactCta() {
             animate={animationState}
             transition={{ ...transition, delay: 0.1 }}
           >
-            Try <AuroraText>Finex</AuroraText> today
+            {beforeHighlight}
+            <AuroraText>{highlightWord}</AuroraText>
+            {afterHighlight}
           </motion.h1>
 
           <motion.p
@@ -50,16 +71,16 @@ export default function ContactCta() {
             animate={animationState}
             transition={{ ...transition, delay: 0.3 }}
           >
-            We are here to help you with any questions or concerns you may have.
+            {description}
           </motion.p>
 
           <motion.div transition={transition} variants={variants}>
             <Button
               className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
               variant={"outline"}
-              onClick={() => router.push("/contact")}
+              onClick={() => router.push(buttonLink)}
             >
-              Contact Us
+              {buttonText}
             </Button>
           </motion.div>
         </div>

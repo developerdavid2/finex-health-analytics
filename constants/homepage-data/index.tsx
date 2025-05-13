@@ -273,6 +273,7 @@ export const whyChooseFinex = [
             src="/images/ai-model.gif"
             alt="AI Solutions"
             className="w-[300px] h-[200px] object-cover rounded-xl"
+            unoptimized
           />
         </div>
         <div className="font-semibold text-xl">

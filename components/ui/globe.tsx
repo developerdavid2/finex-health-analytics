@@ -7,6 +7,8 @@ import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const MOVEMENT_DAMPING = 1400;
+// Convert hex color "#F2F2FE" to RGB values (range 0-1)
+const RGB_COLOR: [number, number, number] = [242 / 255, 242 / 255, 254 / 255];
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -19,7 +21,7 @@ const GLOBE_CONFIG: COBEOptions = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [1, 1, 1],
+  baseColor: RGB_COLOR,
   markerColor: [251 / 255, 100 / 255, 21 / 255],
   glowColor: [1, 1, 1],
   markers: [

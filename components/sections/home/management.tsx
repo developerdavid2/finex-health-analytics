@@ -23,13 +23,13 @@ const variants = {
 
 // Team members data
 const teamMembers = [
-  {
-    name: "Chris N. Anazia",
-    description:
-      "Expert in healthcare innovation, cybersecurity, and fintech with 15+ years in risk management, AI, and healthcare financing.",
-    position: "Founder & CEO",
-    image: "/images/ceo.webp",
-  },
+  // {
+  //   name: "Chris N. Anazia",
+  //   description:
+  //     "Expert in healthcare innovation, cybersecurity, and fintech with 15+ years in risk management, AI, and healthcare financing.",
+  //   position: "Founder & CEO",
+  //   image: "/images/ceo.webp",
+  // },
   {
     name: "Stanley U. Egbuchulam",
     description:

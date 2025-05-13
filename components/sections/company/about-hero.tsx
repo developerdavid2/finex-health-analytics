@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-// Import the hook
 
 import { AuroraText } from "@/components/ui/aurora-text";
 
@@ -14,8 +13,6 @@ const variants = {
 };
 
 export default function AboutHeroSection() {
-  // Use the scroll hook for the services section
-
   // State to track if animation has played
   const [, setHasAnimated] = useState(false);
 
@@ -27,17 +24,35 @@ export default function AboutHeroSection() {
     setInitialState("visible");
     setHasAnimated(true);
   }, []);
+
+  // Split headline text into words for word-by-word animation
+  const headlineText = "Empowering Healthcare through Data and Innovation";
+  const words = headlineText.split(" ");
   return (
     <section
-      id="about-hero"
+      id="company"
       className="justify-center items-center bg-pink-50/20 relative pt-[7rem]"
     >
       {/* Blur gradient reflections */}
       <div className="blur-[12rem] h-52 w-52 bg-pink-200/50 absolute top-[20%] right-[5%] " />
-      <div className="blur-[12rem] h-52 w-52 bg-purple-500 absolute top-[60%] left-[5%] " />
+
       {/* Glass Morphism with animations */}
       <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-5 left-[0%] " />
       <div className="blur-[3rem] h-20 w-20 bg-blue-500/30 absolute top-10 left-[50%]" />
+
+      {/* Radial round balls with animation */}
+      <motion.div
+        variants={variants}
+        transition={transition}
+        className="size-18 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900/15 to-75% absolute top-52 right-[10%]"
+      ></motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={initialState}
+        transition={{ staggerChildren: 0.04 }}
+        className="size-18 rounded-full bg-radial-[at_50%_75%] from-blue-200 via-purple-400/15 to-purple-900/10 to-90% absolute top-[30rem] md:top-96 left-[10%]"
+      ></motion.div>
 
       <div className="container mx-auto flex flex-col overflow-hidden">
         <motion.div
@@ -47,14 +62,18 @@ export default function AboutHeroSection() {
           transition={{ staggerChildren: 0.04 }}
         >
           <div className="max-w-7xl px-4">
-            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[200px] leading-none font-black tracking-tight mb-6 text-main/50 pt-8 text-shadow-xl font-urbanist mask-b-from-50% mask-b-to-90%">
+            <motion.h1
+              variants={variants}
+              transition={transition}
+              className="text-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[200px] leading-none font-black tracking-tight mb-6 text-main/50 pt-8 text-shadow-xl font-urbanist mask-b-from-50% mask-b-to-90%"
+            >
               About
-            </h1>
+            </motion.h1>
 
             <div className="flex items-center justify-center">
               <div
                 className="bg-radial-[at_25%_25%] from-white to-zinc-900 to-75%
-          h-px z-[1] pointer-events-none"
+                h-px z-[1] pointer-events-none"
               />
               <motion.div variants={variants} transition={transition}>
                 <div className="bg-blue-200/10 border-2 border-white drop-shadow-2xl rounded-xl border-transparent animate-border text-base capitalize inline-flex justify-center whitespace-nowrap font-medium text-gray-700 backdrop-blur-[5rem] p-2 px-4 gap-2 items-center">
@@ -64,14 +83,28 @@ export default function AboutHeroSection() {
 
               <div
                 className="bg-[radial-gradient(ellipse_at_center,_#CAC6DD_0%,_rgba(14,12,21,0)_40%)]
-          h-px z-[1] pointer-events-none"
+                h-px z-[1] pointer-events-none"
               />
             </div>
 
             <div className="max-w-5xl px-4">
               <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl leading-none font-black tracking-tight mb-4 text-main pt-8 text-shadow-xl font-urbanist">
-                Empowering Healthcare through Data and{" "}
-                <AuroraText>Innovation</AuroraText>
+                {words.map((word, index) => (
+                  <React.Fragment key={index}>
+                    <motion.span
+                      className="inline-block"
+                      transition={transition}
+                      variants={variants}
+                    >
+                      {word === "Innovation" ? (
+                        <AuroraText>{word}</AuroraText>
+                      ) : (
+                        word
+                      )}
+                    </motion.span>
+                    {index < words.length - 1 && " "}
+                  </React.Fragment>
+                ))}
               </h1>
 
               <motion.p
