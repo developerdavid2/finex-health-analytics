@@ -7,6 +7,7 @@ import { outlinedServices } from "@/constants/homepage-data";
 import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 // Animation configuration - matching the Hero Section
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
@@ -172,16 +173,23 @@ export default function ServicesSection() {
                 height={70}
               />
             </div>
-            <div className="flex flex-col xl:flex-none xl:w-72">
+            <div className="flex flex-col xl:flex-none xl:w-80">
               <h3 className="text-2xl font-semibold text-main mb-4">
                 Sports Promotion, Engagement and Education (SPEED)
               </h3>
               <p className="text-gray-600 text-sm">
                 We promote wellness through sports, education, and community
-                engagement. By supporting talent, partnering with NGOs, and
-                sponsoring programs, we encourage physical activity and
-                educational growth while driving positive social impact.
+                engagement by supporting talent, partnering with NGOs, and
+                sponsoring programs.
               </p>
+              <div className="flex flex-1 items-center mt-4">
+                <Link
+                  className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 inline-flex justify-center whitespace-nowrap rounded-full bg-gray-500 px-3 py-1.5 text-sm font-medium text-white shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300"
+                  href="/services/#ngo"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
           </motion.div>
 
