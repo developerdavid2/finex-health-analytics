@@ -1,48 +1,31 @@
-"use client";
+import React from "react";
+import CompetitiveEdgeSection from "@/components/sections/company/competitive-edge";
+import MarketReachSection from "@/components/sections/company/market-reach";
+import WhyFinexBetterSection from "@/components/sections/company/why-finex-better";
+import ContactCta from "@/components/ui/contact-cta";
+import KeyOperationsSection from "@/components/sections/company/key-operational-processes";
+import ServicesHeroSection from "@/components/sections/services/services-hero";
+import HealthAnalyticsSection from "@/components/sections/services/heath-analytics";
+import CyberSecuritySection from "@/components/sections/services/cybersecurity";
 
-import { useSectionScroll } from "@/hooks/use-section-scroll";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-
-const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
-const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
-  visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
-};
-
-export default function TestimonialsSection() {
-  const { ref } = useSectionScroll("services");
-  const animationRef = useRef(null);
-  const isInView = useInView(animationRef, { once: true, amount: 0.2 });
-
-  // Set animation state based on view
-  const animationState = isInView ? "visible" : "hidden";
-
+const ServicesPage = () => {
   return (
-    <section ref={ref} className="w-full py-20 bg-[#EEF2FF]">
-      <div className="container mx-auto px-4">
-        <div ref={animationRef} className="max-w-4xl mx-auto text-center mb-12">
-          <motion.h2
-            className="text-7xl font-bold mb-4"
-            variants={variants}
-            initial="hidden"
-            animate={animationState}
-            transition={{ ...transition, delay: 0.1 }}
-          >
-            Services
-          </motion.h2>
-
-          <motion.p
-            className="text-2xl text-gray-700"
-            variants={variants}
-            initial="hidden"
-            animate={animationState}
-            transition={{ ...transition, delay: 0.3 }}
-          >
-            Page is coming soon. We are working on it.
-          </motion.p>
-        </div>
-      </div>
-    </section>
+    <div className="w-full bg-[#EEF2FF]">
+      <ServicesHeroSection />
+      <HealthAnalyticsSection />
+      <CyberSecuritySection />
+      <CompetitiveEdgeSection />
+      <MarketReachSection />
+      <WhyFinexBetterSection />
+      <KeyOperationsSection />
+      <ContactCta
+        sectionId="cta"
+        heading="Intelligent Tools for Real Healthcare Change"
+        highlightWord="Real"
+        description="We are here to help you with any questions or concerns you may have."
+        buttonText="Book a Consultation"
+      />
+    </div>
   );
-}
+};
+export default ServicesPage;

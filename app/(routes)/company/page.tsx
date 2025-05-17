@@ -7,7 +7,7 @@ import WhyFinexBetterSection from "@/components/sections/company/why-finex-bette
 import ContactCta from "@/components/ui/contact-cta";
 import KeyOperationsSection from "@/components/sections/company/key-operational-processes";
 
-const HomePage = () => {
+const AboutCompanyPage = () => {
   return (
     <div className="w-full bg-[#EEF2FF]">
       <AboutHeroSection />
@@ -26,4 +26,4 @@ const HomePage = () => {
     </div>
   );
 };
-export default HomePage;
+export default AboutCompanyPage;

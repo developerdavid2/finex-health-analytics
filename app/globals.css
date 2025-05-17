@@ -83,7 +83,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
 
-  --color-main: #626877;
+  --color-main: rgba(98, 104, 119, 0.83);
 
 
   --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
