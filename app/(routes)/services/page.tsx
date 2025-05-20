@@ -1,12 +1,14 @@
 import React from "react";
-import CompetitiveEdgeSection from "@/components/sections/company/competitive-edge";
-import MarketReachSection from "@/components/sections/company/market-reach";
-import WhyFinexBetterSection from "@/components/sections/company/why-finex-better";
 import ContactCta from "@/components/ui/contact-cta";
-import KeyOperationsSection from "@/components/sections/company/key-operational-processes";
 import ServicesHeroSection from "@/components/sections/services/services-hero";
 import HealthAnalyticsSection from "@/components/sections/services/heath-analytics";
 import CyberSecuritySection from "@/components/sections/services/cybersecurity";
+import EPaymentFintechSection from "@/components/sections/services/epayment-fintech";
+import HealthInformaticsSection from "@/components/sections/services/health-informatics";
+import PredictiveAnalyticsSection from "@/components/sections/services/predictive-analytics";
+import TrainingCapacitySection from "@/components/sections/services/training-capacity";
+import MedicalTransportationSection from "@/components/sections/services/medical-transportation";
+import RehabilitationSection from "@/components/sections/services/rehabilitation";
 
 const ServicesPage = () => {
   return (
@@ -14,10 +16,12 @@ const ServicesPage = () => {
       <ServicesHeroSection />
       <HealthAnalyticsSection />
       <CyberSecuritySection />
-      <CompetitiveEdgeSection />
-      <MarketReachSection />
-      <WhyFinexBetterSection />
-      <KeyOperationsSection />
+      <EPaymentFintechSection />
+      <PredictiveAnalyticsSection />
+      <HealthInformaticsSection />
+      <TrainingCapacitySection />
+      <MedicalTransportationSection />
+      <RehabilitationSection />
       <ContactCta
         sectionId="cta"
         heading="Intelligent Tools for Real Healthcare Change"

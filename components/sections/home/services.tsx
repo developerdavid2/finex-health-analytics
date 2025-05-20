@@ -185,7 +185,7 @@ export default function ServicesSection() {
               <div className="flex flex-1 items-center mt-4">
                 <Link
                   className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 inline-flex justify-center whitespace-nowrap rounded-full bg-gray-500 px-3 py-1.5 text-sm font-medium text-white shadow transition-colors hover:bg-gray-600 focus-visible:outline-none focus-visible:ring focus-visible:ring-gray-300"
-                  href="/services/#ngo"
+                  href="/services/#speed"
                 >
                   Learn More
                 </Link>

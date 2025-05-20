@@ -88,7 +88,7 @@ export default function AboutHeroSection() {
             </div>
 
             <div className="max-w-5xl px-4">
-              <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl leading-1 lg:leading-none font-black tracking-tight mb-4 text-main pt-8 text-shadow-xl font-urbanist">
+              <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl leading-normal font-black tracking-tight mb-4 text-main pt-8 text-shadow-xl font-urbanist">
                 {words.map((word, index) => (
                   <React.Fragment key={index}>
                     <motion.span

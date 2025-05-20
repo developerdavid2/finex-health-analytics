@@ -1,6 +1,4 @@
-"use client";
-
-import { competitiveEdge } from "@/constants/company-page-data/company";
+import { healthInformatics } from "@/constants/services-page-data/services";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
@@ -24,10 +22,10 @@ const cardVariants = {
   }),
 };
 
-export default function CompetitiveEdgeGrid() {
+export default function HealthInformaticsGrid() {
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-6 gap-6">
-      {competitiveEdge.map((item, index) => (
+    <div className="relative grid grid-cols-1 md:grid-cols-6 gap-6 max-w-4xl mx-auto">
+      {healthInformatics.map((item, index) => (
         <motion.div
           key={index}
           custom={index}
@@ -37,18 +35,30 @@ export default function CompetitiveEdgeGrid() {
           variants={cardVariants}
           className={`backdrop-blur-md bg-main/10 relative rounded-[2rem] shadow-xl border border-white/50 text-white p-6 md:p-10 flex flex-col justify-between transition-all duration-300 h-[400px] overflow-hidden ${item.className}`}
         >
-          <div className="flex items-center justify-start gap-3">
+          {/* Image container with radial mask */}
+          <div className="absolute inset-0 w-full h-full">
+            {/*Mask background*/}
+            <div className="absolute inset-0 w-full h-full bg-[#131C45]/90 mask-t-from-20%"></div>
+            <div className="absolute inset-0 w-full h-[20%] bg-[#131C45]/90 mask-b-from-20%"></div>
+            <div className="absolute inset-0 w-[20%] h-full bg-[#131C45]/90 mask-r-from-20%"></div>
+            <div className="absolute right-0 w-[20%] h-full bg-[#131C45]/90 mask-l-from-20%"></div>
+
             <Image
-              src={item.icon}
+              src={item.image}
               alt={item.title}
               width={500}
               height={500}
-              className="absolute inset-0 h-full w-full object-cover mask-b-from-50% mask-b-to-75%"
+              className="h-full w-full object-cover"
               unoptimized
             />
           </div>
+
+          <div className="flex items-center justify-start gap-3 relative z-10">
+            {/* Content goes here */}
+          </div>
+
           <motion.div
-            className="flex flex-col justify-center items-center mt-auto"
+            className="flex flex-col justify-center items-center mt-auto relative z-10"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: {
@@ -61,11 +71,11 @@ export default function CompetitiveEdgeGrid() {
               },
             }}
           >
-            <h3 className="text-main/80 text-center text-xl font-bold drop-shadow-2xl">
+            <h3 className="text-white text-center text-xl md:text-2xl font-bold drop-shadow-2xl">
               {item.title}
             </h3>
 
-            <p className="text-base text-center text-main/80">
+            <p className="text-base text-center text-white">
               {item.description}
             </p>
           </motion.div>
