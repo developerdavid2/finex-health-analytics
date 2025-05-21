@@ -12,9 +12,21 @@ const variants = {
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
+// Container animation stagger effect
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 export default function EPaymentFintechSection() {
-  const animationRef = useRef(null);
-  const isInView = useInView(animationRef, { once: true, amount: 0.2 });
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   // Set animation state based on view
   const animationState = isInView ? "visible" : "hidden";
@@ -23,6 +35,7 @@ export default function EPaymentFintechSection() {
     <section
       id="fintech"
       className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
+      ref={sectionRef}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -33,21 +46,26 @@ export default function EPaymentFintechSection() {
         className="h-56 w-56 bg-gradient-to-tr from-main/30 to-pink-300/10 rounded-full absolute top-[60%] right-[40%]"
       />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-7xl relative">
-        <div ref={animationRef} className="mb-8 md:mb-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={animationState}
+          className="mb-8 md:mb-12"
+        >
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4 text-main font-urbanist font-bold pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
             variants={variants}
-            initial="hidden"
-            animate={animationState}
-            transition={{ ...transition, delay: 0.1 }}
           >
             Healthcare E-Payment & Fintech
           </motion.h2>
 
-          <div className="w-full max-w-6xl mx-auto mb-10">
+          <motion.div
+            className="w-full max-w-6xl mx-auto mb-10"
+            variants={variants}
+          >
             <FintechStepsTabs tabs={fintechFlowSteps} />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

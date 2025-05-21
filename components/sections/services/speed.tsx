@@ -82,7 +82,7 @@ export default function SpeedSection() {
             </motion.div>
           </div>
 
-          <p className="text-neutral-500  text-lg md:text-3xl text-center mx-auto">
+          <div className="text-neutral-500 text-lg md:text-3xl text-center mx-auto">
             From sponsoring the{" "}
             <LinkPreview
               url="https://theeagleonline.com.ng/new-winner-emerges-in-el-marino-alukimba-table-tennis-tournament/"
@@ -99,7 +99,7 @@ export default function SpeedSection() {
             </LinkPreview>
             , Finex empowers communities through wellness-focused sports
             initiatives.
-          </p>
+          </div>
         </div>
       </div>
     </section>
