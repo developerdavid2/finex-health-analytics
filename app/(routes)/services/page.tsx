@@ -9,6 +9,7 @@ import PredictiveAnalyticsSection from "@/components/sections/services/predictiv
 import TrainingCapacitySection from "@/components/sections/services/training-capacity";
 import MedicalTransportationSection from "@/components/sections/services/medical-transportation";
 import RehabilitationSection from "@/components/sections/services/rehabilitation";
+import SpeedSection from "@/components/sections/services/speed";
 
 const ServicesPage = () => {
   return (
@@ -22,6 +23,7 @@ const ServicesPage = () => {
       <TrainingCapacitySection />
       <MedicalTransportationSection />
       <RehabilitationSection />
+      <SpeedSection />
       <ContactCta
         sectionId="cta"
         heading="Intelligent Tools for Real Healthcare Change"

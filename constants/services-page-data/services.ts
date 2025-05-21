@@ -203,3 +203,38 @@ export const trainingDetails = [
     title: "Certification on Completion",
   },
 ];
+
+export const speedEvents = [
+  {
+    id: "0",
+    img: "/images/speed/speed-1.jpg",
+  },
+  {
+    id: "1",
+    img: "/images/speed/speed-2.jpg",
+  },
+  {
+    id: "2",
+    img: "/images/speed/speed-3.jpg",
+  },
+  {
+    id: "3",
+    img: "/images/speed/speed-4.jpg",
+  },
+  {
+    id: "4",
+    img: "/images/speed/speed-5.jpg",
+  },
+  {
+    id: "5",
+    img: "/images/speed/speed-6.jpg",
+  },
+  {
+    id: "6",
+    img: "/images/speed/speed-7.jpg",
+  },
+  {
+    id: "7",
+    img: "/images/speed/speed-8.jpg",
+  },
+];
