@@ -13,17 +13,6 @@ const variants = {
 };
 
 // Container animation stagger effect
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
 export default function EPaymentFintechSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -47,9 +36,10 @@ export default function EPaymentFintechSection() {
       />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-7xl relative">
         <motion.div
-          variants={containerVariants}
+          variants={variants}
           initial="hidden"
           animate={animationState}
+          transition={{ ...transition, delay: 0.8 }}
           className="mb-8 md:mb-12"
         >
           <motion.h2
@@ -62,6 +52,9 @@ export default function EPaymentFintechSection() {
           <motion.div
             className="w-full max-w-6xl mx-auto mb-10"
             variants={variants}
+            initial="hidden"
+            animate={animationState}
+            transition={{ ...transition, delay: 0.8 }}
           >
             <FintechStepsTabs tabs={fintechFlowSteps} />
           </motion.div>

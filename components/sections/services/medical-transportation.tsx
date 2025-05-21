@@ -6,7 +6,6 @@ import { FaAmbulance } from "react-icons/fa";
 import { Ripple } from "@/components/ui/ripple";
 
 // Animation configuration - matching the Hero Section
-const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
 const variants = {
   hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
@@ -109,11 +108,11 @@ export default function MedicalTransportationSection() {
             {/* Centered overlay div */}
             <motion.div
               variants={variants}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-5/6 lg:w-3/4"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 md:w-5/6 lg:w-3/4 backdrop-blur-xl"
             >
               <motion.div
                 variants={variants}
-                className="flex flex-col lg:flex-row gap-4 rounded-3xl border text-gray-800 font-semibold justify-center p-4 md:p-6 border-black/10 backdrop-blur-lg bg-pink-200/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] overflow-hidden w-3/4 md:w-full mx-auto"
+                className="flex flex-col lg:flex-row gap-4 rounded-3xl border text-gray-800 font-semibold justify-center p-4 md:p-6 border-black/10 backdrop-blur-xl bg-pink-200/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] overflow-hidden w-3/4 md:w-full mx-auto relative z-10"
               >
                 <motion.div
                   variants={variants}
