@@ -1,284 +1,302 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useState, useRef, JSX } from "react";
+import emailjs from "@emailjs/browser";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { Check, ChevronsUpDown, Loader2 } from "lucide-react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
 import { cn } from "@/lib/utils";
+import { countryCodes } from "@/constants/contactData";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
+const formSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Invalid email address"),
+  countryCode: z.string().min(1, "Country code is required"),
+  phoneNumber: z.string().min(5, "Phone number is required"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message cannot exceed 1000 characters"),
+});
+
+// Type for form values
+type FormValues = z.infer<typeof formSchema>;
+
+const ContactForm = (): JSX.Element => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Initialize form
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      countryCode: "",
+      phoneNumber: "",
+      message: "",
     },
-  },
-};
-
-const itemVariants = {
-  hidden: { filter: "blur(10px)", y: 20, opacity: 0 },
-  visible: {
-    filter: "blur(0px)",
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  },
-};
-
-// Custom input component with neuomorphic styling
-const FormInput = ({
-  label,
-  type,
-  placeholder,
-  name,
-  value,
-  onChange,
-  textArea = false,
-  className,
-}: {
-  label: string;
-  type?: string;
-  placeholder: string;
-  name: string;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  textArea?: boolean;
-  className?: string;
-}) => {
-  const InputElement = textArea ? "textarea" : "input";
-
-  return (
-    <motion.div className="mb-6" variants={itemVariants}>
-      <label
-        htmlFor={name}
-        className="block mb-2 text-base font-medium text-indigo-700 dark:text-indigo-300"
-      >
-        {label}
-      </label>
-      <div
-        className={cn(
-          "relative",
-          "rounded-xl overflow-hidden",
-          // Neumorphic outer shadow effect
-          "shadow-[6px_6px_12px_0px_rgba(163,177,230,0.35),-6px_-6px_12px_0px_rgba(255,255,255,0.7)]",
-          "dark:shadow-[5px_5px_10px_0px_rgba(8,12,24,0.6),-5px_-5px_10px_0px_rgba(38,43,60,0.3)]",
-          "border border-gray-100/50 dark:border-gray-700/30",
-        )}
-      >
-        {/* Inner shadow for depth perception */}
-        <div className="inset-0 absolute pointer-events-none rounded-xl bg-gradient-to-br from-white/5 to-transparent"></div>
-
-        <InputElement
-          type={type || "text"}
-          id={name}
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className={cn(
-            "w-full px-5 py-4 bg-indigo-50/40 backdrop-blur-sm",
-            "text-indigo-900 placeholder-indigo-400/70",
-            "outline-none ring-0 border-0",
-            "dark:bg-indigo-900/10 dark:text-indigo-100 dark:placeholder-indigo-300/40",
-            textArea ? "h-32 resize-none" : "h-12",
-            "transition-all duration-300 ease-in-out",
-            "focus:ring-2 focus:ring-indigo-400/30",
-            className,
-          )}
-        />
-      </div>
-    </motion.div>
-  );
-};
-
-export function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
-  const formRef = useRef(null);
-  const isInView = useInView(formRef, { once: true, amount: 0.2 });
+  const onSubmit = async (values: FormValues): Promise<void> => {
+    setIsLoading(true);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    try {
+      // Format the form data for EmailJS
+      const templateParams = {
+        from_name: `${values.firstName} ${values.lastName}`,
+        from_email: values.email,
+        from_number: `${values.countryCode} ${values.phoneNumber}`,
+        message: values.message,
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
+        templateParams,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY || "",
+      );
+
+      toast.success("Message sent successfully!");
+      form.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Handle actual form submission logic here
-    console.log("Form submitted:", formData);
-
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
-  };
+  const charCount = form.watch("message")?.length || 0;
 
   return (
-    <section className="relative w-full py-24 overflow-hidden bg-gradient-to-b from-[#EEF2FF] to-[#E5EAFF] dark:from-gray-900 dark:to-gray-800">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-64 h-64 rounded-full bg-indigo-300/10 blur-3xl"></div>
-        <div className="absolute bottom-[20%] right-[8%] w-80 h-80 rounded-full bg-blue-300/10 blur-3xl"></div>
-        <div className="absolute bottom-[40%] left-[30%] w-40 h-40 rounded-full bg-purple-300/10 blur-3xl"></div>
-      </div>
+    <Card className="w-full bg-transparent border-none">
+      <CardContent className="p-6">
+        <h2 className="text-2xl font-bold text-start mb-6">Get in touch</h2>
 
-      <div className="container relative mx-auto px-6 z-10 max-w-5xl">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          {/* Header and description */}
-          <motion.div
-            className="w-full md:w-2/5 space-y-4"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-            ></motion.div>
-          </motion.div>
-
-          {/* Contact form with glassmorphism */}
-          <motion.div
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-6"
             ref={formRef}
-            className="w-full md:w-3/5"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div
-              className={cn(
-                "relative rounded-2xl overflow-hidden p-8",
-                // Glassmorphism effects
-                "bg-white/20 backdrop-blur-lg",
-                "border border-white/30",
-                "shadow-[0_8px_32px_0_rgba(31,38,135,0.1)]",
-                // Dark mode
-                "dark:bg-gray-800/30 dark:border-gray-700/30",
-              )}
-              variants={itemVariants}
-            >
-              {/* Glassmorphism highlight */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent pointer-events-none"></div>
-
-              {submitted ? (
-                <motion.div
-                  className="py-12 text-center"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg
-                      className="w-8 h-8 text-indigo-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* First Name */}
+              <FormField
+                control={form.control}
+                name="firstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter your first name"
+                        {...field}
+                        className="bg-white/20 border-white/30 focus-visible:ring-offset-0 placeholder:text-gray-400 placeholder:font-normal"
                       />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-2">
-                    Thank You!
-                  </h3>
-                  <p className="text-indigo-600/80 dark:text-indigo-400">
-                    Your message has been sent successfully. We&#39;ll get back
-                    to you soon.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-2">
-                  <FormInput
-                    label="Name"
-                    name="name"
-                    placeholder="Your full name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-                  <FormInput
-                    label="Email"
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
+              {/* Last Name */}
+              <FormField
+                control={form.control}
+                name="lastName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Last Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter your last name"
+                        {...field}
+                        className="bg-white/20 border-white/30 focus-visible:ring-offset-0 placeholder:text-gray-400 placeholder:font-normal"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-                  <FormInput
-                    label="Message"
-                    name="message"
-                    placeholder="Tell us how we can help you..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    textArea={true}
-                  />
-
-                  <motion.div variants={itemVariants}>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={cn(
-                        "w-full relative mt-4 px-8 py-4 rounded-xl font-medium text-base",
-                        "text-white bg-indigo-600",
-                        "shadow-[0_10px_20px_-10px_rgba(79,70,229,0.4)]",
-                        "transition-all duration-300",
-                        "hover:bg-indigo-700 hover:shadow-[0_14px_24px_-10px_rgba(79,70,229,0.5)]",
-                        // Neumorphic touch
-                        "border border-indigo-500/80",
-                        // Dark mode
-                        "dark:bg-indigo-600 dark:border-indigo-500/50 dark:hover:bg-indigo-700",
-                        isSubmitting ? "opacity-80 cursor-not-allowed" : "",
-                      )}
-                    >
-                      <span className="relative z-10">
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                      </span>
-                      {/* Button inner highlight */}
-                      <span className="absolute inset-0 rounded-xl overflow-hidden">
-                        <span className="absolute top-0 left-0 right-0 h-1/2 bg-white/10"></span>
-                      </span>
-                    </button>
-                  </motion.div>
-                </form>
+            {/* Email */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Enter your email address"
+                      {...field}
+                      className="bg-white/20 border-white/30 focus-visible:ring-offset-0 placeholder:text-gray-400 placeholder:font-normal"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               )}
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+            />
+
+            {/* Phone Number with Country Code */}
+            <div className="grid grid-cols-3 gap-2">
+              <FormField
+                control={form.control}
+                name="countryCode"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Country</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            className={cn(
+                              "justify-between bg-white/20 border-white/30 focus-visible:ring-offset-0",
+                              !field.value && "text-gray-400",
+                            )}
+                          >
+                            {field.value
+                              ? countryCodes.find(
+                                  (code) => code.value === field.value,
+                                )?.value
+                              : "Code"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="p-0 w-48">
+                        <Command>
+                          <CommandInput placeholder="Search country..." />
+                          <CommandEmpty>No country found.</CommandEmpty>
+                          <CommandGroup className="max-h-64 overflow-y-auto">
+                            {countryCodes.map((code) => (
+                              <CommandItem
+                                key={code.id}
+                                value={code.label}
+                                onSelect={() => {
+                                  form.setValue("countryCode", code.value);
+                                }}
+                              >
+                                <Check
+                                  className={cn(
+                                    "mr-2 h-4 w-4",
+                                    field.value === code.value
+                                      ? "opacity-100"
+                                      : "opacity-0",
+                                  )}
+                                />
+                                {code.label} ({code.value})
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </Command>
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field }) => (
+                  <FormItem className="col-span-2">
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter your phone number"
+                        {...field}
+                        className="bg-white/20 border-white/30 focus-visible:ring-offset-0 placeholder:text-gray-400 placeholder:font-normal"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* Message */}
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex justify-between">
+                    <FormLabel>Message</FormLabel>
+                    <span
+                      className={`text-xs ${charCount > 1000 ? "text-red-500" : "text-gray-400"}`}
+                    >
+                      {charCount}/1000
+                    </span>
+                  </div>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Enter your message (max 1000 characters)"
+                      className="resize-none h-32 bg-white/20 border-white/30 focus-visible:ring-offset-0"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="text-md p-6 md:text-lg md:p-8 bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-3xl text-white hover:text-white transition duration-300 w-full mx-auto cursor-pointer flex items-center justify-center"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
+            </Button>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
-}
+};
+
+export default ContactForm;
