@@ -268,7 +268,7 @@ const ContactForm = (): JSX.Element => {
                   <FormControl>
                     <Textarea
                       placeholder="Enter your message (max 1000 characters)"
-                      className="resize-none h-32 bg-white/20 border-white/30 focus-visible:ring-offset-0"
+                      className="resize-none h-32 bg-white/20 border-white/30 focus-visible:ring-offset-0 placeholder:text-gray-400 placeholder:font-normal"
                       {...field}
                     />
                   </FormControl>

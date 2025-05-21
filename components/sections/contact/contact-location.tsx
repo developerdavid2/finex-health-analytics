@@ -13,10 +13,13 @@ export default function ContactLocationSection() {
   useInView(animationRef, { once: true, amount: 0.2 });
   // Set animation state based on view
   return (
-    <section id="location" className="w-full bg-[#EEF2FF] relative">
+    <section
+      id="location"
+      className="w-full bg-gray-400/10 rounded-[5rem] relative"
+    >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-[1320px] relative">
         <div ref={animationRef} className="mb-8 md:mb-12">
-          <div className="py-12 grid md:grid-cols-2 gap-16">
+          <div className="py-28 grid md:grid-cols-2 gap-16">
             <div className="rounded-3xl overflow-hidden shadow-lg">
               <OpenMap />
             </div>

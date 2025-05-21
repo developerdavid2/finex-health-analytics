@@ -162,7 +162,7 @@ export default function MainNavigationMenu() {
           <SheetClose asChild>
             <Link
               href={navItem.content?.sidebarButtonLink || "#"}
-              className="w-full inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              className="w-full inline-flex h-9 items-center justify-center rounded-md bg-main px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             >
               {navItem.content?.sidebarButtonText}
             </Link>
@@ -321,14 +321,14 @@ export default function MainNavigationMenu() {
                                 <div className="mb-3 text-lg font-medium">
                                   {navItem.content.sidebarTitle}
                                 </div>
-                                <p className="mb-4 text-sm text-neutral-600">
+                                <p className="mb-4 text-sm text-main">
                                   {navItem.content.sidebarDescription}
                                 </p>
                                 <Link
                                   href={
                                     navItem.content.sidebarButtonLink || "#"
                                   }
-                                  className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                  className="inline-flex h-9 items-center justify-center rounded-md bg-main px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                                 >
                                   {navItem.content.sidebarButtonText}
                                 </Link>
@@ -380,7 +380,7 @@ export default function MainNavigationMenu() {
                                   href={
                                     navItem.content.sidebarButtonLink || "#"
                                   }
-                                  className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                                  className="inline-flex h-9 items-center justify-center rounded-md bg-main px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                                 >
                                   {navItem.content.sidebarButtonText}
                                 </Link>

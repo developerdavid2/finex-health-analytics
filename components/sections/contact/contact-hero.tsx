@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaClock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
 import ContactForm from "@/components/sections/contact/contact-form";
 
@@ -32,12 +32,12 @@ export default function ContactUsHeroSection() {
           isInView ? { opacity: 0.6, scale: 1 } : { opacity: 0, scale: 0.8 }
         }
         transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-        className="h-56 w-56 bg-main/30 rounded-full absolute top-1/2 right-[0%]"
+        className="h-56 w-56 bg-gradient-to-tr from-main/30 to-pink-300/30 rounded-full absolute top-1/2 right-[5%]"
       />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-[1320px] relative">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4 text-main font-urbanist font-bold pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-10 text-main font-urbanist font-bold pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
             variants={variants}
             initial="hidden"
             animate={animationState}
@@ -50,7 +50,7 @@ export default function ContactUsHeroSection() {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
             {/* Left Panel - Research Links */}
             <motion.div
-              className="flex flex-col h-full w-fit items-start"
+              className="flex flex-col h-full w-fit items-start justify-center"
               transition={{ ...transition, delay: 0.6 }}
               variants={variants}
               initial="hidden"
@@ -100,6 +100,40 @@ export default function ContactUsHeroSection() {
                       </span>
                     </Link>
                   </motion.div>
+                </div>
+
+                <div className="mt-10 p-8 flex flex-col flex-1  rounded-xl bg-[#EEF2FF] drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 hover:bg-gray-400/10 cursor-pointer items-center justify-start w-full border border-zinc-300/30">
+                  {/*Business Hours*/}
+                  <motion.div
+                    variants={variants}
+                    className="flex items-center justify-start gap-4"
+                  >
+                    <FaClock className="h-6 w-6 mr-2 text-main" />
+                    <h2 className="inline-flex justify-start text-main text-lg md:text-2xl lg:text-3xl font-bold text-start">
+                      BUSINESS HOURS
+                    </h2>
+                  </motion.div>
+                  {/*Separator*/}
+                  <div className="h-px w-[90%] bg-main mt-8" />
+
+                  {/*  BUSINESS DAYS*/}
+                  <div className="flex flex-col lg:flex-row items-center justify-start mt-16 gap-8">
+                    <motion.div className="flex flex-col justify-center items-start">
+                      <span className="font-semibold text-main">
+                        MONDAY - FRIDAY
+                      </span>
+                      <span className="font-light text-main">
+                        9:00 AM - 5:00 PM
+                      </span>
+                    </motion.div>
+
+                    <motion.div className="flex flex-col justify-center items-start">
+                      <span className="font-semibold text-main">SATURDAY</span>
+                      <span className="font-light text-main">
+                        10:00 AM - 4:00 PM
+                      </span>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>

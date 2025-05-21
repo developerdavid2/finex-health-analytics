@@ -3,7 +3,7 @@
 import { useSectionScroll } from "@/hooks/use-section-scroll";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ContactForm } from "@/components/sections/contact/contact-form";
+import ContactForm from "@/components/sections/contact/contact-form";
 
 // Animation configuration - matching the Hero Section
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
