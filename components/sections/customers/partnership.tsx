@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { partnershipOpportunities } from "@/constants/customers-page-data/customers";
 
@@ -32,25 +32,21 @@ const variants = {
   hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
+
 export default function PartnershipSection() {
   const animationRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(animationRef, { once: true, amount: 0.2 });
-  const [animationState, setAnimationState] = useState<"hidden" | "visible">(
-    "hidden",
-  );
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {
+        // Autoplay failed, user interaction required
         console.log("Autoplay failed");
       });
     }
-    if (isInView) {
-      setAnimationState("visible");
-    }
-  }, [isInView]);
+  }, []);
 
   return (
     <section
@@ -59,21 +55,21 @@ export default function PartnershipSection() {
     >
       <motion.h2
         variants={textItemVariants}
-        initial="hidden"
-        animate={animationState}
-        className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-16 text-main font-urbanist"
+        className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-16 text-main font-urbanist "
       >
         Partnerships Opportunities
       </motion.h2>
-
-      {/* Glow element */}
+      <div className="absolute bottom-1/4 left-[5%] size-[200px] rounded-full bg-indigo-800 filter blur-[100px] opacity-40"></div>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={animationState === "visible" ? { opacity: 0.6, scale: 1 } : {}}
-        transition={{ duration: 1.2, delay: 0.3 }}
+        animate={
+          isInView ? { opacity: 0.6, scale: 1 } : { opacity: 0, scale: 0.8 }
+        }
+        transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
         className="h-56 w-56 bg-gradient-to-tr from-main/30 to-pink-300/30 rounded-full absolute top-[20%] right-[10%]"
       />
 
+      {/* Animated Content */}
       <div
         ref={animationRef}
         className="container relative mx-auto flex flex-col max-w-md md:max-w-xl lg:max-w-5xl z-10"
@@ -81,77 +77,80 @@ export default function PartnershipSection() {
         <motion.div
           className="flex flex-col items-center w-full mb-16"
           variants={containerVariants}
-          initial="hidden"
-          animate={animationState}
         >
+          {/* Centered overlay div */}
           <motion.div
             variants={variants}
-            initial="hidden"
-            animate={animationState}
             className="flex flex-col justify-center items-center w-full h-full"
           >
             <div className="flex flex-col gap-4 rounded-3xl border text-gray-800 font-semibold justify-center p-8 md:p-10 lg:p-16 border-black/10 backdrop-blur-xl bg-pink-200/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] overflow-hidden w-full relative z-10">
-              {/* Title */}
               <motion.span
-                variants={variants}
-                initial="hidden"
-                animate={animationState}
-                className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-4xl xl:text-6xl font-semibold leading-none text-transparent"
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 1, delay: 0.6 }}
+                className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-4xl xl:text-6xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
               >
                 Build with Us
               </motion.span>
 
-              {/* Description */}
               <motion.p
                 variants={variants}
-                initial="hidden"
-                animate={animationState}
                 className="text-main text-center text-base md:text-lg lg:text-xl font-medium max-w-full lg:max-w-lg mx-auto"
               >
                 Whether you’re an investor, NGO, or government partner, Finex
                 welcomes collaboration to scale our shared mission.
               </motion.p>
 
-              {/* Video */}
               <motion.div
                 variants={variants}
-                initial="hidden"
-                animate={animationState}
-                className="flex justify-center items-center"
+                className="flex flex-col items-center lg:items-start justify-center gap-3 lg:gap-6 mb-0 lg:mb-4 w-full"
               >
-                <video
-                  ref={videoRef}
-                  loop
-                  muted
-                  autoPlay
-                  playsInline
-                  className="w-80 sm:w-[28rem] lg:w-[32rem] object-cover rounded-2xl"
-                >
-                  <source src="/videos/partnerships.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
+                <div className="flex justify-center items-center mx-auto">
+                  <video
+                    loop
+                    muted
+                    autoPlay
+                    playsInline
+                    className="w-80 sm:w-[28rem] lg:w-[32rem] object-cover rounded-2xl"
+                  >
+                    <source src="/videos/partnerships.webm" type="video/webm" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </motion.div>
 
-              {/* Feature Cards */}
-              <div className="flex flex-col lg:flex-row gap-16 lg:gap-6 mt-10">
+              <div className="flex flex-col lg:flex-row gap-16 lg:gap-6">
                 {partnershipOpportunities.map(
                   ({ id, icon: IconComponent, title, description }) => (
                     <motion.div
+                      className="w-full justify-center items-center flex flex-col gap-4"
                       key={id}
                       variants={variants}
-                      initial="hidden"
-                      animate={animationState}
-                      className="w-full flex flex-col items-center gap-4"
                     >
-                      <div className="bg-[#F0EDF9] rounded-full p-6 drop-shadow-xl">
-                        <IconComponent className="text-3xl text-main" />
-                      </div>
-                      <h2 className="text-xl lg:text-2xl font-bold text-main">
+                      <motion.div
+                        className="flex items-center justify-center flex-col"
+                        variants={variants}
+                      >
+                        <div className="flex items-center justify-center bg-[#F0EDF9] rounded-full p-6 drop-shadow-xl drop-shadow-black/10">
+                          <IconComponent className="text-3xl text-main" />
+                        </div>
+                      </motion.div>
+
+                      <motion.h2
+                        className="text-xl lg:text-2xl font-bold text-main"
+                        variants={variants}
+                      >
                         {title}
-                      </h2>
-                      <p className="max-w-60 text-center text-base md:text-lg text-main">
+                      </motion.h2>
+
+                      <motion.p
+                        className="max-w-60 text-center text-base md:text-lg text-main"
+                        variants={variants}
+                      >
                         {description}
-                      </p>
+                      </motion.p>
                     </motion.div>
                   ),
                 )}
