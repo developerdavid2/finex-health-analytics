@@ -95,7 +95,7 @@ export default function GeographicalSection() {
         />
       </div>
 
-      <div className="absolute bottom-1/4 right-1/3 size-[200px] rounded-full bg-[#e90e83] filter blur-[80px] opacity-20"></div>
+      <div className="absolute bottom-1/4 right-1/3 size-[200px] rounded-full bg-[#e90e83] filter blur-[80px] opacity-10"></div>
 
       {/* Animated Content */}
       <div
