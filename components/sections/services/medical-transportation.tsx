@@ -104,6 +104,7 @@ export default function MedicalTransportationSection() {
                 ref={videoRef}
                 loop
                 muted
+                autoPlay
                 playsInline
                 className="w-full h-auto min-h-96 object-cover rounded-2xl"
               >
