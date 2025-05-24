@@ -8,6 +8,7 @@ import {
   FaChalkboardTeacher,
   FaRobot,
 } from "react-icons/fa";
+import { IconType } from "react-icons";
 
 export const milestonesMenu = [
   {
@@ -64,5 +65,59 @@ export const milestonesMenu = [
     description: "Achieve recognition through industry validations.",
     href: "/milestones#certifications",
     icon: FaCertificate,
+  },
+];
+
+export interface MilestoneItem {
+  id: string;
+  title: string;
+  icon: IconType;
+  image: string;
+  description: string;
+  cta: string;
+  href: string;
+  className?: string;
+}
+
+export const milestonesMainData: MilestoneItem[] = [
+  {
+    id: "scale",
+    title: "Scale Operations",
+    icon: FaRocket,
+    image: "/images/milestones/milestone-scale.jpg",
+    description:
+      "Raise funding to expand our healthcare analytics services across new geographies and demographics.",
+    cta: "Read more",
+    href: "/milestones#scale",
+  },
+  {
+    id: "products",
+    title: "Launch New Products",
+    icon: FaLaptopMedical,
+    image: "/images/milestones/milestone-products.jpeg",
+    description:
+      "Introduce new AI-driven tools that enhance decision-making in healthcare management.",
+    cta: "Read more",
+    href: "/milestones#products",
+  },
+  {
+    id: "partnerships",
+    title: "Strategic Partnerships",
+    icon: FaUserTie,
+    image: "/images/milestones/milestone-partners.jpg",
+    description:
+      "Partner with leading stakeholders across health, finance, and data ecosystems.",
+    cta: "Read more",
+    href: "/milestones#partnerships",
+  },
+  {
+    id: "brand",
+    title: "Brand & Leadership",
+    icon: FaChartBar,
+    image: "/images/milestones/milestone-leader.jpg",
+    description:
+      "Establish Finex as a leading voice in healthcare transformation and data integrity.",
+    cta: "Read more",
+    href: "/milestones#brand",
   },
 ];
