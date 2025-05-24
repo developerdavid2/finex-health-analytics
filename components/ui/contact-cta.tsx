@@ -39,7 +39,11 @@ export default function ContactCta({
   const afterHighlight = headingParts.length > 1 ? headingParts[1] : "";
 
   return (
-    <section ref={ref} className="w-full py-20" style={{ backgroundColor }}>
+    <section
+      ref={ref}
+      className="w-full py-8 md:py-10 "
+      style={{ backgroundColor }}
+    >
       <div className="container mx-auto px-4 relative">
         <div
           className={`blur-[12rem] h-52 w-52 ${primaryBlurColor} absolute top-[20%] right-[5%]`}
