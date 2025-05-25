@@ -23,7 +23,7 @@ export default function ResearchSection() {
   return (
     <section
       id="research"
-      className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF]"
+      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF]"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-sm md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
         <div ref={animationRef} className="mb-8 md:mb-12">

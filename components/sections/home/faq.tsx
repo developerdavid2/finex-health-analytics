@@ -29,11 +29,11 @@ export default function FAQSection() {
     <section
       id="home-faq"
       ref={ref}
-      className="flex justify-center items-center bg-indigo-50 relative pb-[10rem] pt-16"
+      className="flex justify-center items-center bg-indigo-50 relative pt-[5rem] lg:pt-[10rem]"
     >
       <div
         ref={animationRef}
-        className="flex flex-col xl:flex-row container relative px-4 pt-[10rem] max-w-3xl xl:max-w-7xl"
+        className="flex flex-col xl:flex-row container relative px-4 max-w-3xl xl:max-w-7xl"
       >
         <div className="absolute inset-0 h-[500px] mask-y-from-80% mask-y-to-90% opacity-60 w-full overflow-hidden">
           <Ripple />
@@ -49,7 +49,7 @@ export default function FAQSection() {
             <h2 className="max-xl:text-center text-3xl md:text-5xl  xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-600 text-xl font-medium mb-8 max-w-3xl max-xl:text-center">
+            <p className="text-gray-600 text-xl font-medium mb-8 px-4 max-xl:text-center">
               Get quick answers to common questions about our healthcare
               consulting, analytics, and digital transformation solutions.
               Whether you&apos;re a hospital, insurer, or government agency,

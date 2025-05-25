@@ -34,14 +34,11 @@ export default function HowItWorksSection() {
     <section
       id="how-it-works"
       ref={ref}
-      className="flex justify-center items-center bg-indigo-50 relative"
+      className="flex justify-center items-center bg-indigo-50 relative pt-[5rem] lg:pt-[10rem]"
     >
-      <div
-        ref={animationRef}
-        className="flex flex-col container pt-[10rem] max-w-7xl"
-      >
+      <div ref={animationRef} className="flex flex-col container max-w-7xl">
         <motion.div
-          className="max-w-6xl mb-10 px-[3rem]"
+          className="max-w-6xl px-4"
           initial="hidden"
           animate={initialState}
           variants={variants}
@@ -57,7 +54,7 @@ export default function HowItWorksSection() {
           </p>
         </motion.div>
 
-        <div className="mb-10 mx-auto flex flex-col justify-center items-center">
+        <div className="mx-auto flex flex-col justify-center items-center">
           <StackedCards animationProps={stackedCardsAnimationProps} />
         </div>
       </div>

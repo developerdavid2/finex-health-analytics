@@ -35,11 +35,11 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className="flex justify-center items-center"
+      className="flex justify-center items-center pt-[5rem] lg:pt-[10rem]"
     >
       <div
         ref={animationRef}
-        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-4 lg:px-[6rem] mb-[10rem]"
+        className="flex flex-col container bg-pink-300/10 relative rounded-[2rem] lg:rounded-[5rem] max-w-7xl mx-auto px-4 lg:px-[6rem] py-[3rem] md:py-[5rem]"
       >
         <motion.div
           className="container max-w-6xl mb-10"

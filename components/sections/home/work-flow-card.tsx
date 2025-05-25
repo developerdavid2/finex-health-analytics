@@ -103,10 +103,10 @@ const cssVariables = {
 
 export default function StackedCards({ animationProps }: StackedCardsProps) {
   return (
-    <motion.div className="max-w-7xl w-full pb-20" {...(animationProps || {})}>
+    <motion.div className="max-w-7xl w-full" {...(animationProps || {})}>
       <div className="container mx-auto px-4">
         <ul
-          className="list-none p-0 grid grid-cols-1 gap-16 mb-16"
+          className="list-none p-0 grid grid-cols-1 gap-16"
           style={cssVariables}
         >
           {cardData.map((card, index) => (

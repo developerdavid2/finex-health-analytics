@@ -96,7 +96,7 @@ export default function CoreValuesSection() {
 
   // Tablet Grid Layout (md to max-lg)
   const GridLayout = () => (
-    <div className="hidden md:grid xl:hidden grid-cols-2 gap-8">
+    <div className="hidden md:grid xl:hidden grid-cols-2 gap-8 px-8">
       {coreValues.map((value, index) => (
         <CoreValueCard key={index} value={value} index={index} layout="grid" />
       ))}
@@ -113,7 +113,7 @@ export default function CoreValuesSection() {
   );
 
   return (
-    <section ref={ref} className="w-full py-[10rem] bg-[#EEF2FF]">
+    <section ref={ref} className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF]">
       <div className="container mx-auto flex flex-col max-w-sm md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
         <div
           ref={animationRef}
@@ -130,7 +130,7 @@ export default function CoreValuesSection() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700 max-w-2xl mx-auto"
+            className="text-lg text-gray-700 max-w-2xl mx-auto px-4"
             variants={variants}
             initial="hidden"
             animate={animationState}

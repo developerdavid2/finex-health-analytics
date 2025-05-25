@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
     <section
       ref={ref}
       id="home-testimonials"
-      className="bg-[#EEF2FF] -mt-32 flex justify-center items-center mx-auto"
+      className="bg-[#EEF2FF] pt-[5rem] lg:pt-[10rem] flex justify-center items-center mx-auto"
     >
       <div className="relative overflow-hidden text-center flex flex-col items-center bg-[#EEF2FF] ">
         <div

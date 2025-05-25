@@ -2,7 +2,6 @@
 
 import { useSectionScroll } from "@/hooks/use-section-scroll";
 import React, { useRef } from "react";
-import { Button } from "@/components/ui/button";
 import { motion, useInView } from "framer-motion";
 import ManagementCard from "@/components/sections/home/management-card";
 import { TextReveal } from "@/components/ui/text-reveal";
@@ -49,10 +48,14 @@ export default function ManagementSection() {
   const animationState = isInView ? "visible" : "hidden";
 
   return (
-    <section id="team" ref={ref} className="flex justify-center items-center">
+    <section
+      id="team"
+      ref={ref}
+      className="flex justify-center items-center pt-[5rem] lg:pt-[10rem]"
+    >
       <div
         ref={animationRef}
-        className="flex flex-col container bg-pink-300/10 relative rounded-[5rem] py-[10rem] max-w-7xl mx-auto px-4 lg:px-[6rem] mb-[10rem]"
+        className="flex flex-col container bg-pink-300/10 relative rounded-[2rem] lg:rounded-[5rem] max-w-7xl mx-auto px-4 lg:px-[6rem] py-[3rem] md:py-[5rem]"
       >
         <motion.div
           className="container max-w-6xl mb-10"
@@ -111,22 +114,7 @@ export default function ManagementSection() {
             </Carousel>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            animate={animationState}
-            variants={variants}
-            transition={{ ...transition, delay: 0.8 }}
-          >
-            <Button
-              className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-indigo-100 shadow-xl transition duration-300 w-full hover:scale-110 cursor-pointer"
-              variant={"outline"}
-              onClick={() => window.open("/company", "_self")}
-            >
-              Explore More
-            </Button>
-          </motion.div>
-
-          <div className="mt-10">
+          <div className="mt-2">
             <TextReveal>
               &#34;Finex Healthcare Analytics was founded in 2022 to improve
               global healthcare delivery through digital innovation, with a

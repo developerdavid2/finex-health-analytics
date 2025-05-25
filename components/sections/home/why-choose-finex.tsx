@@ -35,11 +35,11 @@ export function WhyChooseFinexSection() {
     <section
       id="why-choose-finex"
       ref={ref}
-      className="flex flex-col  items-center  pb-[10rem]"
+      className="flex flex-col  items-center pt-[5rem] lg:py-[10rem]"
     >
       <div
         ref={animationRef}
-        className="flex flex-col container relative max-w-7xl px-[3rem] pb-10 lg:px-[6rem]"
+        className="flex flex-col container relative max-w-7xl px-[3rem] lg:px-[6rem]"
       >
         <motion.div
           className="container max-w-6xl"
