@@ -32,7 +32,7 @@ export default function OpenMap() {
     return (
       <div
         style={{ height: "400px", width: "100%" }}
-        className="bg-gray-100 flex items-center justify-center text-gray-500"
+        className="bg-gray-100 flex items-center justify-center text-gray-500 relative z-10"
       >
         Loading map...
       </div>
@@ -40,11 +40,12 @@ export default function OpenMap() {
   }
 
   return (
-    <div style={{ height: "400px", width: "100%" }}>
+    <div style={{ height: "400px", width: "100%" }} className="relative z-10">
       <MapContainer
         center={position}
         zoom={13}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%", zIndex: 10 }}
+        zoomControl={true}
       >
         <TileLayer
           url={`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=${process.env.NEXT_PUBLIC_MAPTILER_API_KEY}`}
@@ -88,6 +89,19 @@ export default function OpenMap() {
           </Popup>
         </Marker>
       </MapContainer>
+
+      {/* Additional CSS to ensure map stays below navbar */}
+      <style jsx global>{`
+        .leaflet-container {
+          z-index: 10 !important;
+        }
+        .leaflet-control-container {
+          z-index: 15 !important;
+        }
+        .leaflet-popup {
+          z-index: 20 !important;
+        }
+      `}</style>
     </div>
   );
 }
