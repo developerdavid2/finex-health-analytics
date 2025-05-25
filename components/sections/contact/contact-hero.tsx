@@ -24,7 +24,7 @@ export default function ContactUsHeroSection() {
   return (
     <section
       id="contact-hero"
-      className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
+      className="w-full pt-[5rem] xl:pt-[10rem] bg-[#EEF2FF] relative"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -37,7 +37,7 @@ export default function ContactUsHeroSection() {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-[1320px] relative">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-10 text-main font-urbanist font-bold pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
+            className="hidden xl:block text-3xl md:text-4xl lg:text-5xl xl:text-7xl text-main font-urbanist font-bold xl:pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
             variants={variants}
             initial="hidden"
             animate={animationState}
@@ -50,23 +50,23 @@ export default function ContactUsHeroSection() {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
             {/* Left Panel - Research Links */}
             <motion.div
-              className="flex flex-col h-full w-fit items-start justify-center"
+              className="flex flex-col h-full w-full justify-center items-center xl:items-start"
               transition={{ ...transition, delay: 0.6 }}
               variants={variants}
               initial="hidden"
               animate={animationState}
             >
-              <div className="flex flex-col items-start gap-2 mb-8">
+              <div className="flex flex-col items-center xl:items-start gap-2 mb-8 w-full">
                 <motion.h1
                   variants={variants}
                   transition={transition}
-                  className="text-center xl:text-start text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-none font-black tracking-tight text-main/50 pt-8 text-shadow-xl font-urbanist"
+                  className="text-center xl:text-start text-3xl sm:text-4xl md:text-5xl  xl:text-8xl leading-none font-black tracking-tight text-main/50 pt-8 text-shadow-xl font-urbanist"
                 >
                   Contact Us
                 </motion.h1>
 
                 <motion.p
-                  className="text-gray-600 text-xl font-medium max-w-lg mx-auto"
+                  className="text-center xl:text-start text-gray-600 text-xl font-medium max-w-lg"
                   transition={transition}
                   variants={variants}
                 >
@@ -75,7 +75,7 @@ export default function ContactUsHeroSection() {
                   conversation!
                 </motion.p>
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-8 items-start justify-start">
+                <div className="flex flex-col sm:flex-row gap-4 pt-8 items-center xl:items-start justify-start">
                   {/*Email Link Button*/}
                   <motion.div variants={variants}>
                     <Link
@@ -109,7 +109,7 @@ export default function ContactUsHeroSection() {
                     className="flex items-center justify-start gap-4"
                   >
                     <FaClock className="h-6 w-6 mr-2 text-main" />
-                    <h2 className="inline-flex justify-start text-main text-lg md:text-2xl lg:text-3xl font-bold text-start">
+                    <h2 className="inline-flex justify-start text-main text-lg md:text-2xl xl:text-3xl font-bold text-start">
                       BUSINESS HOURS
                     </h2>
                   </motion.div>
@@ -117,7 +117,7 @@ export default function ContactUsHeroSection() {
                   <div className="h-px w-[90%] bg-main mt-8" />
 
                   {/*  BUSINESS DAYS*/}
-                  <div className="flex flex-col lg:flex-row items-center justify-start mt-16 gap-8">
+                  <div className="flex flex-col xl:flex-row items-center justify-start mt-16 gap-8">
                     <motion.div className="flex flex-col justify-center items-start">
                       <span className="font-semibold text-main">
                         MONDAY - FRIDAY
@@ -141,13 +141,13 @@ export default function ContactUsHeroSection() {
             {/* Right Panel - Image */}
 
             <motion.div
-              className="flex items-center h-full rounded-3xl border text-gray-800 font-semibold flex-col space-y-10 justify-center p-10 border-white/30 backdrop-blur-sm bg-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)]"
+              className="flex items-center h-full rounded-3xl border text-gray-800 font-semibold flex-col space-y-10 justify-center md:p-10 border-white/30 backdrop-blur-sm bg-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.1)]"
               variants={variants}
               initial="hidden"
               animate={animationState}
               transition={{ ...transition, delay: 0.8 }}
             >
-              <div className="relative w-full h-full min-h-[300px] md:min-h-[350px] lg:min-h-[400px] rounded-xl overflow-hidden">
+              <div className="relative w-full h-full min-h-[300px] md:min-h-[350px] xl:min-h-[400px] rounded-xl overflow-hidden">
                 <ContactForm />
               </div>
             </motion.div>
