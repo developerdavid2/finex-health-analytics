@@ -15,8 +15,8 @@ const variants = {
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
-export default function MilestonesHeroSection() {
-  const scrollToScale = useScrollTo("scale");
+export default function TrendsHeroSection() {
+  const scrollToMain = useScrollTo("trends-main");
   useScrollOnLoad();
   const animationRef = useRef(null);
   const isInView = useInView(animationRef, { once: true, amount: 0.2 });
@@ -26,7 +26,7 @@ export default function MilestonesHeroSection() {
 
   return (
     <section
-      id="milestones-hero"
+      id="trends-hero"
       className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
     >
       <motion.div
@@ -63,7 +63,7 @@ export default function MilestonesHeroSection() {
                   transition={transition}
                   className="text-center lg:text-start text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl leading-none font-black tracking-tight text-main/50 pt-8 text-shadow-xl font-urbanist"
                 >
-                  Milestones
+                  Trends
                 </motion.h1>
 
                 <motion.p
@@ -71,8 +71,8 @@ export default function MilestonesHeroSection() {
                   transition={transition}
                   variants={variants}
                 >
-                  Charting our journey from vision to execution across funding,
-                  operations, partnerships, and recognition.
+                  Explore Finex&apos;s data-driven insights and innovations
+                  reshaping healthcare across emerging and global markets.
                 </motion.p>
 
                 <div className="flex flex-col pt-8 items-center lg:items-start justify-start">
@@ -80,7 +80,7 @@ export default function MilestonesHeroSection() {
                     <Button
                       className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 md:w-[15rem] hover:scale-110 cursor-pointer"
                       variant={"outline"}
-                      onClick={scrollToScale}
+                      onClick={scrollToMain}
                     >
                       Explore More
                     </Button>
@@ -100,11 +100,12 @@ export default function MilestonesHeroSection() {
             >
               <div className="h-full w-full relative">
                 <Image
-                  src="/images/milestones/milestones-hero.png"
+                  src="/images/trends/trends-hero.png"
                   alt="Milestones Hero"
                   width={300}
                   height={300}
-                  className="object-cover w-[350px] lg:w-[500px] h-auto"
+                  className="object-cover w-[350px] lg:w-[500px] h-auto mix-blend-lighten"
+                  unoptimized
                 />
               </div>
             </motion.div>

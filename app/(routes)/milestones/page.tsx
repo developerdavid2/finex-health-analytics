@@ -1,7 +1,7 @@
 import React from "react";
 
-import MilestonesHeroSection from "@/components/milestones/milestones-hero";
-import MilestonesMainSection from "@/components/milestones/milestones-main";
+import MilestonesHeroSection from "@/components/sections/milestones/milestones-hero";
+import MilestonesMainSection from "@/components/sections/milestones/milestones-main";
 
 const MilestonesPage = () => {
   return (
