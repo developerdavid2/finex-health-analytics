@@ -116,9 +116,10 @@ export default function ManagementSection() {
 
           <div className="mt-2">
             <TextReveal>
-              &#34;Finex Healthcare Analytics was founded in 2022 to improve
-              global healthcare delivery through digital innovation, with a
-              focus on health economics and public health.&#34;
+              &#34;Finex Healthcare Analytics and Informatics Consult LLC was
+              founded in 2022 to improve global healthcare delivery through
+              digital innovation, with a focus on health economics and public
+              health.&#34;
             </TextReveal>
           </div>
         </div>

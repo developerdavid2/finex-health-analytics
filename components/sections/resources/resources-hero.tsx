@@ -107,8 +107,8 @@ export default function ResourcesHeroSection() {
                 transition={transition}
                 variants={variants}
               >
-                From innovation to impact — explore how Finex Healthcare is
-                shaping the future of digital health.
+                From innovation to impact — explore how Finex is shaping the
+                future of digital health.
               </motion.p>
             </div>
           </div>

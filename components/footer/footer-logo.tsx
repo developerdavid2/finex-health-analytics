@@ -15,7 +15,7 @@ const FooterLogo: React.FC = () => {
           className="w-16 h-16 md:h-fit md:w-fit "
         />
         <h2 className="font-extrabold text-sm sm:text-lg md:text-xl text-main tracking-tight uppercase max-w-[300px]">
-          Finex Healthcare Analytics & Informatics LLC
+          Finex Healthcare Analytics & Informatics Consult LLC
         </h2>
       </div>
     </Link>

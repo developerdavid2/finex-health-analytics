@@ -112,7 +112,7 @@ export default function AboutHeroSection() {
                 transition={transition}
                 variants={variants}
               >
-                Finex Healthcare Analytics and Informatics is reshaping
+                Finex Healthcare Analytics and Informatics Consult is reshaping
                 healthcare delivery using intelligent analytics, secure digital
                 infrastructure, and scalable financial solutions.
               </motion.p>

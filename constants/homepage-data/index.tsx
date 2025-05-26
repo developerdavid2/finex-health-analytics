@@ -216,7 +216,7 @@ export const whyChooseFinex = [
   {
     title: "Integrated Expertise in Healthcare, Fintech, and Cybersecurity",
     description:
-      "Finex combines analytics, digital health transformation, financial strategy, and advanced cybersecurity into one powerful service suite. Unlike most consulting firms that specialize in just one area, we offer comprehensive, cross-functional expertise tailored to the unique challenges in modern healthcare. Our solutions are built on a foundation of HIPAA/GDPR compliance, AI-powered decision intelligence, and real-time risk mitigation.",
+      "Finex combines analytics, digital health transformation, financial strategy, and advanced cybersecurity into one powerful service suite. Unlike most consulting firms that specialize in just one area, we offer comprehensive, cross-functional expertise tailored to the unique challenges in modern healthcare. Our solutions are built on a foundation of HIPAA/GDPR, PCI DSS compliance, AI-powered decision intelligence, and real-time risk mitigation.",
     content: (
       <div className="flex flex-col h-full w-full items-center justify-center text-neutral-800 p-4 text-center">
         <div className="my-6 ">

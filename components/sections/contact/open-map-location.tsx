@@ -63,7 +63,7 @@ export default function OpenMap() {
                   alt="Logo"
                 />
                 <span className="text-sm font-semibold text-main">
-                  Finex Healthcare Inc
+                  Finex Healthcare Analytics & Informatics Consult LLC
                 </span>
               </motion.div>
               {/**/}

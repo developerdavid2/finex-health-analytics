@@ -30,7 +30,7 @@ export default function ContactLocationSection() {
               </h2>
               <div className="text-base text-gray-700">
                 <p className="font-semibold">Headquarters</p>
-                <p>Finex Healthcare Analytics & Informatics LLC.</p>
+                <p>Finex Healthcare Analytics & Informatics Consult LLC.</p>
                 <p>Hawthorne, USA</p>
                 <p>Broadway Street, Off Hawthorne Blvd</p>
                 <p>Hawthorne, CA, 90250</p>

@@ -15,7 +15,7 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://finex-healthcare-analytics.vercel.app"),
   title: {
-    default: "FINEX Healthcare Analytics",
+    default: "FINEX Healthcare Analytics and Informatics Consult",
     template: "%s | FINEX Healthcare",
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   creator: "FINEX",
   openGraph: {
-    title: "FINEX Healthcare Analytics",
+    title: "FINEX Healthcare Analytics and Informatics Consult",
     description:
       "Empowering healthcare with advanced analytics and intelligent insights.",
     url: "https://finex-healthcare-analytics.vercel.app",
