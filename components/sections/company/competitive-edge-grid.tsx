@@ -43,6 +43,7 @@ export default function CompetitiveEdgeGrid() {
               alt={item.title}
               width={500}
               height={500}
+              loading="lazy"
               className="absolute inset-0 h-full w-full object-cover mask-b-from-50% mask-b-to-75%"
               unoptimized
             />

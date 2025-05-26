@@ -39,7 +39,7 @@ export default function WhyFinexBetterSection() {
                       alt="Hero image"
                       width={400}
                       height={400}
-                      className="w-full h-auto absolute inset-0 top-0 left-1/2 -translate-x-1/2 object-cover mask-b-from-60% mask-b-to-95%"
+                      className="w-full h-auto absolute inset-0 top-0 left-1/2 -translate-x-1/2 object-cover mask-b-from-60%"
                       transition={{ ...transition, delay: 0.6 }}
                       variants={variants}
                     />
@@ -51,13 +51,13 @@ export default function WhyFinexBetterSection() {
 
           {/*Why-Finex-Is-Better Cards*/}
           <motion.div
-            className="container mb-10 flex flex-col mx-auto w-fit xl:w-[60%] xl:flex-none h-full"
+            className="container flex flex-col mx-auto w-fit xl:w-[60%] xl:flex-none h-full"
             initial="hidden"
             animate={initialState}
             variants={variants}
             transition={transition}
           >
-            <h2 className="max-xl:text-center text-3xl  xl:text-5xl font-bold mb-4 text-main font-urbanist font-urban">
+            <h2 className="max-xl:text-center text-3xl  xl:text-5xl font-bold text-main font-urbanist font-urban">
               Why Finex is <AuroraText>Better</AuroraText>
             </h2>
 

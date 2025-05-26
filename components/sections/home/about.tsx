@@ -147,7 +147,7 @@ export default function AboutSection() {
 
           {/* Mobile button with optimized rendering */}
           <motion.div
-            className="flex lg:hidden justify-center items-center lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4"
+            className="flex lg:hidden justify-center items-center lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4 mt-10"
             variants={variants}
             transition={{ ...transition, delay: 0.4 }}
           >

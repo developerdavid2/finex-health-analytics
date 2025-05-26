@@ -80,10 +80,7 @@ export default function MissionVisionSection() {
   }, [isInView]);
 
   return (
-    <section
-      id="mission-vision"
-      className="w-full pb-[10rem] bg-pink-50/20 relative"
-    >
+    <section id="mission-vision" className="w-full bg-pink-50/20 relative">
       {/* Background decorative elements */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -108,7 +105,7 @@ export default function MissionVisionSection() {
           initial="hidden"
           animate={animationState}
           variants={containerVariants}
-          className="text-center mb-8 md:mb-12"
+          className="text-center"
         >
           <motion.div
             variants={textItemVariants}
@@ -152,10 +149,10 @@ export default function MissionVisionSection() {
                   variants={textItemVariants}
                   className="text-main text-lg text-start font-medium leading-relaxed"
                 >
-                  To transform global healthcare systems through cutting-edge
-                  analytics, informatics, and data-driven policy solutions that
-                  enhance patient outcomes, drive efficiency, and support
-                  financial sustainability.
+                  To empower healthcare organizations, policymakers, and
+                  industry leaders with actionable intelligence, fostering a
+                  more efficient, equitable, and technology-driven healthcare
+                  ecosystem.
                 </motion.p>
               </motion.div>
 
@@ -216,10 +213,10 @@ export default function MissionVisionSection() {
                   variants={textItemVariants}
                   className="text-main text-lg text-start font-medium leading-relaxed"
                 >
-                  To transform global healthcare systems through cutting-edge
-                  analytics, informatics, and data-driven policy solutions that
-                  enhance patient outcomes, drive efficiency, and support
-                  financial sustainability.
+                  To be a leading force in transforming healthcare through
+                  data-driven insights, innovative health informatics, and
+                  strategic policy solutions, ensuring sustainable, efficient,
+                  and equitable healthcare systems globally.
                 </motion.p>
               </motion.div>
             </div>

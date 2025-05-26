@@ -4,14 +4,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import CompetitiveEdgeGrid from "@/components/sections/company/competitive-edge-grid";
 
-// Container variants for staggered children
+// Memoized stagger container variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };
@@ -49,7 +49,7 @@ export default function CompetitiveEdgeSection() {
   return (
     <section
       id="competitive-edge"
-      className="flex justify-center items-center bg-indigo-50 relative px-4 py-16"
+      className="flex justify-center items-center bg-indigo-50 relative px-4 pt-[5rem] lg:pt-[10rem] pb-10"
     >
       <div
         ref={animationRef}

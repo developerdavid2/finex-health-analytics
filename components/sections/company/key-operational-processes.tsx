@@ -179,7 +179,7 @@ export default function KeyOperationsSection() {
   return (
     <section
       id="operations"
-      className="flex justify-center items-center bg-indigo-50 relative pb-[10rem] pt-16"
+      className="flex justify-center items-center bg-indigo-50 relative py-[5rem] lg:py-[10rem]"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -193,11 +193,11 @@ export default function KeyOperationsSection() {
       {/* Animated Content */}
       <div
         ref={animationRef}
-        className="flex flex-col xl:flex-row container relative px-4 pt-[10rem] max-w-3xl xl:max-w-7xl z-10"
+        className="flex flex-col xl:flex-row container relative px-4 max-w-3xl xl:max-w-7xl z-10"
       >
         <div className="flex flex-col gap-10 justify-between w-full">
           <motion.div
-            className="container mb-10 flex flex-col items-center mx-auto"
+            className="container flex flex-col items-center mx-auto"
             initial="hidden"
             animate={initialState}
             variants={variants}
@@ -206,7 +206,7 @@ export default function KeyOperationsSection() {
             <h2 className="max-xl:text-center text-3xl md:text-5xl xl:text-7xl font-bold mb-4 text-main font-urbanist">
               Key Operational Processes
             </h2>
-            <p className="text-center text-gray-600 text-xl font-medium mb-8 max-w-3xl max-xl:text-center">
+            <p className="text-center text-gray-600 text-xl font-medium max-w-3xl max-xl:text-center">
               Our key operational processes are designed to ensure that we
               deliver the best possible service to our clients.
             </p>

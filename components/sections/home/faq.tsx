@@ -15,9 +15,9 @@ import { faqData } from "@/constants/homepage-data";
 import { Button } from "@/components/ui/button";
 
 // Animation configuration - memoized to prevent recreation
-const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
+const transition = { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }; // Reduced duration
 const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  hidden: { filter: "blur(5px)", transform: "translateY(10%)", opacity: 0 }, // Reduced blur
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
@@ -159,12 +159,7 @@ export default function FAQSection() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            className="mb-10 flex flex-col justify-center items-center will-change-transform"
-            initial="hidden"
-            animate={initialState}
-            variants={containerVariants}
-          >
+          <div className="mb-10 flex flex-col justify-center items-center will-change-transform">
             <div
               className="flex flex-col gap-6 max-w-full items-stretch w-full"
               role="region"
@@ -172,7 +167,7 @@ export default function FAQSection() {
             >
               {faqItems}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

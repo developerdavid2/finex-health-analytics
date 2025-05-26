@@ -14,7 +14,7 @@ export default function AboutGrid() {
       {aboutSections.map((feature) => (
         <BentoCard key={feature.name} {...feature} />
       ))}
-      <div className="max-lg:hidden flex justify-center items-center lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4 ">
+      <div className="max-lg:hidden flex justify-center items-center lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4">
         <Button
           className="bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 font-bold rounded-full text-white hover:text-white text-lg p-8 hover:drop-shadow-2xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
           variant={"outline"}

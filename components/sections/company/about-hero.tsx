@@ -112,9 +112,10 @@ export default function AboutHeroSection() {
                 transition={transition}
                 variants={variants}
               >
-                Finex Healthcare Analytics and Informatics Consult is reshaping
-                healthcare delivery using intelligent analytics, secure digital
-                infrastructure, and scalable financial solutions.
+                Finex Healthcare Analytics and Informatics Consult LLC is a
+                trailblazing force in digital healthcare transformation,
+                offering cutting-edge consulting, staffing, training, and
+                rehabilitation analytics to healthcare organizations worldwide.
               </motion.p>
             </div>
           </div>

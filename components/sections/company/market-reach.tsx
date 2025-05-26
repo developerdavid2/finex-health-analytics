@@ -5,14 +5,14 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import MarketReachGrid from "@/components/sections/company/market-reach-grid";
 
-// Animation configs
+// Memoized stagger container variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };
@@ -55,7 +55,7 @@ export default function MarketReachSection() {
   return (
     <section
       id="market-reach"
-      className="relative px-4 py-16 min-h-[1000px] bg-[#EFF0FC] overflow-hidden pt-[10rem] rounded-t-[5rem] mask-b-from-90% mask-b-to-95%"
+      className="relative px-4 min-h-[1000px] bg-[#EFF0FC] overflow-hidden pt-[5rem] lg:pt-[10rem] rounded-t-[5rem] mask-b-from-90% mask-b-to-95%"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 w-full h-full overflow-hidden opacity-40 mix-blend-hard-light mask-y-from-70% mask-y-to-80%">
