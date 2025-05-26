@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export default function AboutGrid() {
   const router = useRouter();
   return (
-    <BentoGrid className="lg:grid-rows-3 pb-10 lg:pb-32">
+    <BentoGrid className="lg:grid-rows-3">
       {aboutSections.map((feature) => (
         <BentoCard key={feature.name} {...feature} />
       ))}

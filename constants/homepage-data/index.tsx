@@ -83,6 +83,7 @@ export const aboutSections = [
         className="absolute inset-0 object-cover min-h-full mask-b-from-50% mask-b-to-100% w-full"
         src="/images/brain-ai.png"
         alt="brain-ai"
+        loading="lazy"
       />
     ),
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
@@ -101,6 +102,7 @@ export const aboutSections = [
         className="absolute inset-0 object-cover min-h-full mask-b-from-50% mask-b-to-100% w-full"
         src="/images/health-record.jpeg"
         alt="health-record"
+        priority={true}
       />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
@@ -135,6 +137,43 @@ export const outlinedServices = [
   { label: "Capacity", slug: "training" },
   { label: "Integration", slug: "ai" },
   { label: "Health Projects", slug: "community" },
+];
+
+export const services = [
+  {
+    id: 1,
+    title: "Healthcare Data Analytics",
+    description:
+      "Turn complex healthcare data into actionable insights to optimize care, cut costs, and drive smarter decisions.",
+    image: "/images/health-analytics.jpeg",
+    alt: "Healthcare Data Analytics",
+    stat: "90%",
+    statDescription:
+      "healthcare leaders believe AI will improve good health decisions.",
+  },
+  {
+    id: 2,
+    title: "E-Payment & Fintech Solutions for Healthcare",
+    description:
+      "Streamline healthcare payments, prevent fraud, and improve financial efficiency with digital-first solutions.",
+    image: "/images/e-payment.jpeg",
+    alt: "E-Payment & Fintech Solutions",
+  },
+  {
+    id: 3,
+    title: "Cybersecurity Solutions for Digital Health Systems",
+    description:
+      "Protect sensitive health data and ensure full compliance with robust, AI-powered cybersecurity frameworks.",
+  },
+  {
+    id: 4,
+    title: "Sports Promotion, Engagement and Education (SPEED)",
+    description:
+      "We promote wellness through sports, education, and community engagement by supporting talent, partnering with NGOs, and sponsoring programs.",
+    image: "/images/speed.jpeg",
+    alt: "SPEED Wellness",
+    link: "/services/#speed",
+  },
 ];
 
 // faqData.ts

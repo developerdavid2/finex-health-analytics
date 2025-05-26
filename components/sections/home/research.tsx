@@ -7,16 +7,20 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Animation configuration - matching the Hero Section
-const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
+// Animation configuration - memoized to prevent recreation
+const transition = { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }; // Reduced duration
 const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  hidden: { filter: "blur(5px)", transform: "translateY(10%)", opacity: 0 }, // Reduced blur
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
 export default function ResearchSection() {
   const animationRef = useRef(null);
-  const isInView = useInView(animationRef, { once: true, amount: 0.2 });
-
+  const isInView = useInView(animationRef, {
+    once: true,
+    margin: "-1%", // Trigger animation slightly before fully in view
+    amount: 0.1, // Trigger when 30% is visible
+  });
   // Set animation state based on view
   const animationState = isInView ? "visible" : "hidden";
 
@@ -50,7 +54,7 @@ export default function ResearchSection() {
           </motion.p>
 
           {/* Responsive Grid */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 xl:gap-16">
             {/* Left Panel - Research Links */}
             <motion.div
               className="bg-white/10 rounded-3xl shadow-2xl backdrop-blur-md border border-white/50 flex flex-col p-6 md:p-8 lg:p-10 h-full"
