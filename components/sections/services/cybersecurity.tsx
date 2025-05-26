@@ -5,9 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { FaShieldAlt } from "react-icons/fa";
 import Image from "next/image";
 
-// Animation configuration - matching the Hero Section
 const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  hidden: { filter: "blur(3px)", transform: "translateY(8%)", opacity: 0 }, // Reduced blur and transform
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
@@ -24,23 +23,27 @@ const containerVariants = {
 };
 
 export default function CyberSecuritySection() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
+  const animationRef = useRef(null);
+  const isInView = useInView(animationRef, {
+    once: true,
+    margin: "-1%", // Trigger animation slightly before fully in view
+    amount: 0.1, // Trigger when 30% is visible
+  });
   return (
     <section
       id="cybersecurity"
-      className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
-      ref={sectionRef}
+      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF] relative"
+      ref={animationRef}
     >
       {/* Background visuals */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden rounded-t-[5rem] opacity-60 mask-b-from-80% mask-b-to-90%">
+      <div className="absolute inset-0 w-full h-full overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem] opacity-60 mask-b-from-80% mask-b-to-90%">
         <Image
           src="/images/light-loader.gif"
           alt="Cyber Security"
           width={1920}
           height={1283}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 
@@ -50,7 +53,7 @@ export default function CyberSecuritySection() {
           isInView ? { opacity: 0.6, scale: 1 } : { opacity: 0, scale: 0.8 }
         }
         transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-        className="h-56 w-56 bg-gradient-to-tr from-main/30 to-pink-300/10 rounded-full absolute top-1/2 right-[0%]"
+        className="hidden lg:block h-56 w-56 bg-gradient-to-tr from-main/30 to-pink-300/10 rounded-full absolute top-1/2 right-[0%]"
       />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-7xl relative">
@@ -58,7 +61,6 @@ export default function CyberSecuritySection() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="mb-8 md:mb-12"
         >
           {/* Title */}
           <motion.h2
@@ -99,7 +101,7 @@ export default function CyberSecuritySection() {
           {/* Three-Column Layout */}
           <motion.div
             variants={containerVariants}
-            className="grid xl:grid-cols-[1fr_2fr_1fr] relative justify-center items-center gap-8 mt-12"
+            className="grid xl:grid-cols-[1fr_2fr_1fr] relative justify-center items-center gap-8 lg:mt-12"
           >
             {/* Left Panel - Image */}
             <motion.div
@@ -121,6 +123,8 @@ export default function CyberSecuritySection() {
                       width={100}
                       height={100}
                       className="size-full object-cover rounded-2xl"
+                      loading="eager"
+                      priority
                     />
                   </div>
                 </motion.div>
@@ -132,17 +136,19 @@ export default function CyberSecuritySection() {
               className="flex grow items-center justify-center h-full w-full"
               variants={variants}
             >
-              <motion.div className="relative rounded-xl" variants={variants}>
+              <div className="relative rounded-xl">
                 <div className="flex justify-center w-full h-full">
                   <Image
                     src="/images/cyber-shield.png"
                     alt="Cyber Shield"
+                    loading="eager"
+                    priority
                     width={400}
                     height={400}
                     className="h-full sm:h-[300px] xl:h-[400px] w-full object-cover grayscale-0 rounded-2xl drop-shadow-xl/50 drop-shadow-cyan-500/50"
                   />
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Right Panel - Image */}
@@ -165,6 +171,8 @@ export default function CyberSecuritySection() {
                       width={300}
                       height={300}
                       className="size-full object-cover rounded-2xl"
+                      loading="eager"
+                      priority
                     />
                   </div>
                 </motion.div>
