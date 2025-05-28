@@ -50,6 +50,7 @@ export default function HealthInformaticsGrid() {
               height={500}
               className="h-full w-full object-cover"
               unoptimized
+              loading={"lazy"}
             />
           </div>
 

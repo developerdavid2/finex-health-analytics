@@ -8,9 +8,9 @@ import { GiWaterDrop } from "react-icons/gi";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // Animation configuration - matching the Hero Section
-const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
+const transition = { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }; // Slightly reduced duration
 const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  hidden: { filter: "blur(3px)", transform: "translateY(8%)", opacity: 0 }, // Reduced blur and transform
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
@@ -24,7 +24,7 @@ export default function RehabilitationSection() {
   return (
     <section
       id="rehab"
-      className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
+      className="w-full pt-[2rem] lg:pt-[10rem] bg-[#EEF2FF] relative"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 w-full h-full overflow-hidden rounded-t-[5rem] opacity-15 mask-b-from-80% mask-b-to-90%">
@@ -33,7 +33,8 @@ export default function RehabilitationSection() {
           alt="Cyber Security "
           width={1920}
           height={1283}
-          className="w-full h-full object-cover "
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <motion.div
@@ -47,7 +48,7 @@ export default function RehabilitationSection() {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-7xl relative">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4 text-main font-urbanist font-bold pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4 text-main font-urbanist font-bold lg:pb-10 pointer-events-none whitespace-pre-wrap bg-gradient-to-r from-[#261935] to-main/80 bg-clip-text text-center leading-none text-transparent"
             variants={variants}
             initial="hidden"
             animate={animationState}
@@ -102,6 +103,7 @@ export default function RehabilitationSection() {
                       width={100}
                       height={100}
                       className="size-full object-cover rounded-2xl"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -117,11 +119,11 @@ export default function RehabilitationSection() {
                 initial="hidden"
                 animate={animationState}
               >
-                <div className="flex flex-col items-start gap-6 mb-8">
+                <div className="flex flex-col items-start gap-4 lg:gap-6 mb-8">
                   <div className="flex items-center justify-center bg-[#E8EDF9] rounded-full p-6 drop-shadow-xl drop-shadow-black/10">
                     <FaHeartbeat className="h-12 w-12 text-main" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-main pb-8">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-main lg:pb-8">
                     Data-Informed Healing.
                   </h2>
                   <p className="text-main text-start text-base md:text-lg">

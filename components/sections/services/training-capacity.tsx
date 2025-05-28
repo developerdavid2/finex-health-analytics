@@ -10,8 +10,9 @@ import { Button } from "@/components/ui/button";
 // Add the missing React icons imports
 
 // Animation configuration - matching the Hero Section
+// Slightly reduced duration
 const variants = {
-  hidden: { filter: "blur(10px)", transform: "translateY(20%)", opacity: 0 },
+  hidden: { filter: "blur(3px)", transform: "translateY(8%)", opacity: 0 }, // Reduced blur and transform
   visible: { filter: "blur(0)", transform: "translateY(0)", opacity: 1 },
 };
 
@@ -61,7 +62,7 @@ export default function TrainingCapacitySection() {
   return (
     <section
       id="training"
-      className="w-full py-16 md:py-24 lg:py-32 bg-[#EEF2FF] relative"
+      className="w-full pt-[2rem] lg:pt-[10rem] bg-[#EEF2FF] relative"
       ref={sectionRef}
     >
       <motion.div

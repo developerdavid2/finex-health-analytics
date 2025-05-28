@@ -20,10 +20,7 @@ export default function PredictiveAnalyticsSection() {
   const animationState = isInView ? "visible" : "hidden";
 
   return (
-    <section
-      id="ai"
-      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF] relative"
-    >
+    <section id="ai" className="w-full lg:pt-[10rem] bg-[#EEF2FF] relative">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-7xl relative">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
@@ -51,7 +48,7 @@ export default function PredictiveAnalyticsSection() {
                   <div className="bg-blue-100 p-3 rounded-xl w-fit">
                     <FaRobot className="h-6 w-6 text-main" />
                   </div>
-                  <h2 className=" text-2xl md:text-3xl lg:text-4xl font-bold text-main">
+                  <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-main">
                     Anticipate. Act. Advance.
                   </h2>
                 </div>

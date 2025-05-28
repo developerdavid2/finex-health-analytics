@@ -10,7 +10,7 @@ const SpeedCard = ({ img }: { img: string }) => {
   return (
     <figure
       className={cn(
-        "relative min-h-[200px] min-w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative min-h-[200px] min-w-[150px] min-[480px]:min-w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
       )}
