@@ -55,7 +55,7 @@ export default function PartnershipSection() {
     >
       <motion.h2
         variants={textItemVariants}
-        className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-16 text-main font-urbanist "
+        className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 lg:mb-16 text-main font-urbanist "
       >
         Partnerships Opportunities
       </motion.h2>
@@ -75,7 +75,7 @@ export default function PartnershipSection() {
         className="container relative mx-auto flex flex-col max-w-md md:max-w-xl lg:max-w-5xl z-10"
       >
         <motion.div
-          className="flex flex-col items-center w-full mb-16"
+          className="flex flex-col items-center w-full"
           variants={containerVariants}
         >
           {/* Centered overlay div */}

@@ -60,7 +60,7 @@ export default function NeedsStackedCards({
       {...(animationProps || defaultAnimationProps)}
     >
       <div className="container mx-auto px-4">
-        <ul className="list-none p-0 grid grid-cols-1 gap-16 mb-16">
+        <ul className="list-none p-0 grid grid-cols-1 gap-16">
           {customerNeedsData.map((card, index) => (
             <li
               key={card.id}

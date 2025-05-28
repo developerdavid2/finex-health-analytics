@@ -55,7 +55,7 @@ export default function GeographicalSection() {
   return (
     <section
       id="regions"
-      className="relative px-4 pt-16 min-h-[500px] bg-[#EFF0FC] overflow-hidden rounded-t-[5rem]"
+      className="relative px-4 pt-[2rem] lg:pt-[10rem] min-h-[500px] bg-[#EFF0FC] overflow-hidden rounded-t-[5rem]"
     >
       {/* Background visuals */}
       <div className="absolute inset-0 w-full h-full overflow-hidden mask-y-from-70% mask-y-to-80%">
