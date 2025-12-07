@@ -57,13 +57,13 @@ export default function MainNavigationMenu() {
 
   // Type guard function to check if content has specialLayout and sections
   const hasSpecialLayout = (
-    content: NavigationContent | undefined,
+    content: NavigationContent | undefined
   ): content is SpecialContent => {
     return content?.specialLayout === true && Array.isArray(content?.sections);
   };
 
   const hasStandardLayout = (
-    content: NavigationContent | undefined,
+    content: NavigationContent | undefined
   ): content is StandardContent => {
     return content?.specialLayout !== true && Array.isArray(content?.menuItems);
   };
@@ -239,7 +239,10 @@ export default function MainNavigationMenu() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-30 transition-all duration-300">
+    <header
+      className="fixed w-full z-30 transition-all duration-300"
+      style={{ top: "var(--affiliate-banner-height, 0px)" }}
+    >
       <div
         className={`transition-all duration-300 ${
           isScrolled ? "max-w-5xl mx-auto px-4 sm:px-6 mt-6" : "p-4"
@@ -300,7 +303,7 @@ export default function MainNavigationMenu() {
                                               if (sectionId) {
                                                 handleSectionNavigation(
                                                   path,
-                                                  sectionId,
+                                                  sectionId
                                                 );
                                               }
                                             }}
@@ -314,7 +317,7 @@ export default function MainNavigationMenu() {
                                         ))}
                                       </div>
                                     </div>
-                                  ),
+                                  )
                                 )}
                               </div>
                               <div className="border-l pl-6">
@@ -433,7 +436,7 @@ export default function MainNavigationMenu() {
                   <MobileSubmenu
                     navItem={
                       mainNavigation.find(
-                        (item) => item.title === activeSubmenu,
+                        (item) => item.title === activeSubmenu
                       )!
                     }
                     onBack={() => setActiveSubmenu(null)}
@@ -463,7 +466,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
+            className
           )}
           {...props}
         >

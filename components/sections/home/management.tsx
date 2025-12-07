@@ -58,7 +58,7 @@ export default function ManagementSection() {
         className="flex flex-col container bg-pink-300/10 relative rounded-[2rem] lg:rounded-[5rem] max-w-7xl mx-auto px-4 lg:px-[6rem] py-[3rem] md:py-[5rem]"
       >
         <motion.div
-          className="container max-w-6xl mb-10"
+          className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl mb-10"
           initial="hidden"
           animate={animationState}
           variants={variants}
@@ -72,57 +72,56 @@ export default function ManagementSection() {
             data scientists. We are committed to delivering innovative solutions
             that can transform the healthcare landscape.
           </p>
-        </motion.div>
-
-        <div className="flex flex-col items-start gap-10 w-full">
-          <motion.div
-            className="w-full"
-            initial="hidden"
-            animate={animationState}
-            variants={variants}
-            transition={{ ...transition, delay: 0.3 }}
-          >
-            <Carousel
-              opts={{
-                align: "start",
-              }}
+          <div className="flex flex-col items-start gap-10 w-full">
+            <motion.div
               className="w-full"
+              initial="hidden"
+              animate={animationState}
+              variants={variants}
+              transition={{ ...transition, delay: 0.3 }}
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {teamMembers.map((member, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/3"
-                  >
-                    <div className="p-1">
-                      <ManagementCard
-                        name={member.name}
-                        description={member.description}
-                        position={member.position}
-                        image={member.image}
-                        animationState="visible" // Always visible within carousel
-                        delay={0}
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center mt-6 gap-4">
-                <CarouselPrevious className=" static transform-none mx-2" />
-                <CarouselNext className=" static transform-none mx-2" />
-              </div>
-            </Carousel>
-          </motion.div>
+              <Carousel
+                opts={{
+                  align: "start",
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {teamMembers.map((member, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/3"
+                    >
+                      <div className="p-1">
+                        <ManagementCard
+                          name={member.name}
+                          description={member.description}
+                          position={member.position}
+                          image={member.image}
+                          animationState="visible" // Always visible within carousel
+                          delay={0}
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="flex justify-center mt-6 gap-4">
+                  <CarouselPrevious className=" static transform-none mx-2" />
+                  <CarouselNext className=" static transform-none mx-2" />
+                </div>
+              </Carousel>
+            </motion.div>
 
-          <div className="mt-2">
-            <TextReveal>
-              &#34;Finex Healthcare Analytics and Informatics Consult LLC was
-              founded in 2022 to improve global healthcare delivery through
-              digital innovation, with a focus on health economics and public
-              health.&#34;
-            </TextReveal>
+            <div className="mt-2">
+              <TextReveal>
+                &#34;Finex Healthcare Analytics and Informatics Consult LLC was
+                founded in 2022 to improve global healthcare delivery through
+                digital innovation, with a focus on health economics and public
+                health.&#34;
+              </TextReveal>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ const TrustedBrands = dynamic(
   {
     loading: () => <div className="h-32 animate-pulse bg-gray-100" />,
     ssr: true, // Enable SSR for above-the-fold content
-  },
+  }
 );
 
 const AboutSection = dynamic(() => import("@/components/sections/home/about"), {
@@ -21,7 +21,7 @@ const CoreValuesSection = dynamic(
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
     ssr: true,
-  },
+  }
 );
 
 // Lazy load sections further down with lower priority
@@ -29,21 +29,28 @@ const ServicesSection = dynamic(
   () => import("@/components/sections/home/services"),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
+);
+
+const EbooksSection = dynamic(
+  () => import("@/components/sections/home/ebook-showcase"),
+  {
+    loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+  }
 );
 
 const ManagementSection = dynamic(
   () => import("@/components/sections/home/management"),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
 );
 
 const HowItWorksSection = dynamic(
   () => import("@/components/sections/home/how-it-works"),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
 );
 
 const FAQSection = dynamic(() => import("@/components/sections/home/faq"), {
@@ -54,7 +61,7 @@ const TestimonialsSection = dynamic(
   () => import("@/components/sections/home/testimonials"),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
 );
 
 const WhyChooseFinexSection = dynamic(
@@ -64,7 +71,7 @@ const WhyChooseFinexSection = dynamic(
     })),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
 );
 
 const ContactCta = dynamic(() => import("@/components/ui/contact-cta"), {
@@ -75,7 +82,7 @@ const ResearchSection = dynamic(
   () => import("@/components/sections/home/research"),
   {
     loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
-  },
+  }
 );
 
 // Minimal loading fallback for better UX
@@ -107,6 +114,10 @@ const HomePage = () => {
       {/* Lower priority sections */}
       <Suspense fallback={<MinimalLoader />}>
         <ServicesSection />
+      </Suspense>
+
+      <Suspense fallback={<MinimalLoader />}>
+        <EbooksSection />
       </Suspense>
 
       <Suspense fallback={<MinimalLoader />}>

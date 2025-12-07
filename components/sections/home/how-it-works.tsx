@@ -36,7 +36,10 @@ export default function HowItWorksSection() {
       ref={ref}
       className="flex justify-center items-center bg-indigo-50 relative pt-[5rem] lg:pt-[10rem]"
     >
-      <div ref={animationRef} className="flex flex-col container max-w-7xl">
+      <div
+        ref={animationRef}
+        className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl"
+      >
         <motion.div
           className="max-w-6xl px-4"
           initial="hidden"

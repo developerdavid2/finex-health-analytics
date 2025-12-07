@@ -52,7 +52,7 @@ export default function FAQSection() {
         "Get quick answers to common questions about our healthcare consulting, analytics, and digital transformation solutions. Whether you're a hospital, insurer, or government agency, we're here to guide your journey to smarter healthcare.",
       buttonText: "Get in touch",
     }),
-    [],
+    []
   );
 
   // Optimize the animation trigger with requestAnimationFrame
@@ -84,7 +84,7 @@ export default function FAQSection() {
         {content.buttonText}
       </Button>
     ),
-    [handleContactClick, content.buttonText],
+    [handleContactClick, content.buttonText]
   );
 
   // Memoized FAQ items
@@ -106,7 +106,7 @@ export default function FAQSection() {
         ))}
       </ul>
     ),
-    [initialState],
+    [initialState]
   );
 
   return (
@@ -118,7 +118,7 @@ export default function FAQSection() {
     >
       <div
         ref={animationRef}
-        className="flex flex-col xl:flex-row container relative px-4 max-w-3xl xl:max-w-7xl"
+        className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl"
       >
         {/* Background decoration with GPU acceleration */}
         <div
@@ -145,7 +145,7 @@ export default function FAQSection() {
               {content.title}
             </motion.h2>
             <motion.p
-              className="text-gray-600 text-xl font-medium mb-8 px-4 max-xl:text-center"
+              className="text-gray-600 lg:text-xl font-medium mb-8 px-4 max-xl:text-center"
               variants={variants}
               transition={{ ...transition, delay: 0.1 }}
             >

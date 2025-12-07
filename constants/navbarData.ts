@@ -4,6 +4,7 @@ import { customersMenu } from "@/constants/customers-page-data/customers";
 import { trendsMenu } from "@/constants/trends-page-data/trends";
 import { milestonesMenu } from "@/constants/milestones-page-data/milestones";
 import { NavigationItem } from "@/types/navbarTypes";
+import { ebooksMenu } from "./resources-page-data/ebooks-menu";
 
 export const mainNavigation: NavigationItem[] = [
   {
@@ -71,6 +72,11 @@ export const mainNavigation: NavigationItem[] = [
         {
           title: "Industry Trends",
           items: trendsMenu,
+          columns: 1,
+        },
+        {
+          title: "E-Books",
+          items: ebooksMenu,
           columns: 1,
         },
       ],

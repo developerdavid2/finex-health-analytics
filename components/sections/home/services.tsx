@@ -55,7 +55,7 @@ export default function ServicesSection() {
         "We deliver cutting-edge solutions that enhance patient outcomes, protect data, and ensure financial sustainability. Explore our core services that are driving the future of healthcare.",
       services: services,
     }),
-    [],
+    []
   );
 
   // Optimize the animation trigger with requestAnimationFrame
@@ -86,7 +86,7 @@ export default function ServicesSection() {
         Explore More
       </Button>
     ),
-    [handleExploreMoreClick],
+    [handleExploreMoreClick]
   );
 
   // Memoize service cards to prevent unnecessary re-renders
@@ -239,11 +239,11 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className="flex justify-center items-center pt-[5rem] lg:pt-[10rem]"
+      className="flex justify-center items-center mt-[5rem] lg:mt-[10rem] bg-pink-300/10 rounded-[2rem] lg:rounded-[5rem] px-4 lg:px-[6rem] py-[3rem] md:py-[5rem]"
     >
       <div
         ref={animationRef}
-        className="flex flex-col container bg-pink-300/10 relative rounded-[2rem] lg:rounded-[5rem] max-w-7xl mx-auto px-4 lg:px-[6rem] py-[3rem] md:py-[5rem]"
+        className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl  relative "
       >
         <motion.div
           className="container max-w-6xl mb-10 will-change-transform"
@@ -268,7 +268,7 @@ export default function ServicesSection() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 will-change-transform"
+          className="grid grid-cols-1 xl:grid-cols-3 gap-10 will-change-transform"
           initial="hidden"
           animate={initialState}
           variants={containerVariants}

@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 import WhatsAppButton from "@/components/whatsapp-button";
 import { Toaster } from "react-hot-toast";
+import { AffiliateBanner } from "@/components/affiliate/affiliate-banner";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({
             },
           }}
         />
+        <AffiliateBanner />
         <Navbar />
         {children}
         <WhatsAppButton />

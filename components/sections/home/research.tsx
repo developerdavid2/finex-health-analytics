@@ -29,7 +29,7 @@ export default function ResearchSection() {
       id="research"
       className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF]"
     >
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-sm md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
+      <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-main font-urbanist text-center"
