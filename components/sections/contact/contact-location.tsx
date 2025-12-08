@@ -1,9 +1,10 @@
+"use client";
 import dynamic from "next/dynamic";
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 const OpenMap = dynamic(
   () => import("@/components/sections/contact/open-map-location"),
-  { ssr: false },
+  { ssr: false }
 );
 
 //

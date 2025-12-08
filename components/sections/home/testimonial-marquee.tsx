@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 import { motion } from "framer-motion";
 import { reviews } from "@/constants/homepage-data";
+import Image from "next/image";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -57,7 +58,7 @@ const ReviewCard = ({
         // hover effect
         "hover:bg-white/20 hover:shadow-lg hover:scale-105",
         // dark mode adjustments
-        "dark:bg-gray-900/40 dark:border-white/10 dark:hover:bg-gray-800/50",
+        "dark:bg-gray-900/40 dark:border-white/10 dark:hover:bg-gray-800/50"
       )}
       variants={animate ? itemVariants : undefined}
       custom={index}
@@ -68,7 +69,7 @@ const ReviewCard = ({
       <div className="relative z-10">
         <div className="flex flex-row items-center gap-3">
           <div className="rounded-full overflow-hidden border-2 border-white/30 shadow-md">
-            <img
+            <Image
               className="w-10 h-10 object-cover"
               width={40}
               height={40}

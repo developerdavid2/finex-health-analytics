@@ -35,4 +35,15 @@ export const resourcesMenu: ResourceOverviewItem[] = [
     cta: "Explore Trends",
     className: "col-span-full lg:col-span-3",
   },
+  {
+    id: 3,
+    title: "Ebooks",
+    description:
+      "Dive into expertly crafted publications that blend deep research, cultural storytelling, and actionable insights. ",
+    icon: FaChartLine,
+    image: "/images/resources/ebooks-cover.jpeg", // Or Lottie or SVG
+    href: "/ebooks",
+    cta: "Explore Ebooks",
+    className: "col-span-full lg:col-span-3",
+  },
 ];

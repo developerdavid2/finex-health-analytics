@@ -1,5 +1,4 @@
-// constants/ebooks-data.ts
-import type { LucideIcon } from "lucide-react"; // Import if using icons, otherwise remove
+import type { LucideIcon } from "lucide-react";
 
 export interface Ebook {
   id: string;
@@ -7,7 +6,7 @@ export interface Ebook {
   title: string;
   subtitle: string;
   cover: string;
-  thumbnails: string[]; // For gallery in hero or details
+  thumbnails: string[];
   shortDescription: string;
   longDescription: string;
   story: string;
@@ -18,7 +17,7 @@ export interface Ebook {
   pricing: { type: string; price: string; link: string }[];
   bonuses: string[];
   proceeds: string;
-  author: { name: string; bio: string };
+  author: { name: string; bio: string; photo?: string };
   cta: string;
   className?: string;
   icon?: LucideIcon; // Optional if using icons like in milestones
@@ -80,6 +79,7 @@ export const ebooksData: Ebook[] = [
     author: {
       name: "Chris N. Anazia",
       bio: "Author | Founder, Beyond Scoreline & NaijaBallNation. Chris Nnamdi Anazia is a multidisciplinary leader, visionary, thinker, and innovator with a deep passion for digital transformation, sports development, and public health advancement. A dynamic professional whose career spans payment card and digital technology, e-payment systems, analytics, informatics, healthcare advocacy, and cybersecurity. Chris brings a rare blend of technical expertise, strategic foresight, and human-centered leadership to every project he undertakes.",
+      photo: "/authors/chris-anazia.png",
     },
     cta: "Join the Movement. Revive the Game. Reignite the Spirit. Get your copy now and be part of the new generation rewriting our football story.",
     className: "",
