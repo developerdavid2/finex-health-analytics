@@ -84,11 +84,12 @@ export default function EbooksHeroSection() {
             >
               <div className="h-full w-full relative">
                 <Image
-                  src="/images/ebooks/ebook-hero.png" // Replace with actual hero image
+                  src="/images/ebooks/ebook-hero.webp" // Replace with actual hero image
                   alt="E-Books Hero"
                   width={300}
                   height={300}
                   className="object-cover w-[350px] lg:w-[800px] h-auto grayscale-50"
+                  priority
                 />
               </div>
             </motion.div>
