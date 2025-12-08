@@ -128,7 +128,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
                   Sports · Culture · History
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-main mb-4 font-urbanist leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-main mb-5 font-urbanist leading-tight">
                   {ebook.title}
                 </h1>
 
