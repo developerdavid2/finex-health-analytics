@@ -166,7 +166,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
                 </div>
                 <div>
                   <p className="font-semibold text-main">{ebook.author.name}</p>
-                  <p className="text-sm text-gray-600">Author & Founder</p>
+                  <p className="text-sm text-gray-600/90">Author & Founder</p>
                 </div>
               </motion.div>
 
