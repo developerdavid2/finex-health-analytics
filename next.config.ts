@@ -1,18 +1,19 @@
-import type { NextConfig } from "next";
-
-// next.config.js
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-  onDemandEntries: {
-    // other options...
+
+  // Force Next.js to build using Webpack instead of Turbopack
+  experimental: {
+    webpackBuildWorker: false,
   },
-  // This suppresses hydration warnings in development
+
   webpack: (config, { dev }) => {
     if (dev) {
       config.optimization.minimizer = [];
     }
     return config;
   },
+
   images: {
     remotePatterns: [
       {
@@ -21,9 +22,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-    ],
+    domains: ["api.microlink.io"],
   },
 };
 
