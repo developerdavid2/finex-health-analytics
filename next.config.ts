@@ -2,16 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  // Force Next.js to build using Webpack instead of Turbopack
   experimental: {
+    // forces Next.js to fall back to webpack
     webpackBuildWorker: false,
-  },
-
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.optimization.minimizer = [];
-    }
-    return config;
   },
 
   images: {
