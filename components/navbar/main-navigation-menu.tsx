@@ -249,10 +249,10 @@ export default function MainNavigationMenu() {
         }`}
       >
         <div
-          className={`flex h-14 w-full items-center justify-between gap-3 transition-all duration-300 mt-2
+          className={`flex h-14 w-full items-center justify-between gap-3 transition-all duration-300
           ${
             isScrolled
-              ? "rounded-full shadow-2xl backdrop-blur-2xl border border-gray-300/50 px-3 shadow-main/[0.04]"
+              ? "rounded-full shadow-2xl backdrop-blur-2xl border border-gray-300/50 px-3 shadow-main/[0.04] lg:mt-2"
               : "px-3 rounded-full"
           }
         `}
