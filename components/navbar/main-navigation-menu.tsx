@@ -249,7 +249,7 @@ export default function MainNavigationMenu() {
         }`}
       >
         <div
-          className={`flex h-14 w-full items-center justify-between gap-3 transition-all duration-300
+          className={`flex h-14 w-full items-center justify-between gap-3 transition-all duration-300 mt-2
           ${
             isScrolled
               ? "rounded-full shadow-2xl backdrop-blur-2xl border border-gray-300/50 px-3 shadow-main/[0.04]"
