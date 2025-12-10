@@ -83,7 +83,7 @@ export const StickyScroll = ({
       }
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="relative flex items-start px-4 z-20 max-lg:mr-0">
+      <div className="relative flex items-start lg:px-4 z-20 max-lg:mr-0">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <motion.div
@@ -132,13 +132,13 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-lg mt-10 max-w-xl text-neutral-700"
+                className="lg:text-lg mt-10 max-w-xl text-neutral-700"
               >
                 {item.description}
               </motion.p>
             </motion.div>
           ))}
-          <div className="h-40" />
+          <div className="lg:h-80" />
         </div>
       </div>
       <motion.div

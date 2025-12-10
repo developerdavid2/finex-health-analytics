@@ -63,9 +63,9 @@ export default function EbookDetailsClient({ ebook }: Props) {
   });
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
+    <div className="min-h-screen bg-[#EEF2FF] mt-6">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 lg:py-28">
+      <section className="relative overflow-hidden pt-20 lg:py-28 px-4">
         <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
           {/* Back Button */}
           <motion.div
@@ -128,7 +128,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
                   Sports · Culture · History
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-main mb-5 font-urbanist leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-black text-main mb-5 font-urbanist leading-tight">
                   {ebook.title}
                 </h1>
 
@@ -142,7 +142,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
                 initial="hidden"
                 animate={heroInView ? "visible" : "hidden"}
                 transition={{ ...transition, delay: 0.4 }}
-                className="text-lg text-gray-700 leading-relaxed"
+                className="lg:text-lg text-gray-700 leading-relaxed"
               >
                 {ebook.shortDescription}
               </motion.p>
@@ -199,7 +199,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
       </section>
 
       {/* Why This Matters Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative px-4">
         <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
           <div ref={whyMattersRef}>
             <motion.h2
@@ -207,7 +207,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
               initial="hidden"
               animate={whyMattersInView ? "visible" : "hidden"}
               transition={{ ...transition, delay: 0.1 }}
-              className="text-3xl md:text-4xl font-bold text-center text-main mb-12"
+              className="text-2xl md:text-4xl font-bold text-center text-main mb-12"
             >
               Why This Book Matters
             </motion.h2>
@@ -321,7 +321,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
       </section>
 
       {/* Story Sections */}
-      <section className="py-20">
+      <section className="pt-20 px-4">
         <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl xl:max-w-5xl">
           <div ref={storyRef} className="space-y-16">
             {/* Full Description */}
@@ -334,10 +334,12 @@ export default function EbookDetailsClient({ ebook }: Props) {
             >
               <div className="flex items-center gap-3 mb-4">
                 <BookOpen className="w-6 h-6 text-gray-700" />
-                <h2 className="text-3xl font-bold text-main">The Story</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-main">
+                  The Story
+                </h2>
               </div>
               <div>
-                <p className="text-gray-700 leading-relaxed text-lg">
+                <p className="text-gray-700 leading-relaxed lg:text-lg">
                   {ebook.longDescription}
                 </p>
               </div>
@@ -388,7 +390,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
       </section>
 
       {/* Author Bio */}
-      <section className="py-20">
+      <section className="py-20 px-4">
         <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl xl:max-w-5xl">
           <motion.div
             ref={authorRef}
@@ -396,7 +398,7 @@ export default function EbookDetailsClient({ ebook }: Props) {
             initial="hidden"
             animate={authorInView ? "visible" : "hidden"}
             transition={{ ...transition, delay: 0.1 }}
-            className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-slate-200"
+            className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-slate-200"
           >
             <div className="flex flex-col md:flex-row items-start gap-8">
               <div className="rounded-full overflow-hidden border-2 border-white/30 shadow-md">

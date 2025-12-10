@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 const editions = [
-  { id: "ebook-1", label: "E-Book-1", cover: "/ebooks/ebook-1.png" },
+  { id: "ebook-1", label: "E-Book-1", cover: "/ebooks/ebook-1.webp" },
   { id: "ebook-2", label: "E-Book-2", cover: "/ebooks/ebook-2.jpg" },
 ];
 export default function EbookGallery() {
@@ -65,7 +65,7 @@ export default function EbookGallery() {
         >
           <CarouselContent className="bg-transparent">
             {editions.map((edition, index) => (
-              <CarouselItem key={edition.id}>
+              <CarouselItem key={edition.id} className="pl-0">
                 {/* This div is the clean white + blur container */}
                 <div className="relative flex items-center justify-center h-[300px] lg:h-[450px] border border-white/50 cursor-grab p-10 lg:p-16">
                   <div className="relative w-full h-full max-w-xs lg:max-w-md ">

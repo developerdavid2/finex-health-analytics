@@ -29,7 +29,7 @@ export const ebooksData: Ebook[] = [
     slug: "naija-football-renaissance",
     title: "Naija Football Renaissance",
     subtitle: "The Untold Story of Nigerian Football",
-    cover: "/ebooks/ebook-1.png",
+    cover: "/ebooks/ebook-1.webp",
     thumbnails: [
       "/images/ebooks/naija-ebook.jpg",
       "/images/ebooks/naija-paperback.jpg",

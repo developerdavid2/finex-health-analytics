@@ -116,13 +116,13 @@ export default function EbooksMainSection() {
 
                   {/* CTA Buttons Section */}
                   <div className="mt-auto flex-shrink-0">
-                    <div className="flex flex-col sm:flex-row gap-4 w-fit">
+                    <div className="grid grid-cols-2 gap-4 w-full">
                       {/* Primary: Get the E-Book */}
                       <Button
                         asChild
                         size="lg"
                         className=" bg-gradient-to-tr from-zinc-700 via-55% to-gray-500 text-white  font-bold rounded-2xl shadow-2xl hover:shadow-purple-500/30 
-                 transition-all duration-300 hover:scale-105 w-fit"
+                 transition-all duration-300 hover:scale-105 "
                       >
                         <a
                           href={item.pricing[0].link}
@@ -140,7 +140,7 @@ export default function EbooksMainSection() {
                         asChild
                         variant="ghost"
                         size="lg"
-                        className="w-fit border-2 text-foreground 
+                        className=" border-2 text-foreground 
                  hover:bg-red-100/10 
                  font-semibold rounded-2xl backdrop-blur-sm 
                  transition-all duration-300 hover:scale-105"

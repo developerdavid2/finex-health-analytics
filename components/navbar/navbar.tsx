@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <main
-      className={`relative flex flex-col overflow-hidden ${isBannerVisible ? "mb-10" : ""}`}
+      className={`relative flex flex-col overflow-hidden ${isBannerVisible ? "mb-16" : ""}`}
     >
       <NavProvider>
         <MainNavigationMenu />

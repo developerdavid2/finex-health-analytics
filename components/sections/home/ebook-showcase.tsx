@@ -27,7 +27,7 @@ export default function EbookShowcase() {
   const router = useRouter();
 
   return (
-    <section className="py-20 lg:py-32 overflow-hidden relative bg-[#EEF2FF] px-4">
+    <section className="py-20 pb-0 lg:py-32 overflow-hidden relative bg-[#EEF2FF] px-4">
       <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
         {/* Small accent orbs */}
         <div className="absolute top-[40%] right-[10%] w-20 h-20 bg-gradient-to-br from-white to-zinc-400/30 rounded-full hidden lg:flex" />

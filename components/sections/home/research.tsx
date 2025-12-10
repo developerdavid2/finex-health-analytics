@@ -32,7 +32,7 @@ export default function ResearchSection() {
       <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
         <div ref={animationRef} className="mb-8 md:mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-main font-urbanist text-center"
+            className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-main font-urbanist text-center"
             variants={variants}
             initial="hidden"
             animate={animationState}
@@ -42,7 +42,7 @@ export default function ResearchSection() {
           </motion.h2>
 
           <motion.p
-            className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-10 text-center"
+            className="lg:text-lg text-gray-700 max-w-2xl mx-auto mb-10 text-center"
             variants={variants}
             initial="hidden"
             animate={animationState}
