@@ -48,10 +48,10 @@ export function WhyChooseFinexSection() {
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-center text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+          <h2 className="text-center text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Why Choose Finex?
           </h2>
-          <p className="text-center text-gray-600 text-lg font-medium">
+          <p className="text-center text-gray-600 lg:text-lg font-medium">
             Here are some of the key features that set us apart from the rest:
           </p>
         </motion.div>

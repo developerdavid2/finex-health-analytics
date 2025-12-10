@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
+import { useBanner } from "@/contexts/banner-context";
+import { X } from "lucide-react";
+import { useEffect } from "react";
 
 export function AffiliateBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const { isBannerVisible, setIsBannerVisible } = useBanner();
 
   // Measure banner height and set CSS variable
   useEffect(() => {
-    if (isVisible) {
+    if (isBannerVisible) {
       const banner = document.getElementById("affiliate-banner");
       if (banner) {
         const height = banner.offsetHeight;
@@ -25,13 +26,13 @@ export function AffiliateBanner() {
         "0px"
       );
     }
-  }, [isVisible]);
+  }, [isBannerVisible]);
 
   const handleClose = () => {
-    setIsVisible(false);
+    setIsBannerVisible(false);
   };
 
-  if (!isVisible) {
+  if (!isBannerVisible) {
     return null;
   }
 
@@ -50,10 +51,13 @@ export function AffiliateBanner() {
       id="affiliate-banner"
       className="w-full bg-gradient-to-r from-purple-200/70 to-indigo-200 text-black/80 fixed top-0 left-0 right-0 z-[60] transition-all duration-300 backdrop-blur-2xl"
     >
-      <div className="flex items-center justify-between gap-4 py-3 px-4 max-w-full mx-auto">
+      <div className="flex items-center justify-between gap-4 py- lg:py-3 px-4 max-w-full mx-auto">
         {/* Marquee Scrolling Text */}
         <div className="flex-1 overflow-hidden min-w-0">
-          <Marquee pauseOnHover className="[--duration:30s]">
+          <Marquee
+            pauseOnHover
+            className="[--duration:60s] lg:[--duration:40s]"
+          >
             {affiliateText}
             {affiliateText}
             {affiliateText}

@@ -7,6 +7,7 @@ import Footer from "@/components/footer/footer";
 import WhatsAppButton from "@/components/whatsapp-button";
 import { Toaster } from "react-hot-toast";
 import { AffiliateBanner } from "@/components/affiliate/affiliate-banner";
+import { BannerProvider } from "@/contexts/banner-context";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -58,24 +59,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.className} bg-[#EEF2FF]`}>
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            style: {
-              background: "#ffffff",
-              color: "#1f2937",
-              border: "1px solid #EEF2FF",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-              borderRadius: "12px",
-              padding: "16px",
-            },
-          }}
-        />
-        <AffiliateBanner />
-        <Navbar />
-        {children}
-        <WhatsAppButton />
-        <Footer />
+        <BannerProvider>
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                background: "#ffffff",
+                color: "#1f2937",
+                border: "1px solid #EEF2FF",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                borderRadius: "12px",
+                padding: "16px",
+              },
+            }}
+          />
+          <AffiliateBanner />
+          <Navbar />
+          {children}
+          <WhatsAppButton />
+          <Footer />
+        </BannerProvider>
       </body>
     </html>
   );

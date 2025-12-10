@@ -113,7 +113,7 @@ export default function FAQSection() {
     <section
       id="home-faq"
       ref={ref}
-      className="flex justify-center items-center bg-indigo-50 relative pt-[5rem] lg:pt-[10rem]"
+      className="flex justify-center items-center bg-indigo-50 relative pt-[5rem] lg:pt-[10rem] px-4"
       aria-labelledby="faq-section-title"
     >
       <div
@@ -138,7 +138,7 @@ export default function FAQSection() {
           >
             <motion.h2
               id="faq-section-title"
-              className="max-xl:text-center text-3xl md:text-5xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban will-change-transform"
+              className="max-xl:text-center text-2xl md:text-4xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban will-change-transform"
               variants={variants}
               transition={transition}
             >

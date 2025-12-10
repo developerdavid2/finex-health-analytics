@@ -59,7 +59,7 @@ export default function CoreValuesSection() {
       description:
         "These principles guide every solution we deliver—from AI-driven insights to on-the-ground wellness initiatives.",
     }),
-    [],
+    []
   );
 
   // Immediate animation trigger
@@ -76,7 +76,7 @@ export default function CoreValuesSection() {
       grid: "h-full",
       row: "h-full",
     }),
-    [],
+    []
   );
 
   // Memoized Core Value Card Component
@@ -104,7 +104,7 @@ export default function CoreValuesSection() {
         </p>
       </motion.div>
     ),
-    [cardClasses],
+    [cardClasses]
   );
 
   // Memoized layout components
@@ -137,7 +137,7 @@ export default function CoreValuesSection() {
         </Carousel>
       </div>
     ),
-    [CoreValueCard],
+    [CoreValueCard]
   );
 
   const GridLayout = useMemo(
@@ -158,7 +158,7 @@ export default function CoreValuesSection() {
         ))}
       </motion.div>
     ),
-    [CoreValueCard, initialState],
+    [CoreValueCard, initialState]
   );
 
   const RowLayout = useMemo(
@@ -179,13 +179,13 @@ export default function CoreValuesSection() {
         ))}
       </motion.div>
     ),
-    [CoreValueCard, initialState],
+    [CoreValueCard, initialState]
   );
 
   return (
     <section
       ref={ref}
-      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF] relative"
+      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF] relative px-4"
     >
       {/* Optimized background elements */}
       <div
@@ -210,14 +210,14 @@ export default function CoreValuesSection() {
           variants={containerVariants}
         >
           <motion.h2
-            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist will-change-transform"
+            className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist will-change-transform"
             variants={variants}
           >
             {sectionContent.title}
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700 max-w-2xl mx-auto px-4"
+            className="lg:text-lg text-gray-700 max-w-2xl mx-auto px-4"
             variants={variants}
           >
             {sectionContent.description}

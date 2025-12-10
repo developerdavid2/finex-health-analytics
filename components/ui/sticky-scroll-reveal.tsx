@@ -38,7 +38,7 @@ export const StickyScroll = ({
         }
         return acc;
       },
-      0,
+      0
     );
     setActiveCard(closestBreakpointIndex);
   });
@@ -88,7 +88,7 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <motion.div
               key={item.title + index}
-              className="my-40 first:mt-20 last:mb-20"
+              className="my-10 lg:first:mt-20 lg:last:mb-20"
               initial={
                 animate
                   ? {
@@ -145,7 +145,7 @@ export const StickyScroll = ({
         className={cn(
           "sticky z-30 top-10 hidden h-fit w-96 overflow-hidden rounded-2xl bg-gradient-to-br backdrop-blur-lg border border-white/20 shadow-xl lg:block",
           cardGradients[activeCard % cardGradients.length],
-          contentClassName,
+          contentClassName
         )}
         animate={{
           opacity: [0.8, 1],

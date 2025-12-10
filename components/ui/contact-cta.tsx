@@ -80,7 +80,7 @@ export default function ContactCta({
 
           <motion.div transition={transition} variants={variants}>
             <Button
-              className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-lg p-8 drop-shadow-xl drop-shadow-blue-50 shadow-xl transition duration-300 w-[15rem] hover:scale-110 cursor-pointer"
+              className="bg-[#EEF2FF] font-bold rounded-full text-neutral-600 hover:bg-gradient-to-tr hover:from-zinc-700 hover:via-55% hover:to-gray-500 hover:text-white text-md p-6 md:text-lg md:p-8 shadow-lg transition-all duration-200 md:w-[15rem] hover:scale-105 cursor-pointer will-change-transform"
               variant={"outline"}
               onClick={() => router.push(buttonLink)}
             >

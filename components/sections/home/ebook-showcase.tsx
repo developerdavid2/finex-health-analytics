@@ -27,7 +27,7 @@ export default function EbookShowcase() {
   const router = useRouter();
 
   return (
-    <section className="py-20 lg:py-32 overflow-hidden relative bg-[#EEF2FF]">
+    <section className="py-20 lg:py-32 overflow-hidden relative bg-[#EEF2FF] px-4">
       <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
         {/* Small accent orbs */}
         <div className="absolute top-[40%] right-[10%] w-20 h-20 bg-gradient-to-br from-white to-zinc-400/30 rounded-full hidden lg:flex" />
@@ -50,13 +50,13 @@ export default function EbookShowcase() {
             variants={itemVariants}
             className="order-1 lg:order-2 text-center lg:text-left relative"
           >
-            <h2 className="text-start text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-main font-urbanist">
+            <h2 className="text-start text-2xl md:text-4xl lg:text-6xl font-bold mb-4 text-main font-urbanist">
               Discover Our <br />
               Growing E-Book <br />
               Collection
             </h2>
 
-            <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl text-start">
+            <p className="text-gray-600 lg:text-lg font-medium mb-8 max-w-3xl text-start">
               Dive into expertly crafted publications that blend deep research,
               cultural storytelling, and actionable insights. Our e-books
               deliver knowledge that informs, inspires, and transforms. Start

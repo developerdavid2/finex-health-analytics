@@ -47,7 +47,7 @@ export default function HowItWorksSection() {
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+          <h2 className="text-start text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Finex Process Work Flow
           </h2>
           <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">

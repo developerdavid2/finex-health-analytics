@@ -52,7 +52,7 @@ export default function AboutSection() {
       description:
         "At Finex, we incorporate the use of various analytical tools to read, compile, extract, and visualize clients historic medical report, for making efficient health decisions.",
     }),
-    [],
+    []
   );
 
   // Optimize the animation trigger with requestAnimationFrame
@@ -83,7 +83,7 @@ export default function AboutSection() {
         Learn More
       </Button>
     ),
-    [handleLearnMoreClick],
+    [handleLearnMoreClick]
   );
 
   return (
@@ -118,7 +118,7 @@ export default function AboutSection() {
         >
           {/* Optimized title with staggered animation */}
           <motion.h2
-            className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist will-change-transform"
+            className="text-start text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist will-change-transform"
             variants={variants}
             transition={transition}
           >
@@ -127,7 +127,7 @@ export default function AboutSection() {
 
           {/* Optimized description */}
           <motion.p
-            className="text-gray-600 text-lg font-medium mb-8 max-w-2xl"
+            className="text-gray-600 lg:text-lg font-medium mb-8 max-w-2xl"
             variants={variants}
             transition={{ ...transition, delay: 0.1 }}
           >

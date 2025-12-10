@@ -136,14 +136,14 @@ export default function StackedCards({ animationProps }: StackedCardsProps) {
                     </div>
                     <div className="w-full md:w-3/5 p-8 max-sm:pt-0 flex flex-col justify-center">
                       <div className="flex items-center mb-4">
-                        <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-main opacity-80">
+                        <span className="text-3xl md:text-5xl lg:text-7xl font-bold text-main opacity-80">
                           {card.number}
                         </span>
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-500">
                         {card.title}
                       </h3>
-                      <p className="text-gray-500 text-xl text-opacity-90">
+                      <p className="text-gray-500 lg:text-xl text-opacity-90">
                         {card.description}
                       </p>
                     </div>

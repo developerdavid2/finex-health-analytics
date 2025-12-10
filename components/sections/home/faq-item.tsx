@@ -47,7 +47,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
         "py-2 px-4 rounded-xl transition-all duration-300",
         accordionOpen
           ? "bg-indigo-50 shadow-inner"
-          : "bg-indigo-50 shadow-[5px_5px_15px_rgba(136,146,176,0.15),-5px_-5px_15px_rgba(255,255,255,0.6)]",
+          : "bg-indigo-50 shadow-[5px_5px_15px_rgba(136,146,176,0.15),-5px_-5px_15px_rgba(255,255,255,0.6)]"
       )}
       initial="hidden"
       animate={initialState}
@@ -65,7 +65,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
             "text-left text-[20px] font-semibold flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:ring-offset-2",
             accordionOpen
               ? "text-pink-700/60"
-              : "text-main hover:text-pink-600/60",
+              : "text-main hover:text-pink-600/60"
           )}
           onClick={toggleAccordion}
           onKeyDown={handleKeyDown}
@@ -74,13 +74,13 @@ const FaqItem: React.FC<FaqItemProps> = ({
           id={`faq-button-${id}`}
           type="button"
         >
-          <span>{question}</span>
+          <span className="text-base md:text-lg">{question}</span>
           <div
             className={clsx(
               "flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300",
               accordionOpen
                 ? "bg-indigo-100 shadow-inner text-indigo-700"
-                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-gray-900 hover:text-indigo-600",
+                : "bg-indigo-50 shadow-[2px_2px_5px_rgba(136,146,176,0.2),-2px_-2px_5px_rgba(255,255,255,0.7)] text-gray-900 hover:text-indigo-600"
             )}
             aria-hidden="true"
           >
@@ -123,7 +123,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
         }`}
       >
         <div className="px-4 py-3 rounded-b-md flex flex-col items-start">
-          <p className="leading-relaxed mb-6 text-gray-700 text-start">
+          <p className="leading-relaxed mb-6 text-gray-700 text-start md:text-lg">
             {answer}
           </p>
         </div>

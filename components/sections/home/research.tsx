@@ -27,7 +27,7 @@ export default function ResearchSection() {
   return (
     <section
       id="research"
-      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF]"
+      className="w-full pt-[5rem] lg:pt-[10rem] bg-[#EEF2FF] px-4"
     >
       <div className="container mx-auto flex flex-col max-w-sm md:max-w-xl lg:max-w-5xl xl:max-w-7xl">
         <div ref={animationRef} className="mb-8 md:mb-12">
@@ -65,9 +65,9 @@ export default function ResearchSection() {
             >
               <div className="flex flex-col items-start gap-3 mb-8">
                 <div className="bg-blue-100 p-3 rounded-xl">
-                  <FaResearchgate className="h-6 w-6 text-main" />
+                  <FaResearchgate className="size-4 lg:size-6 text-main" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-main">
+                <h2 className="text-2xl md:text-4xl font-bold text-main">
                   Research
                 </h2>
               </div>

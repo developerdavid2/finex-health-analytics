@@ -64,10 +64,10 @@ export default function ManagementSection() {
           variants={variants}
           transition={transition}
         >
-          <h2 className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
+          <h2 className="text-start text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban">
             Meet our Management Team
           </h2>
-          <p className="text-gray-600 text-lg font-medium mb-8 max-w-3xl">
+          <p className="text-gray-600 lg:text-lg font-medium mb-8 max-w-3xl">
             Our management team is a blend of healthcare analytics experts and
             data scientists. We are committed to delivering innovative solutions
             that can transform the healthcare landscape.

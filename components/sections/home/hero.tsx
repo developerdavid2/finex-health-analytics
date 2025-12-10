@@ -75,7 +75,7 @@ export default function HomeSection() {
           {button.label}
         </div>
       )),
-    [heroButtons],
+    [heroButtons]
   );
 
   return (
@@ -184,7 +184,7 @@ export default function HomeSection() {
 
           {/* Main headline - optimized for LCP */}
           <div className="max-w-7xl px-4">
-            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.1] lg:leading-none font-black tracking-tight mb-6 text-main pt-8 font-urbanist">
+            <h1 className="text-center text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-[80px] leading-[1.1] lg:leading-none font-black tracking-tight mb-6 text-main pt-8 font-urbanist">
               {words.map((word, index) => (
                 <React.Fragment key={index}>
                   <motion.span

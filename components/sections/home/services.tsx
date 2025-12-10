@@ -103,7 +103,7 @@ export default function ServicesSection() {
             transition={{ ...transition, delay }}
           >
             <div className="flex flex-col items-start text-start mb-auto">
-              <h3 className="text-2xl font-semibold text-main mb-4">
+              <h3 className="text-xl lg:text-2xl font-semibold text-main mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm">{service.description}</p>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
               />
             </div>
             <div className="flex justify-between text-start mt-auto space-x-6 md:space-x-20">
-              <h2 className="text-4xl font-semibold text-main">
+              <h2 className="text-2xl lg:text-4xl font-semibold text-main">
                 {service.stat}
               </h2>
               <p className="text-gray-600 text-sm">{service.statDescription}</p>
@@ -151,7 +151,7 @@ export default function ServicesSection() {
               />
             </div>
             <div className="flex flex-col items-start text-start mt-10">
-              <h3 className="text-2xl font-semibold text-main mb-4">
+              <h3 className="text-xl lg:text-2xl font-semibold text-main mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm">{service.description}</p>
@@ -169,7 +169,7 @@ export default function ServicesSection() {
             transition={{ ...transition, delay }}
           >
             <div className="flex flex-col items-start text-start mb-10">
-              <h3 className="text-2xl font-semibold text-main mb-4">
+              <h3 className="text-xl lg:text-2xl font-semibold text-main mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm">{service.description}</p>
@@ -214,7 +214,7 @@ export default function ServicesSection() {
               />
             </div>
             <div className="flex flex-col xl:flex-none xl:w-80">
-              <h3 className="text-2xl font-semibold text-main mb-4">
+              <h3 className="text-xl lg:text-2xl font-semibold text-main mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-600 text-sm">{service.description}</p>
@@ -252,14 +252,14 @@ export default function ServicesSection() {
           variants={containerVariants}
         >
           <motion.h2
-            className="text-start text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban will-change-transform"
+            className="text-start text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban will-change-transform"
             variants={variants}
             transition={transition}
           >
             {content.title}
           </motion.h2>
           <motion.p
-            className="text-gray-600 text-lg font-medium mb-8 max-w-3xl"
+            className="text-gray-600 lg:text-lg font-medium mb-8 max-w-3xl"
             variants={variants}
             transition={{ ...transition, delay: 0.1 }}
           >

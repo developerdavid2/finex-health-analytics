@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
           className="max-w-4xl mx-auto text-center mb-12 px-4"
         >
           <motion.h2
-            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban"
+            className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 text-main font-urbanist font-urban"
             variants={variants}
             initial="hidden"
             animate={animationState}
@@ -43,7 +43,7 @@ export default function TestimonialsSection() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700"
+            className="lg:text-lg text-gray-700"
             variants={variants}
             initial="hidden"
             animate={animationState}
